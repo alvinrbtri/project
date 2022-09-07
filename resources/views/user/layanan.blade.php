@@ -54,7 +54,7 @@
                         <div class="img mb-3">
                             <a href="/user/subkategori/subbaru"><img src="{{ asset('assets/img/icon_kendaraan.png') }}" alt="..."></a>
                         </div>
-                            <h4 class="title"><a href="/user/subkategori/subbaru">Kendaraan</a></h4>
+                            <h4 class="title"><a href="/user/subkategori/subbaru">Kendaraan RODA 8</a></h4>
                             <b>
                                 <p class="description">{{ $data['judul1'] }}</p>
                             </b>
