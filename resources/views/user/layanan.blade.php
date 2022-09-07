@@ -97,8 +97,8 @@
                                 </b>
                                 <p class="description"></p>
                                 <p class="description">- Barang terjaga setiap hari</p>
-                                <p class="description">- Kontrol setiap pagi</p>
-                                <p class="description">- Barang dibersihkan</p>
+                                <p class="description">- Kontrol setiap pagi selalu</p>
+                                <p class="description">- Barang dibersihkan boong</p>
                                 <p class="description">- Keamanan terjaga</p>
                                 <p class="description">- Konsultasi & Support</p>
                             <!-- <a href="#services" class="btn btn-primary" style="margin-top: 10px; background:#00B56A;">Pilih Paket</a> -->
