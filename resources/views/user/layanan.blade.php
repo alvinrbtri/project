@@ -72,7 +72,7 @@
                         <div class="img mb-3">
                             <a href="#"><img src="{{ asset('assets/img/icon_bangunann.png') }}" alt="...">
                         </div>
-                        <h4 class="title"><a href="#">Bangunan</a></h4>
+                        <h4 class="title"><a href="#">Bangunan rumah susun</a></h4>
                             <b>
                                 <p class="description">{{ $data['judul1'] }}</p>
                             </b>
