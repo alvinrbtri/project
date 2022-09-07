@@ -91,7 +91,7 @@
                             <div class="img mb-3">
                                 <a href="#"><img src="{{ asset('assets/img/icon_barang.png') }}" alt="..."></a>
                             </div>
-                                <h4 class="title"><a href="#">Barang</a></h4>
+                                <h4 class="title"><a href="#">Barang Rongsok</a></h4>
                                 <b>
                                     <p class="description">{{ $data['judul1'] }}</p>
                                 </b>
