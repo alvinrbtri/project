@@ -96,8 +96,8 @@
                                     <p class="description">{{ $data['judul1'] }}</p>
                                 </b>
                                 <p class="description"></p>
-                                <p class="description">- Barang terjaga setiap hari</p>
-                                <p class="description">- Kontrol setiap pagi selalu</p>
+                                <p class="description">- Barang terjaga setiap hari selalu baru</p>
+                                <p class="description">- Kontrol setiap pagi selalu boong</p>
                                 <p class="description">- Barang dibersihkan boong</p>
                                 <p class="description">- Keamanan terjaga</p>
                                 <p class="description">- Konsultasi & Support</p>
