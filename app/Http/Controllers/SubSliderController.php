@@ -67,30 +67,6 @@ class SubSliderController extends Controller
         return back()->with('berhasil', 'Layanan berhasil diupdate');
     }
 
-    // public function edit (Request $request, SubSlider $subslider, $id)
-    // {
-    //     if($request->isMethod('post'))
-    //     {
-    //         $subslider = $request->all();
-
-    //         SubSlider::where(['id' => $id])->update([
-    //             'judul' => $subslider['judul'],
-    //             'deskripsi_singkat' => $subslider['deskripsi_singkat'],
-    //             'status' => $subslider['status'],
-    //             'gambar' => $subslider['gambar']
-    //         ]);
-
-    //         if($request->file('gambar')) {
-    //             if($request->oldImage) {
-    //                 Storage::delete($request->oldImage);
-    //             }
-    //             $validatedData['gambar'] = $request->file('gambar')->store('slider-gambar');
-    //         }
-
-    //         return redirect()->back()->with('berhasil', 'Layanan berhasil diupdate');
-    //     }
-    // }
-
     public function show(Request $request)
     {
         $data = [
@@ -100,15 +76,14 @@ class SubSliderController extends Controller
         return view("admin.layanan.sub_slider_detail", $data);
     }
 
-    public function destroy(Request $request)
+    public function destroy($id)
     {
-        $sub = SubSlider::where("id", $request->id)->first();
+        $sub = SubSlider::where("id", $id)->first();
 
         Storage::delete($sub->gambar);
 
         $sub->delete();
 
-        return back();
-
+        return back()->with('berhasil', 'SubSlider Berhasil di Hapus');
     }
 }

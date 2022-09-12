@@ -48,7 +48,7 @@
                                 <button onclick="detailSubSlider({{$slider->id}})" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalDetail" class="btndetail">
                                     <i class='bx bx-detail'></i>
                                 </button>
-                                <button onclick="hapusSubSlider({{$slider->id}})" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalHapus" class="btn btn-danger btn-sm fw-bold px-4">
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModalHapus{{ $slider->id }}" class="btn btn-danger btn-sm fw-bold px-4">
                                     <i class='bx bx-trash'></i>
                                 </button>
                             </td>
@@ -59,6 +59,32 @@
             </div>
         </div>
     </div>
+
+    @foreach ($subslider as $item)
+    <div class="modal fade" id="exampleModalHapus{{ $item->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" style="width:45%">
+            <div class="modal-content">
+                <div class="modal-header hader">
+                    <h3 class="modal-title" id="exampleModalLabel">
+                        Hapus Data
+                    </h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="{{ url('/subslider/'.$item->id) }}" method="POST">
+                    @method("DELETE")
+                    {{ csrf_field() }}
+                    <div class="modal-body" id="modal-content-edit">
+                        Apakah Yakin Untuk Menghapus Data Ini?
+                    </div>
+                    <div class="modal-footer d-md-block">
+                        <button type="submit" class="btn btn-primary btn-sm">Hapus</button>
+                        <button type="button" class="btn btn-danger btn-sm">Batal</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    @endforeach
 
     <!-- Modal Create -->
     <div class="modal fade" id="exampleModal7" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
