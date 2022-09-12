@@ -73,7 +73,7 @@
                 <form action="{{ url('/subslider/'.$item->id) }}" method="POST">
                     @method("DELETE")
                     {{ csrf_field() }}
-                    <div class="modal-body" id="modal-content-edit">
+                    <div class="modal-body" id="modal-content-hapus">
                         Apakah Yakin Untuk Menghapus Data Ini?
                     </div>
                     <div class="modal-footer d-md-block">
