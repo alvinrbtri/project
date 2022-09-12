@@ -91,11 +91,13 @@ class SubSliderController extends Controller
     //     }
     // }
 
-    public function show($id)
+    public function show(Request $request)
     {
-        SubSlider::where(['id' => $id]);
+        $data = [
+            "detail" => SubSlider::where("id", $request->id)->first()
+        ];
 
-        return view('admin.layanan.sub_slider');
+        return view("admin.layanan.sub_slider_detail", $data);
     }
 
     public function destroy(Request $request)

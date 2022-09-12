@@ -66,7 +66,7 @@ Route::group(["middleware" => ["auth"]], function() {
     });
     route::get('/subslider/edit', [SubSliderController::class, 'edit']);
     route::get('/subslider/simpan', [SubSliderController::class, 'update']);
-    Route::get("/subslider/hapus", [SubSliderController::class, "destroy"]);
+    Route::get("/subslider/detail", [SubSliderController::class, "show"]);
     Route::resource('subslider', SubSliderController::class);
 
     //admin-sublayanan
