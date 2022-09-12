@@ -14,10 +14,8 @@ class SubSliderController extends Controller
         return view('admin.layanan.sub_slider', compact('subslider'));
     }
 
-    public function post(Request $request)
+    public function store(Request $request)
     {
-        // dd($request->all());
-
         $this->validate($request, [
             'judul' => '',
             'deskripsi_singkat' => '',
@@ -98,5 +96,17 @@ class SubSliderController extends Controller
         SubSlider::where(['id' => $id]);
 
         return view('admin.layanan.sub_slider');
+    }
+
+    public function destroy(Request $request)
+    {
+        $sub = SubSlider::where("id", $request->id)->first();
+
+        Storage::delete($sub->gambar);
+
+        $sub->delete();
+
+        return back();
+
     }
 }

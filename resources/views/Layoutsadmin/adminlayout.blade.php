@@ -80,7 +80,7 @@
                         <a href="{{route('/subdetail')}}">Details Sub Layanan</a>
                     </div> --}}
                     <div class="drop-box">
-                        <a href="{{route('/subslider')}}">Sub Slider</a>
+                        <a href="{{ url('/subslider') }}">Sub Slider</a>
                     </div>
                 </div>
             </li>
@@ -129,14 +129,14 @@
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     <i class='bx bx-log-out'></i>{{ Auth::user()->name }}
                 </a>
-    
+
                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                     <a data-bs-toggle="modal" data-bs-target="#ModalLogout" href="{{ route('logout') }}"
                        onclick="event.preventDefault();
                                      document.getElementById('logout-form').submit();">
                         {{ __('Logout') }}
                     </a>
-    
+
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
                     </form>

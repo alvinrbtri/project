@@ -44,24 +44,39 @@ route::get('/layanan', [LayananController::class, 'index'])->name('layanan');
 // admin-sublayanan
 route::get('/sublayanan', [SubLayananController::class, 'index'])->name('sublayanan');
 
-////////////-----------ADMIN------------/////////////
-Route::controller(AdminController::class)->group(function(){
-    Route::get('/admin/index', 'index')->middleware('role:admin')->name('admin.index');
-    Route::get('/admin/dashboard', 'index')->middleware('auth');
-    Route::get('/admin/profile', 'profile')->middleware('auth');
-    Route::get('/admin/data/order', 'order')->middleware('auth');
-    Route::get('/admin/data/order=barang', 'barang')->middleware('auth');
-    Route::get('/admin/home/home', 'home')->middleware('auth');
-    Route::get('/admin/data/order=bangunan', 'bangunan')->middleware('auth');
-    Route::get('/admin/data/order=pickup', 'pickup')->middleware('auth');
-    Route::get('/admin/data/payment', 'payment')->middleware('auth');
-    Route::get('/admin/vendor', 'vendor')->middleware('auth');
-    Route::get('/admin/vendor/trans', 'trans')->middleware('auth');
-    Route::get('/admin/vendor/data-pick-up', 'data_pickup')->middleware('auth');
-    Route::get('/admin/vendor/data_trans=selesai', 'trans_selesai')->middleware('auth');
-    Route::get('/admin/vendor/data_trans=berlangsung', 'trans_berlangsung')->middleware('auth');
-    Route::get('/admin/setting', 'setting')->middleware('auth');
-    Route::get('/admin/data/pengaturan-user','pengaturanuser')->middleware('auth');
+Route::group(["middleware" => ["auth"]], function() {
+    ////////////-----------ADMIN------------/////////////
+    Route::controller(AdminController::class)->group(function(){
+        Route::get('/admin/index', 'index')->middleware('role:admin')->name('admin.index');
+        Route::get('/admin/dashboard', 'index');
+        Route::get('/admin/profile', 'profile');
+        Route::get('/admin/data/order', 'order');
+        Route::get('/admin/data/order=barang', 'barang');
+        Route::get('/admin/home/home', 'home');
+        Route::get('/admin/data/order=bangunan', 'bangunan');
+        Route::get('/admin/data/order=pickup', 'pickup');
+        Route::get('/admin/data/payment', 'payment');
+        Route::get('/admin/vendor', 'vendor');
+        Route::get('/admin/vendor/trans', 'trans');
+        Route::get('/admin/vendor/data-pick-up', 'data_pickup');
+        Route::get('/admin/vendor/data_trans=selesai', 'trans_selesai');
+        Route::get('/admin/vendor/data_trans=berlangsung', 'trans_berlangsung');
+        Route::get('/admin/setting', 'setting');
+        Route::get('/admin/data/pengaturan-user','pengaturanuser');
+    });
+    route::get('/subslider/edit', [SubSliderController::class, 'edit']);
+    route::get('/subslider/simpan', [SubSliderController::class, 'update']);
+    Route::get("/subslider/hapus", [SubSliderController::class, "destroy"]);
+    Route::resource('subslider', SubSliderController::class);
+
+    //admin-sublayanan
+    route::get('/sublayanan', [SubLayananController::class, 'index'])->name('/sublayanan');
+    route::post('/create', [SubLayananController::class, 'post'])->name('/post');
+    route::match(['get', 'post'], '/edit{id}', [SubLayananController::class, 'edit']);
+
+    //admin-tambah layanan
+    route::get('/admin/layanan/layanan', [LayananController::class, 'index'])->name('/layanan');
+    route::post('/create', [LayananController::class, 'post'])->name('/post');
 });
 
 //UBAH PASSWORD ADMIN
@@ -111,19 +126,8 @@ Route::controller(UserController::class)->group(function(){
     Route::get('/user/profile/bantuan', 'Bantuan')->middleware('auth');
 });
 
-//admin-tambah layanan
-route::get('/admin/layanan/layanan', [LayananController::class, 'index'])->name('/layanan');
-route::post('/create', [LayananController::class, 'post'])->name('/post');
-
-//admin-sublayanan
-route::get('/sublayanan', [SubLayananController::class, 'index'])->name('/sublayanan');
-route::post('/create', [SubLayananController::class, 'post'])->name('/post');
-route::match(['get', 'post'], '/edit{id}', [SubLayananController::class, 'edit']);
-
 //admn-subslider
-route::get('/subslider/edit', [SubSliderController::class, 'edit']);
-route::get('/subslider/simpan', [SubSliderController::class, 'update']);
-Route::resource('subslider', SubSliderController::class);
+
 // route::post('/create', [SubSliderController::class, 'post'])->name('/post');
 // route::match(['get', 'post'], '/edit{id}', [SubSliderController::class, 'edit']);
 
@@ -267,31 +271,31 @@ Route::get('/user/profile/Tentang', function () {
 
 //Route subkategori layanan
 
-    Route::get('user/subkategori/subbaru', function () {
-        return view('user/subkategori/subbaru', [
-            "title" =>" Golongan 1"
-        ]);
-    });
+Route::get('user/subkategori/subbaru', function () {
+    return view('user/subkategori/subbaru', [
+        "title" =>" Golongan 1"
+    ]);
+});
 
-    //detail kendaraan
+//detail kendaraan
 
-    Route::get('user/subkategori/detailbaru', function () {
-        return view('user/subkategori/detailbaru', [
-            "title" =>" Detail kendaraan"
-        ]);
-    });
+Route::get('user/subkategori/detailbaru', function () {
+    return view('user/subkategori/detailbaru', [
+        "title" =>" Detail kendaraan"
+    ]);
+});
 
-    //wishlist
-    Route::get('user/pemesanan/wishlist', function () {
-        return view('user/pemesanan/wishlist', [
-            "title" =>"Wishtlist"
-        ]);
-    });
-    Route::get('user/pemesanan/qrish', function () {
-        return view('user/pemesanan/qrish', [
-            "title" =>"Wishtlist"
-        ]);
-    });
+//wishlist
+Route::get('user/pemesanan/wishlist', function () {
+    return view('user/pemesanan/wishlist', [
+        "title" =>"Wishtlist"
+    ]);
+});
+Route::get('user/pemesanan/qrish', function () {
+    return view('user/pemesanan/qrish', [
+        "title" =>"Wishtlist"
+    ]);
+});
 
 //profile vendor di user
 Route::get('user/profiilevendor/profilevendor', function () {
@@ -309,7 +313,7 @@ Route::get('/superadmin/dashboard', function () {
 });
 // Route::get('/superadmin/profile', [SuperadminController::class, 'index'])->middleware('role:superadmin')->name('superadmin.profile.ubah');
 
-// //ubah password 
+// //ubah password
 Route::controller(SuperadminController::class)->group(function(){
     Route::get('/superadmin/index', 'index')->middleware('role:superadmin')->name('superadmin.index');
     Route::get('/superadmin/profile','profile')->middleware('auth')->name('profile.profile');
@@ -666,42 +670,42 @@ Route::get('/vendor/dashboard', function () {
     return view('/vendor/dashboard',[
         "title" => "vendor"
     ]);
-    });
+});
 
 Route::get('vendor/keuangan/pemasukan', function () {
     return view('vendor/keuangan/pemasukan', [
         "title" =>"pemasukan"
     ]);
-    });
-    
-    
-    Route::get('vendor/keuangan/penghasilan', function () {
-        return view('vendor/keuangan/penghasilan', [
-            "title" =>"penghasillan"
-        ]);
-        });
-    
-    Route::get('vendor/keuangan/penarikan', function () {
-        return view('vendor/keuangan/penarikan', [
-            "title" =>"penarikan"
-        ]);
-    });
-    
-    Route::get('vendor/keuangan/saldo', function () {
-        return view('vendor/keuangan/saldo', [
-            "title" =>"saldo"
-        ]);
-    });
-    Route::get('vendor/keuangan/tarikdana', function () {
-        return view('vendor/keuangan/tarikdana', [
-            "title" =>"tarikdana"
-        ]);
-    });
-    Route::get('vendor/keuangan/rekening', function () {
-        return view('vendor/keuangan/rekening', [
-            "title" =>"tarikdana"
-        ]);
-    });
+});
+
+
+Route::get('vendor/keuangan/penghasilan', function () {
+    return view('vendor/keuangan/penghasilan', [
+        "title" =>"penghasillan"
+    ]);
+});
+
+Route::get('vendor/keuangan/penarikan', function () {
+    return view('vendor/keuangan/penarikan', [
+        "title" =>"penarikan"
+    ]);
+});
+
+Route::get('vendor/keuangan/saldo', function () {
+    return view('vendor/keuangan/saldo', [
+        "title" =>"saldo"
+    ]);
+});
+Route::get('vendor/keuangan/tarikdana', function () {
+    return view('vendor/keuangan/tarikdana', [
+        "title" =>"tarikdana"
+    ]);
+});
+Route::get('vendor/keuangan/rekening', function () {
+    return view('vendor/keuangan/rekening', [
+        "title" =>"tarikdana"
+    ]);
+});
 
 
 //Finance
