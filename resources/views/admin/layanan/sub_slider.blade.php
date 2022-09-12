@@ -1,5 +1,3 @@
-
-
 @extends('Layoutsadmin.adminlayout')
 @section('content')
 <section class="home-section">
