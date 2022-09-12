@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\SubLayanan;
 use Illuminate\Http\Request;
 
-class SubLayananController extends Controller
+class SubDetailController extends Controller
 {
     public function index()
     {
@@ -69,5 +68,4 @@ class SubLayananController extends Controller
 
         return view('admin.layanan.sub_layanan');
     }
-
 }

@@ -12,6 +12,8 @@ use App\Http\Controllers\FinanceController;
 use App\Http\Controllers\LayananController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TentangController;
+use App\Http\Controllers\SubDetailController;
+use App\Http\Controllers\SubSliderController;
 use App\Http\Controllers\SubLayananController;
 use App\Http\Controllers\SuperadminController;
 use App\Http\Controllers\UserLayananController;
@@ -116,7 +118,19 @@ route::post('/create', [LayananController::class, 'post'])->name('/post');
 //admin-sublayanan
 route::get('/sublayanan', [SubLayananController::class, 'index'])->name('/sublayanan');
 route::post('/create', [SubLayananController::class, 'post'])->name('/post');
+route::match(['get', 'post'], '/edit{id}', [SubLayananController::class, 'edit']);
 
+//admn-subslider
+route::get('/subslider/edit', [SubSliderController::class, 'edit']);
+route::get('/subslider/simpan', [SubSliderController::class, 'update']);
+Route::resource('subslider', SubSliderController::class);
+// route::post('/create', [SubSliderController::class, 'post'])->name('/post');
+// route::match(['get', 'post'], '/edit{id}', [SubSliderController::class, 'edit']);
+
+// //admin-subdetail
+// route::get('/subdetail', [SubDetailController::class, 'index'])->name('subdetail');
+// route::post('/create', [SubDetailController::class, 'post'])->name('/post');
+// route::match(['get','post'], '/edit{id}', [SubDetailController::class, 'edit']);
 
 
 //user-pemesanan

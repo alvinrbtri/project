@@ -35,20 +35,20 @@
                          @foreach ($sublayanan as $sublyn)
                             <tr>
                                 <td>{{$loop->iteration}}</td>
-                                <td><img src="{{asset('assets/img/ic2.png')}}">{{$sublyn->gambar}}</td>
+                                <td><img src="{{url('/storage/' .$sublyn->gambar)}}" style="width:50px;"> </td>
                                 <td>{{ $sublyn->nama }}</td>
                                 <td>{{ $sublyn->harga }}</td>
                                 <td>{{ $sublyn->alamat }}</td>
                                 <td>{{ $sublyn->status1 }}</td>
                                 <td>{{ $sublyn->status2 }}</td>
                                 <td class="td" style="size: 30px;">
-                                    <button class="btnedit" data-bs-toggle="modal" data-bs-target="#exampleModal-{{ $lyn->id }}" class="btn btn-primary fw-bold rounded-pill px-4 shadow float-end">
+                                    <button class="btnedit" data-bs-toggle="modal" data-bs-target="#exampleModal-{{ $sublyn->id }}" class="btn btn-primary fw-bold rounded-pill px-4 shadow float-end">
                                         <i class='bx bx-edit'></i>
                                     </button>
-                                    <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal1-{{ $lyn->id }}" class="btndetail">
+                                    <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal8-{{ $sublyn->id }}" class="btndetail">
                                         <i class='bx bx-detail'></i>
                                     </button>
-                                    <button class="btndelete" ><a href="javascript:" rel="{{ $lyn->id }}" rel1="kategori" id="deletekategori" class="bx bx-trash" ></a></button>
+                                    <button class="btndelete" ><a href="javascript:" rel="{{ $sublyn->id }}" rel1="kategori" id="deletekategori" class="bx bx-trash" ></a></button>
                                     {{-- <a rel="{{ $mhs->id }}" rel1="mahasiswa" href="javascript:" class="btn btn-danger" 
                                         id="deletemahasiswa">Hapus</a> --}}
                                 </td>
@@ -70,7 +70,7 @@
                 </div>
 
                 <div class="modal-body">
-                    <form action="{{route('/post')}}" method="POST">
+                    <form action="{{route('/post')}}" method="POST" enctype="multipart/form-data">
                         @if (session('berhasil'))
                             <div class="alert alert-success">
                                 {{ session('berhasil') }}
@@ -101,14 +101,22 @@
                                 @enderror
                             </div>
 
+                            <div class="form-group">
+                                <label>Deskripsi</label>
+                                <input type="text" name="deskripsi" class="form-control @error('deskripsi') is-invalid @enderror" value="{{ old('deskripsi') }}">
+                                @error('deskripsi')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+
                             <div class="form-group mb-3">
                                 <label>Keterangan Toko</label>
                                 <div>
-                                    <select class="form-control mb-3">
+                                    <select class="form-control mb-3" name="status2">
                                         <option value="buka">Buka</option>
                                         <option value="tutup">Tutup</option>
                                     </select>
-                                    @error('stock_status')
+                                    @error('status2')
                                         <p class="text-danger">{{$message}}</p>
                                     @enderror
                                 </div>
@@ -117,27 +125,22 @@
                             <div class="form-group">
                                 <label>Kapasitas</label>
                                 <div>
-                                    <select class="form-control">
-                                        <option value="buka">Tersedia</option>
-                                        <option value="tutup">Tidak Tersedia</option>
+                                    <select class="form-control mb-3" name="status1">
+                                        <option value="tersedia">Tersedia</option>
+                                        <option value="tidak tersedia">Tidak Tersedia</option>
                                     </select>
-                                    @error('stock_status')
+                                    @error('status1')
                                         <p class="text-danger">{{$message}}</p>
                                     @enderror
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="col-md-4 control-label">Product Image</label>
-                                <div class="col-md-4">
-                                    <input type="file" class="input-file">
-                                    @if($gambar)
-                                        <img src="{{$gambar->temporaryUrl()}}" width="120"/>
-                                    @endif
+                                <label class="col-md-4 form-label" for="inputgambar" >Product Image</label>
+                                <input type="file" class="form-control" name="gambar">
                                     @error('gambar')
                                         <p class="text-danger">{{$message}}</p>
                                     @enderror
-                                </div>
                             </div>
                             
                             <div class="modal-footer d-md-block">
@@ -168,37 +171,70 @@
                             @endif
                             @csrf
                                 <div class="form-group">
-                                    <label>Judul</label>
-                                    <input type="text" name="judul" class="form-control @error('judul') is-invalid @enderror" value="{{ $lyn->judul }}">
-                                    @error('judul')
+                                    <label>Nama</label>
+                                    <input type="text" name="nama" class="form-control @error('nama') is-invalid @enderror" value="{{ $lyn->nama }}">
+                                    @error('nama')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
 
                                 <div class="form-group">
-                                    <label>Subjudul</label>
-                                    <input type="text" name="subjudul" class="form-control @error('subjudul') is-invalid @enderror" value="{{ $lyn->subjudul }}">
-                                    @error('subjudul')
+                                    <label>Harga</label>
+                                    <input type="text" name="harga" class="form-control @error('harga') is-invalid @enderror" value="{{ $lyn->harga }}">
+                                    @error('harga')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
 
                                 <div class="form-group">
-                                    <label>Kategori</label>
-                                    <input type="text" name="kategori" class="form-control @error('kategori') is-invalid @enderror" value="{{ $lyn->kategori }}">
-                                    @error('kategori')
+                                    <label>Alamat</label>
+                                    <input type="text" name="alamat" class="form-control @error('alamat') is-invalid @enderror" value="{{ $lyn->alamat }}">
+                                    @error('alamat')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
 
                                 <div class="form-group">
                                     <label>Deskripsi</label>
-                                    <textarea name="deskripsi" class="form-control @error('deskripsi') is-invalid @enderror" 
-                                        value="{{ $lyn->deskripsi }}" id="my-edit" >
-                                    </textarea>
+                                    <input type="text" name="deskripsi" class="form-control @error('deskripsi') is-invalid @enderror" value="{{ $lyn->deskripsi }}">
                                     @error('deskripsi')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
+                                </div>
+    
+                                <div class="form-group mb-3">
+                                    <label>Keterangan Toko</label>
+                                    <div>
+                                        <select class="form-control mb-3" name="status2">
+                                            <option value="buka">Buka</option>
+                                            <option value="tutup">Tutup</option>
+                                        </select>
+                                        @error('status2')
+                                            <p class="text-danger">{{$message}}</p>
+                                        @enderror
+                                    </div>
+                                </div>
+    
+                                <div class="form-group">
+                                    <label>Kapasitas</label>
+                                    <div>
+                                        <select class="form-control mb-3" name="status1">
+                                            <option selected>
+                                            <option value="tersedia">Tersedia</option>
+                                            <option value="tidak tersedia">Tidak Tersedia</option>
+                                        </select>
+                                        @error('status1')
+                                            <p class="text-danger">{{$message}}</p>
+                                        @enderror
+                                    </div>
+                                </div>
+    
+                                <div class="form-group">
+                                    <label class="col-md-4 form-label" for="inputgambar" >Product Image</label>
+                                    <input type="file" class="form-control" name="gambar">
+                                        @error('gambar')
+                                            <p class="text-danger">{{$message}}</p>
+                                        @enderror
                                 </div>
                                 
                                 <div class="modal-footer d-md-block">
@@ -214,33 +250,57 @@
 
     <!-- Modal Detail-->
     @foreach ($sublayanan as $lyn)  
-        <div class="modal fade" id="exampleModal1-{{ $lyn->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="exampleModal8-{{ $lyn->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg" style="width: 40%">
                 <div class="modal-content">
                     <div class="modal-header hader text-center">
                         <h3 class="modal-title" id="exampleModalLabel">DetailKategori</h3>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="card text-center">
-                        <div class="card-header">
-                            {{ $lyn->judul }}
-                        </div>
-                        <div class="icon-box">
-                            <div class="icon"><i class="bx bxs-truck"></i></div>
-                            <div class="card-body">
-                            <h5 class="card-title">Layanan yang kami sediakan</h5>
-                            <p>{{$lyn->deskripsi}}</p>
+                    
+                        
+                            
+                    <div class="card-body">
+                                <a href="/user/subkategori/detailbaru"><img src="{{ asset('assets/img/z.png') }}" class="card-img-top" alt="..."></a>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <a href="/user/subkategori/detailbaru"><p class="card-title"><b>{{$lyn->nama}}</b></p></a>
+                                    </div>
+                                    <p class="text-success" style="font-size: 14px; margin-bottom: 10px">
+                                        <b>IDR {{$lyn->harga}} / hari</b>
+                                    </p> 
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="alamat">
+                                            <p style="font-size: 13px">{{$lyn->alamat}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="oc">
+                                            <p style="font-size: 15px; color: #00B56A"><b>{{$lyn->status2}}</b></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="oc">
+                                            <p style="font-size: 15px">{{$lyn->status1}}</p>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
                             </div>
-                        </div>
-                    </div>
+                       
                     <div class="modal-footer d-md-block">
-                        <button type="button" class="btn btn-primary btn-sm">Edit</button>
-                        <button type="button" class="btn btn-danger btn-sm">Batal</button>
+                        <button type="button" class="btn btn-danger btn-sm"data-bs-dismiss="modal" aria-label="Close">Kembali</button>
                     </div>
                 </div>
             </div>
         </div>
-    @endforeach
+    @endforeach 
 
 
 </section>

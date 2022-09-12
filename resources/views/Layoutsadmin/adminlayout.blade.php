@@ -67,14 +67,20 @@
                     <i class='bx bxs-chevron-down arrow'></i>
                 </div>
                 <div class="sub-menu">
-                    <div class="drop-box">
+                    {{-- <div class="drop-box">
                         <a href="/admin/layanan-kategori/showsubkategori">SubKategori</a>
-                    </div>
+                    </div> --}}
                     <div class="drop-box">
                         <a href="/admin/layanan/layanan">Layanan</a>
                     </div>
                     <div class="drop-box">
-                        <a href="{{route('/sublayanan')}}">Layanan</a>
+                        <a href="{{route('/sublayanan')}}">Sub Layanan</a>
+                    </div>
+                    {{-- <div class="drop-box">
+                        <a href="{{route('/subdetail')}}">Details Sub Layanan</a>
+                    </div> --}}
+                    <div class="drop-box">
+                        <a href="{{route('/subslider')}}">Sub Slider</a>
                     </div>
                 </div>
             </li>
@@ -209,6 +215,7 @@
     <script>
         AOS.init();
     </script>
+    @yield("js")
 </body>
 
 </html>
