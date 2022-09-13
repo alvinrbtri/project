@@ -74,7 +74,7 @@
                         <a href="/admin/layanan/layanan">Layanan</a>
                     </div>
                     <div class="drop-box">
-                        <a href="{{route('/sublayanan')}}">Sub Layanan</a>
+                        <a href="{{ url('/sublayanan') }}">Sub Layanan</a>
                     </div>
                     {{-- <div class="drop-box">
                         <a href="{{route('/subdetail')}}">Details Sub Layanan</a>

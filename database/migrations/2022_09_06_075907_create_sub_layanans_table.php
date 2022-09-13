@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('kode_pesan')->nullable();
             $table->enum('status1',['tersedia', 'tidak tersedia']);
             $table->enum('status2',['buka', 'tutup']);
-            $table->boolean('fitur')->default(false);
+            $table->boolean('fitur')->default(false)->nullable();
             $table->unsignedInteger('quantity')->default(10);
             $table->string('gambar');
             $table->text('gambars')->nullable();

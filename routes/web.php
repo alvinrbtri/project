@@ -42,7 +42,7 @@ Route::get('/map', [MapsController::class, 'maps'])->name('map');
 // admin-layanan
 route::get('/layanan', [LayananController::class, 'index'])->name('layanan');
 // admin-sublayanan
-route::get('/sublayanan', [SubLayananController::class, 'index'])->name('sublayanan');
+// route::get('/sublayanan', [SubLayananController::class, 'index'])->name('sublayanan');
 
 Route::group(["middleware" => ["auth"]], function() {
     ////////////-----------ADMIN------------/////////////
@@ -64,15 +64,18 @@ Route::group(["middleware" => ["auth"]], function() {
         Route::get('/admin/setting', 'setting');
         Route::get('/admin/data/pengaturan-user','pengaturanuser');
     });
+
+    //admin-subslider
     route::get('/subslider/edit', [SubSliderController::class, 'edit']);
     route::get('/subslider/simpan', [SubSliderController::class, 'update']);
     Route::get("/subslider/detail", [SubSliderController::class, "show"]);
     Route::resource('subslider', SubSliderController::class);
 
     //admin-sublayanan
-    route::get('/sublayanan', [SubLayananController::class, 'index'])->name('/sublayanan');
-    route::post('/create', [SubLayananController::class, 'post'])->name('/post');
-    route::match(['get', 'post'], '/edit{id}', [SubLayananController::class, 'edit']);
+    route::get('/sublayanan/edit', [SubLayananController::class, 'edit']);
+    route::get('/sublayanan/simpan', [SubLayananController::class, 'update']);
+    route::get("/sublayanan/detail", [SubLayananController::class, "show"]);
+    Route::resource('sublayanan', SubLayananController::class);
 
     //admin-tambah layanan
     route::get('/admin/layanan/layanan', [LayananController::class, 'index'])->name('/layanan');

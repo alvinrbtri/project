@@ -2,7 +2,7 @@
 <input type="hidden" name="gambarLama" value="{{ $edit->gambar }}">
 <div class="form-group">
     <label>Judul</label>
-    <input type="text" name="judul" class="form-control @error('judul') is-invalid @enderror" value="{{ $edit->judul }}">
+    <input type="text" name="judul" class="form-control @error('judul') is-invalid @enderror" value="{{ $edit->judul }}" required>
     @error('judul')
         <div class="alert alert-danger">{{ $message }}</div>
     @enderror

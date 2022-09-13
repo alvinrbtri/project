@@ -13,7 +13,7 @@
         <div class="details1 ">
             <div class="recentOrders">
                 <div class="cardHeader" >
-                    <h4>Sub Slider</h4>
+                    <h4>Sub Layanan</h4>
                     <a href="#" class="btn btn-thema"data-bs-toggle="modal" data-bs-target="#exampleModal7" class="btn btn-primary fw-bold rounded-pill px-4 shadow float-end">Tambah</a>
                 </div>
                 <br>
@@ -27,28 +27,34 @@
                         <tr>
                             <td>No</td>
                             <td>Gambar</td>
-                            <td>Judul</td>
-                            <td>Deskripsi Singkat</td>
-                            <td>Status</td>
+                            <td>Nama Vendor</td>
+                            <td>Harga</td>
+                            <td>Alamat</td>
+                            <td>Deskripsi</td>
+                            <td>Status Tersedia</td>
+                            <td>Status Penitipan</td>
                             <td>Aksi</td>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($subslider as $slider)
+                        @foreach ($sublayanan as $sub)
                         <tr>
                             <td>{{$loop->iteration}}</td>
-                            <td><img src="{{url('/storage/' .$slider->gambar)}}" style="width:50px;"> </td>
-                            <td>{{ $slider->judul }}</td>
-                            <td>{{ $slider->deskripsi_singkat }}</td>
-                            <td>{{ $slider->status == 1 ? 'Active':'InActive' }}</td>
+                            <td><img src="{{url('/storage/' .$sub->gambar)}}" style="width:50px;"></td>
+                            <td>{{ $sub->nama }}</td>
+                            <td>{{ $sub->harga }}</td>
+                            <td>{{ $sub->alamat }}</td>
+                            <td>{{ $sub->deskripsi }}</td>
+                            <td>{{ $sub->status1 }}</td>
+                            <td>{{ $sub->status2 }}</td>
                             <td class="td" style="size: 30px;">
-                                <button onclick="editSubSlider({{$slider->id}})" class="btnedit" data-bs-toggle="modal" data-bs-target="#exampleModalEdit" class="btn btn-primary fw-bold rounded-pill px-4 shadow float-end">
+                                <button onclick="editSubLayanan({{$sub->id}})" class="btnedit" data-bs-toggle="modal" data-bs-target="#exampleModalEdit" class="btn btn-primary fw-bold rounded-pill px-4 shadow float-end">
                                     <i class='bx bx-edit'></i>
                                 </button>
-                                <button onclick="detailSubSlider({{$slider->id}})" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalDetail" class="btndetail">
+                                <button onclick="detailSubLayanan({{$sub->id}})" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalDetail" class="btndetail">
                                     <i class='bx bx-detail'></i>
                                 </button>
-                                <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModalHapus{{ $slider->id }}" class="btn btn-danger btn-sm fw-bold px-4">
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModalHapus{{ $sub->id }}" class="btn btn-danger btn-sm fw-bold px-4">
                                     <i class='bx bx-trash'></i>
                                 </button>
                             </td>
@@ -60,7 +66,7 @@
         </div>
     </div>
 
-    @foreach ($subslider as $item)
+    @foreach ($sublayanan as $item)
     <div class="modal fade" id="exampleModalHapus{{ $item->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" style="width:45%">
             <div class="modal-content">
@@ -70,7 +76,7 @@
                     </h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="{{ url('/subslider/'.$item->id) }}" method="POST">
+                <form action="{{ url('/sublayanan/'.$item->id) }}" method="POST">
                     @method("DELETE")
                     {{ csrf_field() }}
                     <div class="modal-body" id="modal-content-hapus">
@@ -85,44 +91,73 @@
         </div>
     </div>
     @endforeach
-
+ 
     <!-- Modal Create -->
     <div class="modal fade" id="exampleModal7" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" style="width: 50%">
             <div class="modal-content">
                 <div class="modal-header hader">
-                    <h3 class="modal-title" id="exampleModalLabel">Tambah Sub-Slider</h3>
+                    <h3 class="modal-title" id="exampleModalLabel">Tambah Sub-Layanan</h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
                 <div class="modal-body">
-                    <form action="{{ url('/subslider') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ url('/sublayanan') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <label>Judul</label>
-                            <input type="text" name="judul" class="form-control @error('judul') is-invalid @enderror" value="{{ old('judul') }}" required>
-                            @error('judul')
+                            <label>Nama Vendor</label>
+                            <input type="text" name="nama" class="form-control @error('nama') is-invalid @enderror" value="{{ old('nama') }}" required>
+                            @error('nama')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
 
                         <div class="form-group">
-                            <label>Deskripsi Singkat</label>
-                            <input type="text" name="deskripsi_singkat" class="form-control @error('deskripsi_singkat') is-invalid @enderror" value="{{ old('deskripsi_singkat') }}" required>
-                            @error('deskripsi_singkat')
+                            <label>Harga</label>
+                            <input type="text" name="harga" class="form-control @error('harga') is-invalid @enderror" value="{{ old('harga') }}" required>
+                            @error('harga')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
 
                         <div class="form-group">
-                            <label>Status</label>
+                            <label>Alamat</label>
+                            <input type="text" name="alamat" class="form-control @error('alamat') is-invalid @enderror" value="{{ old('alamat') }}">
+                            @error('alamat')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label>Deskripsi</label>
+                            <input type="text" name="deskripsi" class="form-control @error('deskripsi') is-invalid @enderror" value="{{ old('deskripsi') }}">
+                            @error('deskripsi')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label>Status Ketersedian</label>
                             <div>
-                                <select class="form-control mb-3" name="status">
-                                    <option value="0">InActive</option>
-                                    <option value="1">Active</option>
+                                <select class="form-control mb-3" name="status2">
+                                    <option value="buka">Buka</option>
+                                    <option value="tutup">Tutup</option>
                                 </select>
-                                @error('status')
-                                <p class="text-danger">{{$message}}</p>
+                                @error('status2')
+                                    <p class="text-danger">{{$message}}</p>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Status Penitipan</label>
+                            <div>
+                                <select class="form-control mb-3" name="status1">
+                                    <option value="tersedia">Tersedia</option>
+                                    <option value="tidak tersedia">Tidak Tersedia</option>
+                                </select>
+                                @error('status1')
+                                    <p class="text-danger">{{$message}}</p>
                                 @enderror
                             </div>
                         </div>
@@ -153,7 +188,7 @@
                     <h3 class="modal-title" id="exampleModalLabel">Edit Kategori</h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <form action="{{ url('/subslider/simpan') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ url('/sublayanan/simpan') }}" method="POST" enctype="multipart/form-data">
                     @method("PUT")
                     {{ csrf_field() }}
                     <div class="modal-body" id="modal-content-edit">
@@ -242,9 +277,9 @@
 @section('js')
 
 <script type="text/javascript">
-    function editSubSlider(id) {
+    function editSubLayanan(id) {
         $.ajax({
-            url: "{{ url('/subslider/edit') }}",
+            url: "{{ url('/sublayanan/edit') }}",
             type: "GET",
             data: {
                 id: id
@@ -256,9 +291,9 @@
         })
     }
 
-    function detailSubSlider(id) {
+    function detailSubLayanan(id) {
         $.ajax({
-            url: "{{ url('/subslider/detail') }}",
+            url: "{{ url('/sublayanan/detail') }}",
             type: "GET",
             data: {
                 id: id
