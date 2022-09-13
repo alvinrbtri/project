@@ -49,13 +49,12 @@ class SubLayananController extends Controller
         ];
 
         return view("admin.layanan.sub_layanan.sub_layanan_edit", $data);
-    
+
     }
 
     public function update(Request $request)
     {
-        // dd($request->all());
-        if($request->file("gambar_new")) {
+        if ($request->file("gambar_new")) {
             if($request->gambarLama) {
                 Storage::delete($request->gambarLama);
             }
@@ -63,18 +62,18 @@ class SubLayananController extends Controller
         } else {
             $data = $request->gambarLama;
         }
-        SubLayanan::where(['id', $request->id])->update([
-                "nama" => $request->nama,
-                "harga" => $request->harga,
-                "alamat" => $request->alamat,
-                "deskripsi" => $request->deskripsi,
-                "status1" => $request->status1,
-                "status2" => $request->status2,
-                'gambar' => $data
-            ]);
+        SubLayanan::where("id", $request->id)->update([
+            "nama" => $request->nama,
+            "harga" => $request->harga,
+            "alamat" => $request->alamat,
+            "deskripsi" => $request->deskripsi,
+            "status1" => $request->status1,
+            "status2" => $request->status2,
+            'gambar' => $data
+        ]);
 
-            return back()->with('berhasil', 'Layanan berhasil diupdate');
-        
+        return back()->with('berhasil', 'Layanan berhasil diupdate');
+
     }
 
     public function show(Request $request)
