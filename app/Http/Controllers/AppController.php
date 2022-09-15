@@ -19,4 +19,9 @@ class AppController extends Controller
     {
         return view("admin.profile");
     }
+
+    public function home()
+    {
+        return view("admin.home.home");
+    }
 }

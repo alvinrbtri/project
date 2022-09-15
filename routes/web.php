@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('app');
 });
 
 Route::group(["middleware" => ["guest"]], function() {
@@ -28,6 +28,7 @@ Route::group(["middleware" => ["autentikasi"]], function() {
     Route::prefix("admin")->group(function() {
         Route::get("/dashboard", [AppController::class, "dashboard"]);
         Route::get("/profile", [AppController::class, "profile"]);
+        Route::get("/home", [AppController::class, "home"]);
     });
     Route::get("logout", [LoginController::class, "logout"]);
 });

@@ -50,7 +50,7 @@
                 </ul>
             </li>
             <li class="list {{ Request::segment(2) == 'home' ? 'active' : '' }}">
-                <a href="/admin/home/home">
+                <a href="{{ url('/admin/home') }}">
                     <i class='bx bx-home'></i>
                     <span class="link_name">Home</span>
                 </a>
