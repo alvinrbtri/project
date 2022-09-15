@@ -77,9 +77,15 @@ Route::group(["middleware" => ["auth"]], function() {
     route::get("/sublayanan/detail", [SubLayananController::class, "show"]);
     Route::resource('sublayanan', SubLayananController::class);
 
-    //admin-tambah layanan
-    route::get('/admin/layanan/layanan', [LayananController::class, 'index'])->name('/layanan');
-    route::post('/create', [LayananController::class, 'post'])->name('/post');
+    //admin-layanan
+    route::get('/layanan/edit', [LayananController::class, 'edit']);
+    route::get('/layanan/simpan', [LayananController::class, 'update']);
+    route::get("/layanan/detail", [LayananController::class, "show"]);
+    Route::resource('layanan', LayananController::class);
+
+    // //admin-tambah layanan
+    // route::get('/admin/layanan/layanan', [LayananController::class, 'index'])->name('/layanan');
+    // route::post('/create', [LayananController::class, 'post'])->name('/post');
 });
 
 //UBAH PASSWORD ADMIN

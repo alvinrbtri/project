@@ -9,19 +9,24 @@ class Layanan extends Model
 {
     use HasFactory;
 
-    protected $guarded = ['id'];
+    protected $fillable = [
+        'judul',
+        'slug',
+        'deskripsi',
+        'gambar'
+    ];
 
-    public function getRouteKeyName()
-    {
-        return 'slug' ;
-    }
+    // public function getRouteKeyName()
+    // {    
+    //     return 'slug' ;
+    // }
 
-    public function sluggable(): array
-    {
-        return[
-            'slug' => [
-                'source' => 'judul'
-            ]
-        ];
-    }
+    // public function sluggable(): array
+    // {
+    //     returphpn[
+    //         'slug' => [
+    //             'source' => 'judul'
+    //         ]
+    //     ];
+    // }
 }

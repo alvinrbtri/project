@@ -1,21 +1,22 @@
 <?php
 
 namespace App\Http\Controllers;
+use Auth;
 use Alert;
 use App\Models\Layanan;
-use Auth;
-use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class LayananController extends Controller
 {
     public function index()
     {
         $layanan = Layanan::all();
-        return view('admin.layanan.layanan', compact('layanan'));
+        return view('admin.layanan.layanan.layanan', compact('layanan'));
     }
 
-    public function post(Request $request)
+    public function store(Request $request)
     {
         $this->validate($request, [
             'judul' => '',
@@ -24,37 +25,64 @@ class LayananController extends Controller
             'gambar' => 'mimes:jpg,jpeg,png'
         ]);
 
+        if($request->file("gambar")) {
+            $data = $request->file("gambar")->store("layanan");
+        }
+
         Layanan::create([
-            'judul' => $request->input('judul'),
-            'slug' => $request->input('slug'),
-            'deskripsi' => $request->input('deskripsi'),
-            'gambar' => $request->input('gambar')
+            'judul' => $request->judul,
+            'slug' => $request->slug,
+            'deskripsi' => $request->deskripsi,
+            'gambar' => $data
         ]);
         return redirect()->back()->with('berhasil', 'Layanan baru telah ditambahkan!');
     }
 
-    public function edit (Request $request, $id)
+    public function edit (Request $request)
     {
-        if($request->isMethod('post'))
-        {
-            $layanan = $request->all();
+        $data = [
+            "edit" => Layanan::where("id", $request->id)->first()
+        ];
 
-            Layanan::where(['id' => $id])->update([
-                'judul' => $layanan['judul'],
-                'slug' => $layanan['slug'],
-                'deskripsi' => $layanan['deskripsi'],
-                'gambar' => $layanan['gambar']
+        return view("admin.layanan.layanan.layanan_edit", $data);
+    }
+    
+    public function update(Request $request)
+    {
+        if($request->file("gambar_new")) {
+            if($request->gambarLama) {
+                Storage::delete($request->gambarLama);
+            }
+            $data = $request->file("gambar_new")->store("layanan");
+        }else {
+            $data = $request->gambarLama;
+        }
+       
+            Layanan::where('id', $request->id)->update([
+                'judul' => $request->judul,
+                'slug' => $request->slug,
+                'deskripsi' => $request->deskripsi,
+                'gambar' => $data
             ]);
 
-            return redirect()->back()->with('berhasil', 'Layanan berhasil diupdate');
-        }
+            return back()->with('berhasil', 'Layanan berhasil diupdate');
+        
     }
 
-    public function show($id)
+    public function show(Request $request)
     {
-        Layanan::where(['id' => $id]);
+        $data = [
+            "detail" => Layanan::where("id", $request->id)->first()
+        ];
 
-        return view('admin.layanan.layanan');
+        return view("admin.layanan.layanan.layanan_detail", $data);
     }
 
+    public function destroy($id)
+    {
+        $sub = Layanan::where("id", $id)->first();
+        Storage::delete($sub->gambar);
+        $sub->delete();
+        return back()->with('berhasil', 'Layanan berhasil dihapus!');
+    }
 }

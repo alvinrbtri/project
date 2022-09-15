@@ -62,6 +62,8 @@ class SubLayananController extends Controller
         } else {
             $data = $request->gambarLama;
         }
+
+        //SubLayanan::where(["id", $request->id]) 
         SubLayanan::where("id", $request->id)->update([
             "nama" => $request->nama,
             "harga" => $request->harga,

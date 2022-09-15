@@ -67,11 +67,8 @@
                     <i class='bx bxs-chevron-down arrow'></i>
                 </div>
                 <div class="sub-menu">
-                    {{-- <div class="drop-box">
-                        <a href="/admin/layanan-kategori/showsubkategori">SubKategori</a>
-                    </div> --}}
                     <div class="drop-box">
-                        <a href="/admin/layanan/layanan">Layanan</a>
+                        <a href="{{ url('/layanan')}}">Layanan</a>
                     </div>
                     <div class="drop-box">
                         <a href="{{ url('/sublayanan') }}">Sub Layanan</a>
