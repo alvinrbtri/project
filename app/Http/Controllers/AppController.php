@@ -29,4 +29,9 @@ class AppController extends Controller
     {
         return view("admin.setting");
     }
+
+    public function vendor()
+    {
+        return view("admin.data_vendor");
+    }
 }

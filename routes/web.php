@@ -30,6 +30,7 @@ Route::group(["middleware" => ["autentikasi"]], function() {
         Route::get("/profile", [AppController::class, "profile"]);
         Route::get("/home", [AppController::class, "home"]);
         Route::get("/setting", [AppController::class, "setting"]);
+        Route::get("/vendor", [AppController::class, "vendor"]);
     });
     Route::get("logout", [LoginController::class, "logout"]);
 });
