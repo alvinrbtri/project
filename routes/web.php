@@ -23,3 +23,11 @@ Route::get("/login", [LoginController::class, "login"]);
 Route::post("/login", [LoginController::class, "post_login"]);
 Route::get("logout", [LoginController::class, "logout"]);
 Route::get("/dashboard", [AppController::class, "dashboard"]);
+
+Route::get("/layout", function() {
+    return view("layouts_admin.admin_layout");
+});
+
+Route::get("/dashboard", function() {
+    return view("admin.dashboard");
+});
