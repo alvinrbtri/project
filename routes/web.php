@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AppController;
+use App\Http\Controllers\Layanan\LayananController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
@@ -44,6 +45,8 @@ Route::group(["middleware" => ["autentikasi"]], function() {
                 Route::get("/payment", "payment");
                 Route::get("/pengaturan-user", "pengaturan_user");
             });
+
+            Route::resource("layanan", LayananController::class);
         });
     });
     Route::get("logout", [LoginController::class, "logout"]);
