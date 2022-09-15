@@ -71,14 +71,17 @@
                         <a href="/admin/layanan-kategori/showsubkategori">SubKategori</a>
                     </div> --}}
                     <div class="drop-box">
+                        <a href="{{ url('/kategori') }}">Tambah Kategori</a>
+                    </div>
+                    <div class="drop-box">
                         <a href="/admin/layanan/layanan">Layanan</a>
                     </div>
                     <div class="drop-box">
                         <a href="{{ url('/sublayanan') }}">Sub Layanan</a>
                     </div>
-                    {{-- <div class="drop-box">
-                        <a href="{{route('/subdetail')}}">Details Sub Layanan</a>
-                    </div> --}}
+                    <div class="drop-box">
+                        <a href="{{ url('/subdetail')}}">Details Sub Layanan</a>
+                    </div>
                     <div class="drop-box">
                         <a href="{{ url('/subslider') }}">Sub Slider</a>
                     </div>

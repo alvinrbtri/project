@@ -17,6 +17,7 @@ use App\Http\Controllers\SubSliderController;
 use App\Http\Controllers\SubLayananController;
 use App\Http\Controllers\SuperadminController;
 use App\Http\Controllers\UserLayananController;
+use App\Http\Controllers\TambahKategoriController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -80,6 +81,11 @@ Route::group(["middleware" => ["auth"]], function() {
     //admin-tambah layanan
     route::get('/admin/layanan/layanan', [LayananController::class, 'index'])->name('/layanan');
     route::post('/create', [LayananController::class, 'post'])->name('/post');
+
+    //admin-tambah-kategori
+    route::resource('kategori', TambahKategoriController::class);
+    route::get('kategori/edit', [TambahKategoriController::class, 'edit']);
+    route::get('kategori/simpan', [TambahKategoriController::class, 'update']);
 });
 
 //UBAH PASSWORD ADMIN
