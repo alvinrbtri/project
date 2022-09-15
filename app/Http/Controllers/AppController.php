@@ -65,4 +65,9 @@ class AppController extends Controller
         return view("admin.pickup");
     }
 
+    public function payment()
+    {
+        return view("admin.payment");
+    }
+
 }

@@ -41,6 +41,7 @@ Route::group(["middleware" => ["autentikasi"]], function() {
                 Route::get("/order=bangunan", "bangunan");
                 Route::get("/order=barang", "barang");
                 Route::get("/order=pickup", "pickup");
+                Route::get("/payment", "payment");
             });
         });
     });
