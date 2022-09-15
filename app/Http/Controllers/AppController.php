@@ -24,4 +24,9 @@ class AppController extends Controller
     {
         return view("admin.home.home");
     }
+
+    public function setting()
+    {
+        return view("admin.setting");
+    }
 }
