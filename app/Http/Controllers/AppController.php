@@ -34,4 +34,14 @@ class AppController extends Controller
     {
         return view("admin.data_vendor");
     }
+
+    public function trans()
+    {
+        return view("admin.data_trans");
+    }
+
+    public function data_pick_up()
+    {
+        return vieW("admin.data_pick_up");
+    }
 }

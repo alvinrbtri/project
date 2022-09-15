@@ -25,12 +25,18 @@ Route::group(["middleware" => ["guest"]], function() {
 });
 
 Route::group(["middleware" => ["autentikasi"]], function() {
-    Route::prefix("admin")->group(function() {
-        Route::get("/dashboard", [AppController::class, "dashboard"]);
-        Route::get("/profile", [AppController::class, "profile"]);
-        Route::get("/home", [AppController::class, "home"]);
-        Route::get("/setting", [AppController::class, "setting"]);
-        Route::get("/vendor", [AppController::class, "vendor"]);
+    Route::controller(AppController::class)->group(function() {
+        Route::prefix("admin")->group(function() {
+            Route::get("/dashboard", "dashboard");
+            Route::get("/profile", "profile");
+            Route::get("/home", "home");
+            Route::get("/setting", "setting");
+            Route::prefix("vendor")->group(function() {
+                Route::get("/", "vendor");
+                Route::get("/trans", "trans");
+                Route::get("/data_pick_up", "data_pick_up");
+            });
+        });
     });
     Route::get("logout", [LoginController::class, "logout"]);
 });
