@@ -36,6 +36,12 @@ Route::group(["middleware" => ["autentikasi"]], function() {
                 Route::get("/trans", "trans");
                 Route::get("/data_pick_up", "data_pick_up");
             });
+            Route::prefix("data")->group(function() {
+                Route::get("/order", "order");
+                Route::get("/order=bangunan", "bangunan");
+                Route::get("/order=barang", "barang");
+                Route::get("/order=pickup", "pickup");
+            });
         });
     });
     Route::get("logout", [LoginController::class, "logout"]);

@@ -44,4 +44,25 @@ class AppController extends Controller
     {
         return vieW("admin.data_pick_up");
     }
+
+    public function order()
+    {
+        return view("admin.order");
+    }
+
+    public function bangunan()
+    {
+        return view("admin.bangunan");
+    }
+
+    public function barang()
+    {
+        return view("admin.barang");
+    }
+
+    public function pickup()
+    {
+        return view("admin.pickup");
+    }
+
 }
