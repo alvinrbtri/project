@@ -5,16 +5,16 @@
 <head>
     <meta charset="UTF-8">
     <title>titipsini.com | Admin </title>
-    <link href="{{ asset('assets/img/ic2.png') }}" rel="icon">
-    <link href="{{ asset('assets/css/admin.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/modal.css') }}" rel="stylesheet">
-    <link href="{{ asset('style/loginview2.css') }}" rel="stylesheet">
+    <link href="{{ url('assets/img/ic2.png') }}" rel="icon">
+    <link href="{{ url('assets/css/admin.css') }}" rel="stylesheet">
+    <link href="{{ url('assets/css/modal.css') }}" rel="stylesheet">
+    <link href="{{ url('style/loginview2.css') }}" rel="stylesheet">
     <!-- Boxiocns CDN Link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link href="{{ asset('assets/vendor/aos/aos.css') }}" rel="stylesheet">
+    <link href="{{ url('assets/vendor/aos/aos.css') }}" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -22,7 +22,7 @@
     <div class="sidebar">
         <div class="logo-details">
             <div class="profile-content">
-                <img class="p-1 mt-1 ms-3" style="width: 45px; height: 45px;" src="{{ asset('Frame 172.png') }}"
+                <img class="p-1 mt-1 ms-3" style="width: 45px; height: 45px;" src="{{ url('Frame 172.png') }}"
                 alt="Profile">
             </div>
 
@@ -68,7 +68,7 @@
                 </div>
                 <div class="sub-menu">
                     <div class="drop-box">
-                        <a href="{{ url('/layanan')}}">Layanan</a>
+                        <a href="{{ url('/admin/layanan')}}">Layanan</a>
                     </div>
                     <div class="drop-box">
                         <a href="{{ url('/sublayanan') }}">Sub Layanan</a>
@@ -162,43 +162,43 @@
 
 @yield('content')
 
-<script src="{{ asset('assets/js/my_chart.js') }}" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.0/dist/chart.min.js"></script>
+<script src="{{ url('assets/js/my_chart.js') }}" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.0/dist/chart.min.js"></script>
 
-<script>
-    // Script for sidenav dropdown
-    let arrow = document.querySelectorAll(".arrow");
-    let dropdownBtn = document.querySelectorAll(".dropBtn");
-    for (var i = 0; i < arrow.length; i++) {
-        arrow[i].addEventListener("click", (e) => {
-            let arrowParent = e.target.parentElement.parentElement;
-            arrowParent.classList.toggle("showMenu");
-        })
-        dropdownBtn[i].addEventListener("click", (e) => {
-            let dropdownParent = e.target.parentElement.parentElement.parentElement;
-            dropdownParent.classList.toggle("showMenu");
+    <script>
+        // Script for sidenav dropdown
+        let arrow = document.querySelectorAll(".arrow");
+        let dropdownBtn = document.querySelectorAll(".dropBtn");
+        for (var i = 0; i < arrow.length; i++) {
+            arrow[i].addEventListener("click", (e) => {
+                let arrowParent = e.target.parentElement.parentElement;
+                arrowParent.classList.toggle("showMenu");
+            })
+            dropdownBtn[i].addEventListener("click", (e) => {
+                let dropdownParent = e.target.parentElement.parentElement.parentElement;
+                dropdownParent.classList.toggle("showMenu");
+            });
+        }
+        // script for sidenav toggle
+        let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".bx-menu");
+        console.log(sidebarBtn);
+        sidebarBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("close");
         });
-    }
+    </script>
 
-    let sidebar = document.querySelector(".sidebar");
-    let sidebarBtn = document.querySelector(".bx-menu");
-    console.log(sidebarBtn);
-    sidebarBtn.addEventListener("click", () => {
-        sidebar.classList.toggle("close");
-    });
-</script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+    <script src="{{ url('assets/vendor/aos/aos.js') }}"></script>
+    <script>
+        AOS.init();
+    </script>
 
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-</script>
-<script src="{{ asset('assets/vendor/aos/aos.js') }}"></script>
-<script>
-    AOS.init();
-</script>
-
-@yield("js")
+    @yield("js")
 
 </body>
 

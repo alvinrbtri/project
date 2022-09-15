@@ -46,6 +46,8 @@ Route::group(["middleware" => ["autentikasi"]], function() {
                 Route::get("/pengaturan-user", "pengaturan_user");
             });
 
+            Route::get("/layanan/edit", [LayananController::class, "edit"]);
+            Route::put("/layanan/simpan", [LayananController::class, "update"]);
             Route::resource("layanan", LayananController::class);
         });
     });

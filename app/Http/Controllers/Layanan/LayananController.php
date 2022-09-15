@@ -35,8 +35,18 @@ class LayananController extends Controller
             'judul' => $request->judul,
             'slug' => Str::slug($request->judul),
             'deskripsi' => $request->deskripsi,
-            'gambar' => $data
+            'image' => $data
         ]);
         return back()->with('berhasil', 'Layanan baru telah ditambahkan!');
     }
+
+    public function edit(Request $request)
+    {
+        $data = [
+            "edit" => Layanan::where("id", $request->id)->first()
+        ];
+
+        return view("admin.layanan.edit", $data);
+    }
+
 }
