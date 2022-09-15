@@ -12,8 +12,11 @@ class AppController extends Controller
 {
     public function dashboard()
     {
-        $data["data_company_pic"] = CompanyPic::where("pic_id", Auth::user()->id)->get();
+        return view("admin.dashboard");
+    }
 
-        return view("dashboard", $data);
+    public function profile()
+    {
+        return view("admin.profile");
     }
 }

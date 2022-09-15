@@ -19,10 +19,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get("/login", [LoginController::class, "login"]);
-Route::post("/login", [LoginController::class, "post_login"]);
-Route::get("logout", [LoginController::class, "logout"]);
-Route::get("/dashboard", [AppController::class, "dashboard"]);
+Route::group(["middleware" => ["guest"]], function() {
+    Route::get("/login", [LoginController::class, "login"]);
+    Route::post("/login", [LoginController::class, "post_login"]);
+});
+
+Route::group(["middleware" => ["autentikasi"]], function() {
+    Route::prefix("admin")->group(function() {
+        Route::get("/dashboard", [AppController::class, "dashboard"]);
+        Route::get("/profile", [AppController::class, "profile"]);
+    });
+    Route::get("logout", [LoginController::class, "logout"]);
+});
+
 
 Route::get("/layout", function() {
     return view("layouts_admin.admin_layout");

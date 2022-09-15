@@ -20,7 +20,7 @@ class LoginController extends Controller
         ]);
 
         if (Auth::attempt($req)) {
-            return redirect()->intended("/dashboard");
+            return redirect()->intended("/admin/dashboard");
         } else {
             return back();
         }
