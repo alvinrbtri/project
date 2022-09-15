@@ -70,4 +70,9 @@ class AppController extends Controller
         return view("admin.payment");
     }
 
+    public function pengaturan_user()
+    {
+        return view("admin.pengaturan_user");
+    }
+
 }
