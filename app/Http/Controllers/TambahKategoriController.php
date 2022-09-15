@@ -22,7 +22,7 @@ class TambahKategoriController extends Controller
         
 
         TambahKategori::create([
-            'judul' => $request->judul,
+            'nama' => $request->nama,
             'slug' => $request->slug
         ]);
         return redirect()->back()->with('berhasil', 'Kategori baru telah ditambahkan!');
@@ -40,7 +40,7 @@ class TambahKategoriController extends Controller
     public function update(Request $request)
     {
         TambahKategori::where('id', $request->id)->update([
-            "judul" => $request->judul,
+            "nama" => $request->nama,
             "slug" => $request->slug
         ]);
 
@@ -55,9 +55,7 @@ class TambahKategoriController extends Controller
     public function destroy($id)
     {
         $sub = TambahKategori::where("id", $id)->first();
-
         $sub->delete();
-
         return back()->with('berhasil', 'TambahKategori Berhasil di Hapus');
     }
 }
