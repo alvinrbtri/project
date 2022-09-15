@@ -17,6 +17,7 @@ use App\Http\Controllers\SubSliderController;
 use App\Http\Controllers\SubLayananController;
 use App\Http\Controllers\SuperadminController;
 use App\Http\Controllers\UserLayananController;
+use App\Http\Controllers\KebijakanPrivasiController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -134,6 +135,17 @@ Route::controller(UserController::class)->group(function(){
 
     Route::get('/user/profile/bantuan', 'Bantuan')->middleware('auth');
 });
+
+//KEBIJAKAN PRIVASI///
+route::controller(KebijakanPrivasiController::class)->group(function(){
+    Route::get('/user/profile/kebijakanprivasi/index', 'index')->name('index');
+    Route::get('/user/profile/kebijakanprivasi/detail', 'show');
+    Route::put('/user/profile/kebijakanprivasi/simpan', 'update');
+    Route::get('/user/profile/kebijakanprivasi/edit', 'edit');
+}); 
+
+Route::resource('/keb', KebijakanPrivasiController::class);
+
 
 //admn-subslider
 
