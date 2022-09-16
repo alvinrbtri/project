@@ -41,6 +41,23 @@
                 </ul>
             </li>
 
+            <li>
+                <a href="#">
+                    <i class="fa fa-pencil"></i>
+                    <span>Akun</span>
+                </a>
+                <ul>
+                    <li>
+                        <a href="{{ url('/admin/akun/role') }}">Role</a>
+                    </li>
+                    <li>
+                        <a href="input_groups.html">Sub Layanan</a>
+                    </li>
+                    <li><a href="layout_horizontal.html">Horizontal Layout</a></li>
+                    <li><a href="layout_vertical.html">Vertical Layout</a></li>
+                </ul>
+            </li>
+
             <li class="navigation-header">
                 <span>Forms</span>
                 <i class="icon-menu"></i>

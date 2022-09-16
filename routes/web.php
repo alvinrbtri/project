@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\Akun\RoleController;
 use App\Http\Controllers\AppController;
 use App\Http\Controllers\Layanan\LayananController;
 use App\Http\Controllers\LoginController;
+use App\Models\Akun\Role;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,6 +46,12 @@ Route::group(["middleware" => ["autentikasi"]], function() {
                 Route::get("/order=pickup", "pickup");
                 Route::get("/payment", "payment");
                 Route::get("/pengaturan-user", "pengaturan_user");
+            });
+
+            Route::prefix("akun")->group(function() {
+                Route::get("/role/edit", [RoleController::class, "edit"]);
+                Route::put("/role/simpan", [RoleController::class, "update"]);
+                Route::resource("role", RoleController::class);
             });
 
             Route::get("/layanan/edit", [LayananController::class, "edit"]);
