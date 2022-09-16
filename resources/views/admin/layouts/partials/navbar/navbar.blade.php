@@ -66,14 +66,11 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle dropdown-has-after" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">
-                <img src="{{ url('/dist') }}/assets/img/default-user.jpg" alt="" class="user-img"> John Doe
+                <img src="{{ url('/dist') }}/assets/img/default-user.jpg" alt="" class="user-img"> {{ Auth::user()->name }}
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="#">
                     <i class="fa fa-user"></i> <span>Profile</span></a>
-                </a>
-                <a class="dropdown-item" href="#">
-                    <i class="fa fa-comment"></i> <span>Messages</span></a>
                 </a>
                 <a class="dropdown-item" href="#">
                     <i class="fa fa-cog"></i> <span>Settings</span></a>
