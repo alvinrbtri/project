@@ -1,221 +1,158 @@
-@extends("layouts_admin.admin_layout")
+@extends("admin.layouts.app")
+
 @section("content")
-<section class="home-section">
-    <div class="main">
-        <div class="topbar">
-            <div class="home-content">
-                <i class='bx bx-menu'></i>
-            </div>
-            <div class="cardHeader-title">
-                <h2>Kategori Layanan</h2>
-            </div>
-        </div>
-        <div class="details1 ">
-            <div class="recentOrders">
-                <div class="cardHeader" >
-                    <h4>Layanan</h4>
-                    <a href="#" class="btn btn-thema"data-bs-toggle="modal" data-bs-target="#exampleModalTambah" class="btn btn-primary fw-bold rounded-pill px-4 shadow float-end">Tambah</a>
-                </div>
-                <br>
-                @if (session('berhasil'))
-                <div class="alert alert-success">
-                    {{ session('berhasil')}}
-                </div>
-                @endif
-                <table>
-                    <thead>
-                        <tr>
-                            <td>No</td>
-                            <td class="col-md-2">Gambar</td>
-                            <td>Judul</td>
-                            <td>Slug</td>
-                            <td>Deskripsi</td>
-                            <td class="col-md-3 text-center">Aksi</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($data_layanan as $lyn)
-                        <tr>
-                            <td>{{$loop->iteration}}</td>
-                            <td><img src="{{ url('/storage/' .$lyn->image)}}" style="width: 120px;"></td>
-                            <td>{{ $lyn->judul }}</td>
-                            <td>{{ $lyn->slug }}</td>
-                            <td>{!! $lyn->deskripsi !!}</td>
-                            <td class="text-end" style="size: 30px;">
-                                <button onclick="editLayanan({{$lyn->id}})" type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModalEdit">
-                                    <i class='bx bx-edit'></i>
-                                  </button>
-                                <button onclick="detailLayanan({{$lyn->id}})" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalDetail" class="btndetail">
-                                    <i class='bx bx-detail'></i>
-                                </button>
-                                <button type="button" data-bs-toggle="modal" data-bs-target="#HapusLayanan{{ $lyn->id }}" class="btn btn-danger btn-sm fw-bold px-4">
-                                    <i class="bx bx-trash"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
+
+<div class="content">
+    <div class="row">
+        <div class="col-lg-12">
+            <h4 class="card-title">
+                Layanan
+            </h4>
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-block">
+                    <b>
+                        Data Layanan
+                    </b>
 
-    @foreach ($data_layanan as $item)
-    <div class="modal fade" id="HapusLayanan{{ $item->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Hapus Data Layanan</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn btn-primary btn-sm float-right" data-toggle="modal" data-target="#exampleModal">
+                        <i class="fa fa-plus"></i> Tambah
+                    </button>
+
+                    <br>
+                    <br>
+                    <table class="display table table-bordered" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th class="text-center">No.</th>
+                                <th>Nama</th>
+                                <th>Slug</th>
+                                <th class="text-center">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @php
+                            $no = 0
+                            @endphp
+                            @foreach ($data_layanan as $data)
+                            <tr>
+                                <td class="text-center">{{ ++$no }}.</td>
+                                <td>{{ $data->judul }}</td>
+                                <td>{{ $data->slug }}</td>
+                                <td class="text-center">
+                                    <button onclick="editDataLayanan({{$data->id}})" type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#exampleModalEdit">
+                                        <i class="fa fa-edit"></i> Edit
+                                    </button>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
-                <form action="{{ url('/layanan/'.$item->id) }}" method="POST">
-                    @method("DELETE")
-                    {{ csrf_field() }}
-                    <div class="modal-body" id="modal-content-hapus">
-                        Data ini akan dihapus?
-                    </div>
-                    <div class="modal-footer d-md-block">
-                        <button type="submit" class="btn btn-primary btn-sm">Hapus</button>
-                        <button type="button" class="btn btn-danger btn-sm">Batal</button>
-                    </div>
-                </form>
             </div>
         </div>
     </div>
-    @endforeach
+</div>
 
-    <!-- Modal Create -->
-    <div class="modal fade" id="exampleModalTambah" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" style="width: 50%">
-            <div class="modal-content">
-                <div class="modal-header hader">
-                    <h3 class="modal-title" id="exampleModalLabel">
-                        Tambah Layanan
-                    </h3>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-
-                <div class="modal-body">
-                    <form action="{{ url('/admin/layanan')}}" method="POST" enctype="multipart/form-data">
-                        @csrf
-                        <div class="form-group">
-                            <label>Judul</label>
-                            <input type="text" name="judul" class="form-control @error('judul') is-invalid @enderror" value="{{ old('judul') }}">
-                            @error('judul')
-                            <div class="alert alert-danger">{{ $message }}</div>
-                            @enderror
-                        </div>
-
-                        <div class="form-group">
-                            <label>Deskripsi</label>
-                            <textarea name="deskripsi" class="form-control @error('deskripsi') is-invalid @enderror"
-                            value="{{ old('deskripsi') }}" id="create" >
-                        </textarea>
-                        @error('deskripsi')
-                        <div class="alert alert-danger">{{ $message }}</div>
-                        @enderror
-                    </div>
-
-                    <div class="form-group">
-                        <label class="col-md-4 form-label" for="inputgambar">Gambar</label>
-                        <input type="file" class="form-control"  name="gambar">
-                        @error('gambar')
-                        <div class="text-danger">{{ $message }}</div>
-                        @enderror
-                    </div>
-
-                    <div class="modal-footer d-md-block">
-                        <button type="submit" class="btn btn-primary btn-sm">Simpan</button>
-                        <button type="button" class="btn btn-danger btn-sm">Batal</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="exampleModalEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
+<!-- Modal Tambah -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h5 class="modal-title" id="exampleModalLabel">
+                    <i class="fa fa-plus"></i> Tambah Data
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-            <div class="modal-body">
-              ...
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    <!-- Modal Detail-->
-    <div class="modal fade" id="exampleModalDetail" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" style="width: 40%">
-            <div class="modal-content">
-                <div class="modal-header hader text-center">
-                    <h3 class="modal-title" id="exampleModalLabel">Detail Layanan</h3>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <form action="{{ url('/admin/layanan') }}" method="POST" enctype="multipart/form-data">
+                {{ csrf_field() }}
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="judul"> Judul </label>
+                        <input type="text" class="form-control" name="judul" id="judul" placeholder="Masukkan Judul">
+                    </div>
+                    <div class="form-group">
+                        <label for="deskripsi"> Deskripsi </label>
+                        <textarea name="deskripsi" id="deskripsi" class="form-control" rows="5" placeholder="Masukkan Deskripsi"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="image"> Gambar </label>
+                        <img class="img-fluid gambar-preview mb-3" id="tampilGambar">
+                        <input type="file" class="form-control" name="image" id="image" onchange="previewImage()">
+                    </div>
                 </div>
-                <div class="modal-body" id="modal-content-detail">
-
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">
+                        <i class="fa fa-times"></i> Kembali
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fa fa-plus"></i> Tambah
+                    </button>
                 </div>
-                <div class="modal-footer d-md-block">
-                    <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal" aria-label="Close">Kembali</button>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
-</section>
+</div>
+<!-- END -->
+
+<!-- Modal Tambah -->
+<div class="modal fade" id="exampleModalEdit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                    <i class="fa fa-edit"></i> Edit Data
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="{{ url('/admin/layanan/simpan') }}" method="POST" enctype="multipart/form-data">
+                @method("PUT")
+                {{ csrf_field() }}
+                <div class="modal-body" id="modal-content-edit">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">
+                        <i class="fa fa-times"></i> Kembali
+                    </button>
+                    <button type="submit" class="btn btn-success">
+                        <i class="fa fa-save"></i> Simpan
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- END -->
+
 @endsection
 
 @section('js')
-<script>
-    $(document).ready(function(){
-        $('#deletelayananbaru').click(function(){
-            var id = $(this).attr('rel');
-            var deleteFunction = $(this).attr('rel1')
-            swal({
-                title: "Are you sure?",
-                text: "Your will not be able to recover this imaginary file!",
-                type: "warning",
-                showCancelButton: true,
-                confirmButtonClass: "btn-danger",
-                confirmButtonText: "Yes, delete it!",
-                closeOnConfirm: false
-            },
-            function(){
-                window.location.href="/delete/"+deleteFunction+"/"+id;
-                swal("Deleted!", "Your imaginary file has been deleted.", "success");
-            });
-        });
-    });
 
+<script type="text/javascript">
     function previewImage() {
-        const gambar = document.queryselector('#gambar');
-        const imgPreview = document.queryselector('.img-preview');
-
-        imgPreview.styp.display = 'block';
-
+        const image = document.querySelector("#image");
+        const imgPreview = document.querySelector(".gambar-preview");
+        imgPreview.style.display = "block";
         const oFReader = new FileReader();
-        oFReader.readAsDataURL(gambar.files[0]);
-
+        oFReader.readAsDataURL(image.files[0]);
         oFReader.onload = function(oFREvent) {
             imgPreview.src = oFREvent.target.result;
+            $("#tampilGambar").addClass('mb-3');
+            $("#tampilGambar").width("100%");
+            $("#tampilGambar").height("300");
         }
     }
-</script>
 
-{{-- JS CKeditor --}}
-<script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
-<script>
-    CKEDITOR.replace('create');
-</script>
-<script type="text/javascript">
-    function editLayanan(id) {
+    function editDataLayanan(id) {
         $.ajax({
             url: "{{ url('/admin/layanan/edit') }}",
             type: "GET",
@@ -226,21 +163,8 @@
                 $("#modal-content-edit").html(data);
                 return true;
             }
-        })
-    }
-
-    function detailLayanan(id) {
-        $.ajax({
-            url: "{{ url('/admin/layanan/detail') }}",
-            type: "GET",
-            data: {
-                id: id
-            },
-            success: function(data) {
-                $("#modal-content-detail").html(data);
-                return true;
-            }
-        })
+        });
     }
 </script>
+
 @endsection
