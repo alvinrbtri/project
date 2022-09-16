@@ -60,6 +60,7 @@ Route::group(["middleware" => ["autentikasi"]], function() {
         });
     });
     Route::get("logout", [LoginController::class, "logout"]);
+
 });
 
 

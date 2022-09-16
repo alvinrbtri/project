@@ -75,7 +75,7 @@
                 <a class="dropdown-item" href="#">
                     <i class="fa fa-cog"></i> <span>Settings</span></a>
                 </a>
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="{{ url('/logout') }}">
                     <i class="fa fa-sign-out"></i> <span>Logout</span></a>
                 </a>
             </div>
