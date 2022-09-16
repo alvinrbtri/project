@@ -1,5 +1,5 @@
-@extends('Layoutsadmin.adminlayout')
-@section('content')
+@extends("layouts_admin.admin_layout")
+@section("content")
 <section class="home-section">
 
     <div class="main">
@@ -12,7 +12,6 @@
             </div>
         </div>
 
-        <!-- top nav -->
         <div class="cardBox1">
             <div class="card1">
                 <div>
@@ -21,9 +20,6 @@
                         </div>
                     </a>
                 </div>
-                <!-- <div class="iconBx1">
-                                    <ion-icon name="car-outline"></ion-icon>
-                                </div> -->
             </div>
 
             <div class="card1">
@@ -34,8 +30,8 @@
                     </a>
                 </div>
                 <!-- <div class="iconBx1">
-                                    <ion-icon name="cube-outline"></ion-icon>
-                                </div> -->
+                    <ion-icon name="cube-outline"></ion-icon>
+                </div> -->
             </div>
 
             <div class="card1">
@@ -46,8 +42,8 @@
                     </a>
                 </div>
                 <!-- <div class="iconBx1">
-                                    <ion-icon name="home-outline"></ion-icon>
-                                </div> -->
+                    <ion-icon name="home-outline"></ion-icon>
+                </div> -->
             </div>
             <div class="card2">
                 <div>
@@ -57,8 +53,8 @@
                     </a>
                 </div>
                 <!-- <div class="iconBx1">
-                                    <ion-icon name="arrow-down-outline"></ion-icon>
-                                </div> -->
+                    <ion-icon name="arrow-down-outline"></ion-icon>
+                </div> -->
             </div>
         </div>
         <!-- data list -->

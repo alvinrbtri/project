@@ -1,4 +1,4 @@
-@extends('Layoutsadmin.adminlayout')
+@extends("layouts_admin.admin_layout")
 @section('content')
 <section class="home-section">
 
@@ -156,7 +156,6 @@
                             <td>Yes</td>
                             <td>IDR 600.000</td>
                             <td>2118 Thornridge cir. Syracuse connecticut 35624</td>
-                            <!-- <td><span class="status return">Return</span></td> -->
                         </tr>
                         <tr>
                             <td>Robecca Howard</td>
@@ -166,7 +165,6 @@
                             <td>Yes</td>
                             <td>IDR 600.000</td>
                             <td>2118 Thornridge cir. Syracuse connecticut 35624</td>
-                            <!-- <td><span class="status return">Return</span></td> -->
                         </tr>
                         <tr>
                             <td>Robecca Howard</td>
@@ -176,7 +174,6 @@
                             <td>Yes</td>
                             <td>IDR 600.000</td>
                             <td>2118 Thornridge cir. Syracuse connecticut 35624</td>
-                            <!-- <td><span class="status return">Return</span></td> -->
                         </tr>
                     </tbody>
                 </table>
