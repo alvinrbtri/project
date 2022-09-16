@@ -62,3 +62,7 @@ Route::get("/layout", function() {
 Route::get("/dashboard", function() {
     return view("admin.dashboard");
 });
+
+Route::get("/template_admin", function() {
+    return view("admin.layouts.app");
+});

@@ -1,174 +1,169 @@
-@extends('layouts_admin.admin_layout')
+@extends("admin.layouts.app")
 
 @section('content')
 
-<section class="home-section">
-
-    <div class="main">
-        <div class="topbar">
-            <div class="home-content">
-                <i class='bx bx-menu'></i>
-            </div>
-            <div class="search" data-aos="fade-left" data-aos-duration="1000">
-                <label>
-                    <input type="text" placeholder="Cari Disini">
-                    <ion-icon name="search-outline"></ion-icon>
-                </label>
-            </div>
+<div class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="page-title">Dashboard <small>Control Panel</small></h3>
         </div>
-
-        <div class="cardBox" data-aos="fade-up" data-aos-delay="100">
-            <div class="card border-0">
-                <div class="card-body">
-                    <div class="numbers">1.504</div>
-                    <div class="cardName">Kunjungan</div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 col-xs-6">
+            <div class="widget-overview bg-primary-1">
+                <div class="inner">
+                    <h2>$15K</h2>
+                    <p>Sales Today</p>
                 </div>
 
-            </div>
+                <div class="icon">
+                    <i class="fa fa-dollar"></i>
+                </div>
 
-            <div class="card border-0">
-                <div class="card-body">
-                    <div class="numbers">1.504</div>
-                    <div class="cardName">Kunjungan</div>
-                </div>
-                <div class="iconBx card-img-overlay">
-                    <ion-icon name="eye"></ion-icon>
-                </div>
-            </div>
-
-
-            <div class="card border-0">
-                <div class="card-body">
-                    <div class="numbers">284</div>
-                    <div class="cardName">Komentar</div>
-                </div>
-                <div class="iconBx card-img-overlay">
-                    <ion-icon name="chatbubbles"></ion-icon>
-                </div>
-            </div>
-
-            <div class="card border-0">
-                <div class="card-body">
-                    <div class="numbers">$28.500.865</div>
-                    <div class="cardName">Pendapatan</div>
-                </div>
-                <div class="iconBx card-img-overlay">
-                    <ion-icon name="card"></ion-icon>
+                <div class="details bg-primary-3">
+                    <span>View Details <i class="fa fa-arrow-right"></i></span>
                 </div>
             </div>
         </div>
 
-        <!-- Chart -->
-        <div class="graphBox">
-            <div class="card border-0 w-auto">
-                <canvas id="myChart"></canvas>
-            </div>
-            <div class="card border-0 w-auto">
-                <canvas id="earning"></canvas>
+        <div class="col-lg-3 col-xs-6">
+            <div class="widget-overview bg-info-1">
+                <div class="inner">
+                    <h2>35%</h2>
+                    <p>Growth in Traffic</p>
+                </div>
+
+                <div class="icon">
+                    <i class="fa fa-signal"></i>
+                </div>
+
+                <div class="details bg-info-3">
+                    <span>View Details <i class="fa fa-arrow-right"></i></span>
+                </div>
             </div>
         </div>
 
-        <!-- data list -->
-        <div class="details mt-3">
-            <div class="recentOrders w-auto">
-                <div class="cardHeader">
-                    <h2>Recent Order</h2>
-                    <a href="#" class="btn btn-thema fs-5">View All</a>
+        <div class="col-lg-3 col-xs-6">
+            <div class="widget-overview bg-success-1">
+                <div class="inner">
+                    <h2>$8.5K</h2>
+                    <p>Profit Today</p>
                 </div>
-                <table class="table table-borderless">
-                    <thead>
-                        <tr>
-                            <td class="text-center">NAMA</td>
-                            <td class="text-center">HARGA</td>
-                            <td class="text-start">PEMBAYARAN</td>
-                            <td class="text-start">STATUS</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Star Refigerator</td>
-                            <td class="text-start">IDR 1.436.000</td>
-                            <td>Paid</td>
-                            <td class="text-start"><span class="status return">Return</span></td>
-                        </tr>
-                        <tr>
-                            <td>iPhone 13 pro</td>
-                            <td class="text-start">IDR 21.783.999</td>
-                            <td>Paid</td>
-                            <td class="text-start"><span class="status delivered">Delivered</span></td>
-                        </tr>
-                        <tr>
-                            <td>Quick Traktor</td>
-                            <td class="text-start">IDR 7.875.987</td>
-                            <td>Paid</td>
-                            <td class="text-start"><span class="status pending">Pending</span></td>
-                        </tr>
-                        <tr>
-                            <td>RX King</td>
-                            <td class="text-start">IDR 15.975.574</td>
-                            <td>Paid</td>
-                            <td class="text-start"><span class="status inprogress">In Progress</span></td>
-                        </tr>
-                        <tr>
-                            <td>Yamaha Jupiter</td>
-                            <td class="text-start">IDR 13.757.452</td>
-                            <td>Paid</td>
-                            <td class="text-start"><span class="status delivered">Delivered</span></td>
-                        </tr>
-                        <tr>
-                            <td>Star Refigerator</td>
-                            <td class="text-start">IDR 1.436.000</td>
-                            <td>Paid</td>
-                            <td class="text-start"><span class="status return">Return</span></td>
-                        </tr>
-                        <tr>
-                            <td>iPhone 13 pro</td>
-                            <td class="text-start">IDR 21.783.999</td>
-                            <td>Paid</td>
-                            <td class="text-start"><span class="status delivered">Delivered</span></td>
-                        </tr>
-                        <tr>
-                            <td>Quick Traktor</td>
-                            <td class="text-start">IDR 7.875.987</td>
-                            <td>Paid</td>
-                            <td class="text-start"><span class="status pending">Pending</span></td>
-                        </tr>
-                        <tr>
-                            <td>RX King</td>
-                            <td class="text-start">IDR 15.975.574</td>
-                            <td>Paid</td>
-                            <td class="text-start"><span class="status inprogress">In Progress</span></td>
-                        </tr>
-                        <tr>
-                            <td>Yamaha Jupiter</td>
-                            <td class="text-start">IDR 13.757.452</td>
-                            <td>Paid</td>
-                            <td class="text-start"><span class="status delivered">Delivered</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
 
-            <!-- New Customer -->
-            <div class="recentCustomer">
-                <div class="cardHeader">
-                    <h2>Recent Customer</h2>
+                <div class="icon">
+                    <i class="fa fa-money"></i>
                 </div>
-                <table>
-                    @for ($i = 0; $i < 8; $i++) <tr>
-                        <td width="60px">
-                            <div class="imgBx"><img src="{{ asset('user.jpg') }}" alt=""></div>
-                        </td>
-                        <td>
-                            <h4>Selena<br><span>Italy</h4>
-                            </td>
-                        </tr>
-                        @endfor
-                    </table>
+
+                <div class="details bg-success-3">
+                    <span>View Details <i class="fa fa-arrow-right"></i></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-xs-6">
+            <div class="widget-overview bg-danger-1">
+                <div class="inner">
+                    <h2>8,952</h2>
+                    <p>Unique Visitors</p>
+                </div>
+
+                <div class="icon">
+                    <i class="fa fa-pie-chart"></i>
+                </div>
+
+                <div class="details bg-danger-3">
+                    <span>View Details <i class="fa fa-arrow-right"></i></span>
                 </div>
             </div>
         </div>
     </div>
-</section>
+
+    <div class="row margin-top-10">
+        <div class="col-lg-8">
+            <div class="card">
+                <div class="card-block">
+                    <h5 class="card-title">Sales Overview</h5>
+                </div>
+                <div class="ct-chart-dashboard height-250 ct-chart-blue"></div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-block">
+                    <h5 class="card-title">Recent Products</h5>
+
+                    <div class="recent-products">
+                        <ul>
+                            <li>
+                                <div class="product-image">
+                                    <img src="{{ url('/dist') }}/assets/img/default-img.png" alt="">
+                                </div>
+
+                                <div class="product-info">
+                                    <span class="product-title">
+                                        <a href="#">Product Name</a>
+                                        <span class="pull-right">
+                                            <badge class="badge badge-primary">$1,800</badge>
+                                        </span>
+                                    </span>
+                                    <span class="product-description">Product Description goes here.</span>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="product-image">
+                                    <img src="{{ url('/dist') }}/assets/img/default-img.png" alt="">
+                                </div>
+
+                                <div class="product-info">
+                                    <span class="product-title">
+                                        <a href="#">Product Name</a>
+                                        <span class="pull-right">
+                                            <badge class="badge badge-primary">$1,800</badge>
+                                        </span>
+                                    </span>
+                                    <span class="product-description">Product Description goes here.</span>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="product-image">
+                                    <img src="{{ url('/dist') }}/assets/img/default-img.png" alt="">
+                                </div>
+
+                                <div class="product-info">
+                                    <span class="product-title">
+                                        <a href="#">Product Name</a>
+                                        <span class="pull-right">
+                                            <badge class="badge badge-primary">$1,800</badge>
+                                        </span>
+                                    </span>
+                                    <span class="product-description">Product Description goes here.</span>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="product-image">
+                                    <img src="{{ url('/dist') }}/assets/img/default-img.png" alt="">
+                                </div>
+
+                                <div class="product-info">
+                                    <span class="product-title">
+                                        <a href="#">Product Name</a>
+                                        <span class="pull-right">
+                                            <badge class="badge badge-primary">$1,800</badge>
+                                        </span>
+                                    </span>
+                                    <span class="product-description">Product Description goes here.</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 @endsection
