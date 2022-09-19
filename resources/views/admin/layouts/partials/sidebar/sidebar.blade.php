@@ -36,10 +36,13 @@
                     <li>
                         <a href="{{ url('/admin/layanan') }}">Layanan</a>
                     </li>
-
+                    <li>
+                        <a href="{{ url('/admin/slider/slider_layanan') }}">Slider Layanan</a>
+                    </li>
+                    
                 </ul>
             </li>
-
+            
             <li>
                 <a href="#">
                     <i class="fa fa-pencil"></i>
@@ -48,6 +51,9 @@
                 <ul>
                     <li>
                         <a href="{{ url('/admin/akun/role') }}">Role</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/admin/master/kategori') }}">Kategori</a>
                     </li>
                 </ul>
             </li>

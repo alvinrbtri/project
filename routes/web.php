@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\Akun\RoleController;
 use App\Http\Controllers\AppController;
+use App\Http\Controllers\Master\KategoriController;
 use App\Http\Controllers\Layanan\LayananController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\SliderLayanan\SliderLayananController;
 use App\Models\Akun\Role;
 use Illuminate\Support\Facades\Route;
 /*
@@ -51,6 +53,18 @@ Route::group(["middleware" => ["autentikasi"]], function() {
                 Route::get("/role/edit", [RoleController::class, "edit"]);
                 Route::put("/role/simpan", [RoleController::class, "update"]);
                 Route::resource("role", RoleController::class);
+            });
+
+            Route::prefix("master")->group(function() {
+                Route::get("/kategori/edit", [KategoriController::class, "edit"]);
+                Route::put("/kategori/simpan", [KategoriController::class, "update"]);
+                Route::resource("kategori", KategoriController::class);
+            });
+
+            Route::prefix("slider")->group(function() {
+                Route::get("/slider_layanan/edit", [SliderLayananController::class, "edit"]);
+                Route::put("/slider_layanan/simpan", [SliderLayananController::class, "update"]);
+                Route::resource("slider_layanan", SliderLayananController::class);
             });
 
             Route::get("/layanan/edit", [LayananController::class, "edit"]);
