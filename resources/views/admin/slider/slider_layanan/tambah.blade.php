@@ -69,12 +69,12 @@
                             @php
                                 $no = 0
                             @endphp
-                            @foreach ($slider_layanans as $dataslid)
+                            @foreach ($data_slider as $dataslid)
                                 <tr>
                                     <td class="text-center">{{ ++$no }}</td>
                                     {{-- <td><img src="{{url('/storage/' .$dataslid->gambar)}}" style="width:50px;"></td> --}}
                                     <td>
-                                        <img src="{{ Storage::url('public/app/LayananSlider/') .$dataslid->gambar}}" class="rounded" style="width: 80px">
+                                        <img src="{{ Storage::url('public/slider_layanan') .$dataslid->gambar}}" class="rounded" style="width: 80px">
                                     </td>
                                     <td>{{ $dataslid->judul }}</td>
                                     <td>{{ $dataslid->deskripsi}}</td>

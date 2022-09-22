@@ -16,8 +16,8 @@ class MetodePembayaranSeeder extends Seeder
     public function run()
     {
         MetodePembayaran::create([
-            "Metode Pembayaran" => "Transfer Bank",
-            "Jenis Pembayaran lain" => "Qris",
+            "metode_pembayaran" => "Transfer Bank",
+            "jenis_pembayaran_lain" => "Qris",
         ]);
     }
 }
