@@ -1,13 +1,17 @@
 <?php
 
-use App\Http\Controllers\Akun\RoleController;
-use App\Http\Controllers\AppController;
-use App\Http\Controllers\Master\KategoriController;
-use App\Http\Controllers\Layanan\LayananController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\SliderLayanan\SliderLayananController;
 use App\Models\Akun\Role;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AppController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\Akun\RoleController;
+use App\Http\Controllers\UserPemesananController;
+use App\Http\Controllers\Layanan\LayananController;
+use App\Http\Controllers\Master\KategoriController;
+use App\Http\Controllers\UserLandingpageController;
+use App\Http\Controllers\SliderLayanan\SliderLayananController;
+use App\Http\Controllers\UserKonfirmPembayaranController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +26,37 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('app');
 });
+
+// Tampilan User
+    // Home
+    Route::controller(UserLandingpageController::class)->group(function() {
+        Route::prefix("user")->group(function() {
+            Route::get("/home", "home");
+            Route::get("/kontak", "kontak");
+            Route::get("/tentang", "tentang");
+            Route::prefix("layanan")->group(function() {
+                Route::get("/", "layanan");
+                Route::get("/barang", "barang");
+                Route::get("/bangunan", "bangunan");
+                Route::get("/kendaraan", "kendaraan");
+                Route::prefix("detail_layanan")->group(function() {
+                    Route::get("/kendaraan", "d_kendaraan");
+                    Route::get("/bangunan", "d_bangunan");
+                    Route::get("/barang", "d_barang");
+                });
+            });
+            Route::prefix("pemesanan")->group(function() {
+                Route::resource("pemesanan", UserPemesananController::class);
+                Route::get("/info_pembayaran", "i_pembayaran");
+                Route::resource("konfirm_pembayaran", UserKonfirmPembayaranController::class);
+                Route::get("/struk", "struk");
+                Route::prefix("history")->group(function() {
+                    Route::get("/on_progress", "o_progress");
+                    Route::get("/last_progress", "l_progress");
+                });
+            });
+        });
+    });
 
 Route::group(["middleware" => ["guest"]], function() {
     Route::get("/login", [LoginController::class, "login"]);
