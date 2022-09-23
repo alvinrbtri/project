@@ -4,13 +4,16 @@ use App\Models\Akun\Role;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AppController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\VendorController;
+use App\Http\Controllers\FinanceController;
 use App\Http\Controllers\Akun\RoleController;
+use App\Http\Controllers\SuperadminController;
 use App\Http\Controllers\UserPemesananController;
 use App\Http\Controllers\Layanan\LayananController;
 use App\Http\Controllers\Master\KategoriController;
 use App\Http\Controllers\UserLandingpageController;
-use App\Http\Controllers\SliderLayanan\SliderLayananController;
 use App\Http\Controllers\UserKonfirmPembayaranController;
+use App\Http\Controllers\SliderLayanan\SliderLayananController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +31,6 @@ Route::get('/', function () {
 });
 
 // Tampilan User
-    // Home
     Route::controller(UserLandingpageController::class)->group(function() {
         Route::prefix("user")->group(function() {
             Route::get("/home", "home");
@@ -57,6 +59,27 @@ Route::get('/', function () {
             });
         });
     });
+
+// Tampilan Vendor
+Route::controller(VendorController::class)->group(function(){
+    Route::prefix("vendor")->group(function(){
+        Route::get("/dashboard_vendor", "dashboard_ven");
+    });
+});
+
+// Tampilan Finance
+Route::controller(FinanceController::class)->group(function(){
+    Route::prefix("finance")->group(function(){
+        Route::get("/dashboard_finance", "dashboard_fin");
+    });
+});
+
+// Tampilan Superadmin
+Route::controller(SuperadminController::class)->group(function(){
+    Route::prefix("superadmin")->group(function(){
+        Route::get("/dashboard_super", "dashboard_sup");
+    });
+});
 
 Route::group(["middleware" => ["guest"]], function() {
     Route::get("/login", [LoginController::class, "login"]);
