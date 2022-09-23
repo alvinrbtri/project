@@ -18,5 +18,21 @@ class SeederRoleSeeder extends Seeder
         SeederRole::create([
             "role" => "Admin",
         ]);
+
+        SeederRole::create([
+            "role" => "SuperAdmin"
+        ]);
+
+        SeederRole::create([
+            "role" => "Finance"
+        ]);
+
+        SeederRole::create([
+            "role" => "Vendor"
+        ]);
+
+        SeederRole::create([
+            "role" => "Pengguna"
+        ]);
     }
 }

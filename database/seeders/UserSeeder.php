@@ -16,7 +16,7 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::create([
-            "role_id" => "1",
+            "id_role" => "1",
             "name" => "Administrator",
             "email" => "admin@gmail.com",
             "password" => bcrypt("password"),
@@ -26,7 +26,7 @@ class UserSeeder extends Seeder
         ]);
 
         User::create([
-            "role_id" => "2",
+            "id_role" => "2",
             "name" => "User",
             "email" => "user@gmail.com",
             "password" => bcrypt("password"),
@@ -35,6 +35,35 @@ class UserSeeder extends Seeder
             "kota" => "Indramayu",
         ]);
 
+        User::create([
+            "id_role" => "3",
+            "name" => "User",
+            "email" => "finance@gmail.com",
+            "password" => bcrypt("password"),
+            "tgl_lahir" => "2002-02-02",
+            "no_telp" => "085324237298",
+            "kota" => "Indramayu",
+        ]);
+
+        User::create([
+            "id_role" => "4",
+            "name" => "User",
+            "email" => "vendor@gmail.com",
+            "password" => bcrypt("password"),
+            "tgl_lahir" => "2002-02-02",
+            "no_telp" => "085324237298",
+            "kota" => "Indramayu",
+        ]);
+
+        User::create([
+            "id_role" => "5",
+            "name" => "User",
+            "email" => "pengguna@gmail.com",
+            "password" => bcrypt("password"),
+            "tgl_lahir" => "2002-02-02",
+            "no_telp" => "085324237298",
+            "kota" => "Indramayu",
+        ]);
 
     }
 }
