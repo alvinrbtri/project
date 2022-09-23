@@ -16,7 +16,7 @@ class SubMetodePembayaranSeeder extends Seeder
     public function run()
     {
         SubMetodePembayaran::create([
-            "Nama Bank" => "Bank Central Asia (BCA)",
+            "nama_bank" => "Bank Central Asia (BCA)",
         ]);
     }
 }

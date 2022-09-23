@@ -1,14 +1,11 @@
 <?php
 
-namespace App\Models\SliderLayanan;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class SliderLayanan extends Model
+class DetailSublayanan extends Model
 {
     use HasFactory;
-
-    protected $guarded = [' '];
-    
 }

@@ -2,21 +2,22 @@
 
 namespace Database\Seeders;
 
+use App\Models\DetailGambarKecil;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Master\Kategori;
-class KategoriSeeder extends Seeder
+
+class DetailGambarKecilSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      *
-     * @return void     
+     * @return void
      */
     public function run()
     {
-        Kategori::create([
-            "kategori" => "Kendaraan",
-            "slug" => "kendaraan",
+        DetailGambarKecil::create([
+            "gambar" => "https://unsplash.com/t/history",
+            "layanan_id" => 1
         ]);
     }
 }
