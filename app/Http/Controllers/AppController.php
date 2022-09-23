@@ -42,7 +42,7 @@ class AppController extends Controller
 
     public function data_pick_up()
     {
-        return vieW("admin.data_pick_up");
+        return view("admin.data_pick_up");
     }
 
     public function order()

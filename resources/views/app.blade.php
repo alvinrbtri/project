@@ -246,7 +246,8 @@
                     <div class="swiper-pagination"></div>
                 </div>
             </div>
-        </section><!-- End Clients Section -->
+        </section>
+        <!-- End Clients Section -->
 
         <!-- ======= Contact Us Section ======= -->
         <section id="contact" class="contact">
