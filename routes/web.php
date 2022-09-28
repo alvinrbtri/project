@@ -3,15 +3,19 @@
 use App\Models\Akun\Role;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AppController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\VendorController;
 use App\Http\Controllers\FinanceController;
+use App\Http\Controllers\ProvinsiController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\Akun\RoleController;
-use App\Http\Controllers\SuperadminController;
 use App\Http\Controllers\UserPemesananController;
+use App\Http\Controllers\ProfilCustomerController;
 use App\Http\Controllers\Layanan\LayananController;
 use App\Http\Controllers\Master\KategoriController;
 use App\Http\Controllers\UserLandingpageController;
+use App\Http\Controllers\TambahAlamatCustomerController;
 use App\Http\Controllers\UserKonfirmPembayaranController;
 use App\Http\Controllers\SliderLayanan\SliderLayananController;
 
@@ -57,6 +61,13 @@ Route::get('/', function () {
                     Route::get("/last_progress", "l_progress");
                 });
             });
+            Route::prefix("profil")->group(function() {
+                Route::resource("profil", ProfilCustomerController::class);
+                // Route::get("/profil/edit", ProfilCustomerController::class);
+                // Route::get("/profil/simpan", ProfilCustomerController::class);
+                Route::resource("alamat", TambahAlamatCustomerController::class);
+                Route::get("/tambah_alamat", [TambahAlamatCustomerController::class, "tambah"]);
+            });
         });
     });
 
@@ -74,21 +85,25 @@ Route::controller(FinanceController::class)->group(function(){
     });
 });
 
-// Tampilan Superadmin
-Route::controller(SuperadminController::class)->group(function(){
-    Route::prefix("superadmin")->group(function(){
-        Route::get("/dashboard_super", "dashboard_sup");
+// Tampilan Admin
+Route::controller(AdminController::class)->group(function(){
+    Route::prefix("admin")->group(function(){
+        Route::get("/dashboard_admin", "dashboard_ad");
     });
 });
 
 Route::group(["middleware" => ["guest"]], function() {
     Route::get("/login", [LoginController::class, "login"]);
     Route::post("/login", [LoginController::class, "post_login"]);
+    Route::get("/register", [LoginController::class, "register"]);
+    Route::post("/register", [LoginController::class, "post_register"]);
 });
+
+
 
 Route::group(["middleware" => ["autentikasi"]], function() {
     Route::controller(AppController::class)->group(function() {
-        Route::prefix("admin")->group(function() {
+        Route::prefix("superadmin")->group(function() {
             Route::get("/dashboard", "dashboard");
             Route::get("/profile", "profile");
             Route::get("/home", "home");
@@ -117,6 +132,9 @@ Route::group(["middleware" => ["autentikasi"]], function() {
                 Route::get("/kategori/edit", [KategoriController::class, "edit"]);
                 Route::put("/kategori/simpan", [KategoriController::class, "update"]);
                 Route::resource("kategori", KategoriController::class);
+                Route::get("/provinsi/edit", [ProvinsiController::class, "edit"]);
+                Route::get("/provinsi/simpan", [ProvinsiController::class, "update"]);
+                Route::resource("provinsi", ProvinsiController::class);
             });
 
             Route::prefix("slider")->group(function() {

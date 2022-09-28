@@ -14,13 +14,13 @@
                 <li><a class="nav-link {{ Request::is('tentang') ? 'active' :'' }}" href="/user/tentang">Tentang</a></li>
                 <li><a class="nav-link {{ Request::is('layanan') ? 'active' :'' }}" href="/user/layanan">Layanan</a></li>
                 <li><a class="nav-link {{ Request::is('kontak') ? 'active' :'' }}" href="/user/kontak">Kontak</a></li>
-                {{-- <li><a class="nav-link {{ Request::is('login') ? 'active' :'' }}" href="/login"></a></li> --}}
+                <li><a class="nav-link {{ Request::is('login') ? 'active' :'' }}" href="/login"></a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         {{ Auth::user()->name }}
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="/user/profile/profileuser">Profile</a></li>
+                      <li><a class="dropdown-item" href="/user/profil/profil">Profile</a></li>
                       <li><a class="dropdown-item" href="/user/pemesanan/History/On_Progress">Pesanan</a></li>
                       <li><a class="dropdown-item" href="/user/pemesanan/History/Last_Progress">History</a></li>
                       <li><hr class="dropdown-divider"></li>
@@ -30,11 +30,11 @@
                             {{ __('Logout') }}
                             </a>
 
-                        <form id="logout-form" action="" method="POST" class="d-none">
+                        <form id="logout-form" action="{{route('logout')}}" method="POST" class="d-none">
                             @csrf
                         </form>
-                      </li> --}}
-                   
+                      </li>
+                    --}}
                     </ul>
                 </li>
 

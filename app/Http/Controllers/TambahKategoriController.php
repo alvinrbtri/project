@@ -10,7 +10,7 @@ class TambahKategoriController extends Controller
     public function index()
     {
         $kategori = TambahKategori::all();
-        return view('admin.layanan.tambah_kategori_layanan.tambah', compact('kategori'));
+        return view('superadmin.layanan.tambah_kategori_layanan.tambah', compact('kategori'));
     }
 
     public function store(Request $request)
@@ -34,7 +34,7 @@ class TambahKategoriController extends Controller
             "edit" => TambahKategori::where("id", $request->id)->first()
         ];
 
-        return view("admin.layanan.tambah_kategori_layanan.tambah", $data);
+        return view("superadmin.layanan.tambah_kategori_layanan.tambah", $data);
     }
 
     public function update(Request $request)

@@ -63,7 +63,7 @@
 
                             <div class="user-links">
                                 <a href="#" class="pull-left">Forgot Password?</a>
-                                <a href="#" class="pull-right">Register</a>
+                                <a href="{{url('/register')}}" class="pull-right">Register</a>
                             </div>
 
                         </div>

@@ -16,7 +16,7 @@ class LayananController extends Controller
             "data_layanan" => Layanan::get()
         ];
 
-        return view("admin.layanan.index", $data);
+        return view("superadmin.layanan.index", $data);
     }
 
     public function store(Request $request)
@@ -47,7 +47,7 @@ class LayananController extends Controller
             "edit" => Layanan::where("id", $request->id)->first()
         ];
 
-        return view("admin.layanan.edit", $data);
+        return view("superadmin.layanan.edit", $data);
     }
 
     public function update(Request $request)

@@ -16,53 +16,79 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::create([
-            "id_role" => "1",
+            "id_role" => 5,
             "name" => "Administrator",
             "email" => "admin@gmail.com",
             "password" => bcrypt("password"),
+            "alamat" => "jl.janti raya blok 12 no 08",
+            "desa" => "karang jambe",
+            "kecamatan" => "Banguntapan",
+            "kota_kabupaten" => "Bantul",
+            "id_kodepos" => "55198",
+            "id_provinsi" => 1,
             "tgl_lahir" => "2002-01-01",
             "no_telp" => "085324237299",
-            "kota" => "Cirebon",
         ]);
 
+
         User::create([
-            "id_role" => "2",
-            "name" => "User",
+            "id_role" => 2,
+            "name" => "Pengguna",
             "email" => "user@gmail.com",
             "password" => bcrypt("password"),
-            "tgl_lahir" => "2002-02-02",
-            "no_telp" => "085324237298",
-            "kota" => "Indramayu",
+            "alamat" => "jl.janti raya blok 12 no 08",
+            "desa" => "karang jambe",
+            "kecamatan" => "Banguntapan",
+            "kota_kabupaten" => "Bantul",
+            "id_kodepos" => "55198",
+            "id_provinsi" => 1,
+            "tgl_lahir" => "2002-01-01",
+            "no_telp" => "085324237290",
         ]);
 
         User::create([
-            "id_role" => "3",
-            "name" => "User",
+            "id_role" => 3,
+            "name" => "Finance",
             "email" => "finance@gmail.com",
             "password" => bcrypt("password"),
-            "tgl_lahir" => "2002-02-02",
+            "alamat" => "jl.janti raya blok 12 no 08",
+            "desa" => "karang jambe",
+            "kecamatan" => "Banguntapan",
+            "kota_kabupaten" => "Bantul",
+            "id_kodepos" => "55198",
+            "id_provinsi" => 1,
+            "tgl_lahir" => "2002-01-01",
             "no_telp" => "085324237298",
-            "kota" => "Indramayu",
         ]);
 
         User::create([
-            "id_role" => "4",
-            "name" => "User",
+            "id_role" => 4,
+            "name" => "Vendor",
             "email" => "vendor@gmail.com",
             "password" => bcrypt("password"),
-            "tgl_lahir" => "2002-02-02",
-            "no_telp" => "085324237298",
-            "kota" => "Indramayu",
+            "alamat" => "jl.janti raya blok 12 no 08",
+            "desa" => "karang jambe",
+            "kecamatan" => "Banguntapan",
+            "kota_kabupaten" => "Bantul",
+            "id_kodepos" => "55198",
+            "id_provinsi" => 1,
+            "tgl_lahir" => "2002-01-01",
+            "no_telp" => "085324237297",
         ]);
 
         User::create([
-            "id_role" => "5",
-            "name" => "User",
-            "email" => "pengguna@gmail.com",
+            "id_role" => 1,
+            "name" => "Superadmin",
+            "email" => "superadmin@gmail.com",
             "password" => bcrypt("password"),
-            "tgl_lahir" => "2002-02-02",
-            "no_telp" => "085324237298",
-            "kota" => "Indramayu",
+            "alamat" => "jl.janti raya blok 12 no 08",
+            "desa" => "karang jambe",
+            "kecamatan" => "Banguntapan",
+            "kota_kabupaten" => "Bantul",
+            "id_kodepos" => "55198",
+            "id_provinsi" => 1,
+            "tgl_lahir" => "2002-01-01",
+            "no_telp" => "085324237296",
         ]);
 
     }

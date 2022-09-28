@@ -14,7 +14,7 @@ class RoleController extends Controller
             "data_role" => Role::get()
         ];
 
-        return view("admin.akun.role.index", $data);
+        return view("superadmin.akun.role.index", $data);
     }
 
     public function store(Request $request)
@@ -36,7 +36,7 @@ class RoleController extends Controller
             "edit" => Role::where("id", $request->id)->first()
         ];
 
-        return view("admin.akun.role.edit", $data);
+        return view("superadmin.akun.role.edit", $data);
     }
 
     public function update(Request $request)

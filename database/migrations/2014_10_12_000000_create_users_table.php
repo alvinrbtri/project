@@ -16,13 +16,18 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->integer('id_role');
-            $table->string('name', 100);
-            $table->string('email')->unique();
-            $table->string('password');
+            $table->integer('id_kodepos')->nullable();
+            $table->integer('id_provinsi');
             $table->string("photo")->nullable();
-            $table->date("tgl_lahir");
+            $table->string('name', 100);
+            $table->string('email');
+            $table->string('password');
+            $table->text('alamat');
             $table->string("no_telp", 30);
-            $table->string("kota", 100);
+            $table->date("tgl_lahir");
+            $table->string('desa', 50);
+            $table->string('kecamatan', 50);
+            $table->string('kota_kabupaten', 50);
             $table->timestamps();
         });
     }

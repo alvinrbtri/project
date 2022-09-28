@@ -37,4 +37,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getProvinsi()
+    {
+        return $this->belongsTo("App\Models\Provinsi", "id_provinsi", "id");
+    }
+
+    public function getAkses()
+    {
+        return $this->belongsTo("App\Models\Role", "id_role", "id");
+    }
 }

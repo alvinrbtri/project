@@ -16,7 +16,7 @@ class SliderLayananController extends Controller
             "data_slider" => SliderLayanan::get()
         ];
 
-        return view('admin.slider.slider_layanan.tambah', $data);
+        return view('superadmin.slider.slider_layanan.tambah', $data);
 
 
         // $slider_layanan = SliderLayanan::all();
@@ -72,24 +72,6 @@ class SliderLayananController extends Controller
     public function update(Request $request)
     {
 
-        // if ($request->hasFile('gambar'))
-        // {
-        //     $gambar = $request->file('gambar');
-        //     $gambar->storeAs('public/app/SliderLayanan', $gambar->hashName());
-
-        //     Storage::delete('public/app/SliderLayanan'. $slider_layanan->gambar);
-
-        //     $slider_layanan->update([
-        //         'gambar' => $gambar->hashName(),
-        //         'judul' => $request->judul,
-        //         'deskripsi' => $request->deskripsi
-        //     ]);
-        // } else {
-        //     $slider_layanan->update([
-        //         'judul' => $request->judul,
-        //         'deskripsi' => $request->deskripsi
-        //     ]);
-        // }
 
         $this->validate($request, [
             'image' => 'mimes:jpg,jpeg,png',
