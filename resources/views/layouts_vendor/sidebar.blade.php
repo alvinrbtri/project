@@ -85,19 +85,9 @@
                 <li><a class="link_name" href="/admin/setting">Setting</a></li>
             </ul>
         </li>
-        {{-- <li class="list">
-        
-            <a style="color:white" href="{{ route('logout')  == 'logout' ? 'active' : '' }}"
-                   onclick="event.preventDefault();
-                                 document.getElementById('logout-form').submit();"><i class='bx bx-log-out'></i>
-                    {{ __('Logout') }}
-                    </a>
-
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                    @csrf
-                </form>
+        <li class="list">
             
-        </li> --}}
+        </li>
 
         <li class="">
             <a style="color:white " id="" class="" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -108,20 +98,21 @@
 </div>
 
 <!-- Modal Logout -->
-{{-- <div class="modal fade" id="ModalLogout" tabindex="-1" aria-labelledby="ModalLogoutLabel" aria-hidden="true">
-    <div class="modal-dialog">
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="ModalLogoutLabel">Log Out <i class="bx bxs-lock-alt"></i></h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
             </div>
-            <div class="modal-body">
-                Are you sure you want to log-off?
-            </div>
+            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
             <div class="modal-footer">
-                <a href="{{ route('logout') }}" class="btn btn-danger"> Logout</a>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" href="{{ url('/logout') }}">Logout</a>
             </div>
         </div>
     </div>
-</div> --}}
+</div>

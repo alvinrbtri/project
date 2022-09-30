@@ -37,6 +37,7 @@
                             @endphp
                             @foreach ($data_provinsi as $data)
                                 <tr>
+                                    
                                     <td scope="row">{{ ++$no }}</td>
                                     <td>{{ $data->nama_provinsi }}</td>
                                     <td class="text-end" style="size: 30px;">

@@ -65,8 +65,8 @@ Route::get('/', function () {
                 Route::resource("profil", ProfilCustomerController::class);
                 // Route::get("/profil/edit", ProfilCustomerController::class);
                 // Route::get("/profil/simpan", ProfilCustomerController::class);
-                Route::resource("alamat", TambahAlamatCustomerController::class);
-                Route::get("/tambah_alamat", [TambahAlamatCustomerController::class, "tambah"]);
+                Route::get("alamat", [TambahAlamatCustomerController::class, "alamat"]);
+                Route::resource("/tambah_alamat", TambahAlamatCustomerController::class);
             });
         });
     });
@@ -148,7 +148,7 @@ Route::group(["middleware" => ["autentikasi"]], function() {
             Route::resource("layanan", LayananController::class);
         });
     });
-    Route::get("logout", [LoginController::class, "logout"]);
+    Route::get("/logout", [LoginController::class, "logout"]);
 
 });
 
