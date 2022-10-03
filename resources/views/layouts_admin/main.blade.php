@@ -115,54 +115,40 @@
                     <li><a class="link_name" href="/superadmin/setting">Setting</a></li>
             </ul>
             </li> --}}
-            <li class="nav-item dropdown">
-                {{-- <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                    <i class='bx bx-log-out'></i>{{ Auth::user()->name }}
-                </a> --}}
-    
-                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    {{-- <a data-bs-toggle="modal" data-bs-target="#ModalLogout" href="{{ route('logout') }}"
-                       onclick="event.preventDefault();
-                                     document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                    </a> --}}
-    
-                    {{-- <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form> --}}
+            
+            <li class="">
+                <div class="iocn-link">
+                    <a style="color:white " id="" class="" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <i class="bi bi-person-circle"></i> {{ Auth::user()->name }}
+                    </a>
+                    <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+                
+                <div class="sub-menu">
+                    <div class="drop-box">
+                        <a style="font-size: 20px" href="{{('/logout')}}" data-toggle="modal" data-target="#logoutModal">
+                            Logout
+                        </a>
+                </div>
                 </div>
             </li>
-            {{-- <li>
-                <div class="profile-details">
-                    <div class="profile-content">
-                        <img src="{{ asset('assets/img/foto1.jpg') }}" alt="Profile">
-                    </div>
-                    <div class="name-job">
-                        <div class="profile_name">Ahmad Arif</div>
-                        <div class="job">Web Designer</div>
-                    </div>
-                    <a data-bs-toggle="modal" data-bs-target="#ModalLogout">
-                        <i class='bx bx-log-out'></i>
-                    </a>
-                </div>
-            </li> --}}
         </ul>
     </div>
     <!-- Modal Logout -->
-    <div class="modal fade" id="ModalLogout" tabindex="-1" aria-labelledby="ModalLogoutLabel" aria-hidden="true">
-        <div class="modal-dialog">
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="ModalLogoutLabel">Log Out <i class="bx bxs-lock-alt"></i></h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
                 </div>
-                <div class="modal-body">
-                    Are you sure you want to log-off?
-                </div>
-                {{-- <div class="modal-footer">
-                    <a href="{{ route('logout') }}" class="btn btn-danger"> Logout</a>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div> --}}
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-primary" href="{{ url('/logout') }}">Logout</a>
+                    </div>
             </div>
         </div>
     </div>

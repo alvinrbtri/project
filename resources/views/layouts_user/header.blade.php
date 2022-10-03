@@ -21,8 +21,8 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <li><a class="dropdown-item" href="/user/profil/profil">Profile</a></li>
-                      <li><a class="dropdown-item" href="/user/pemesanan/History/On_Progress">Pesanan</a></li>
-                      <li><a class="dropdown-item" href="/user/pemesanan/History/Last_Progress">History</a></li>
+                      <li><a class="dropdown-item" href="/user/pemesanan/history/on_progress">Pesanan Saya</a></li>
+                      <li><a class="dropdown-item" href="/user/pemesanan/history/last_progress">History</a></li>
                       <li><hr class="dropdown-divider"></li>
                       <li>
                         <a class="dropdown-item" href="{{url('/logout')}}" data-toggle="modal" data-target="#logoutModal">

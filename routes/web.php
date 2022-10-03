@@ -1,23 +1,30 @@
 <?php
 
-use App\Models\Akun\Role;
+
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AppController;
+
+use App\Http\Controllers\Master\AppController;
+use App\Http\Controllers\Master\KategoriController;
+use App\Http\Controllers\Master\TambahAlamatCustomerController;
+
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\LoginController;
+
+use App\Http\Controllers\Akun\LoginController;
+use App\Http\Controllers\Akun\RoleController;
 use App\Http\Controllers\VendorController;
+
 use App\Http\Controllers\FinanceController;
 use App\Http\Controllers\ProvinsiController;
-use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\Akun\RoleController;
-use App\Http\Controllers\UserPemesananController;
-use App\Http\Controllers\ProfilCustomerController;
-use App\Http\Controllers\Layanan\LayananController;
-use App\Http\Controllers\Master\KategoriController;
-use App\Http\Controllers\UserLandingpageController;
-use App\Http\Controllers\TambahAlamatCustomerController;
+
+use App\Http\Controllers\User\UserPemesananController;
+use App\Http\Controllers\User\UserLandingpageController;
+use App\Http\Controllers\User\ProfilCustomerController;
+
+
 use App\Http\Controllers\UserKonfirmPembayaranController;
-use App\Http\Controllers\SliderLayanan\SliderLayananController;
+
+use App\Http\Controllers\Layanan\SliderLayananController;
+use App\Http\Controllers\Layanan\LayananController;
 
 /*
 |--------------------------------------------------------------------------

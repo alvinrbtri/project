@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\SliderLayanan;
+namespace App\Http\Controllers\Layanan;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;

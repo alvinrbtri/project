@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class UserPemesananController extends Controller
+class ProfilCustomerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,7 @@ class UserPemesananController extends Controller
      */
     public function index()
     {
-        return view('user.pemesanan.pemesanan');
+        return view("user.profil.profil");
     }
 
     /**

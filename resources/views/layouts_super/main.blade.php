@@ -137,20 +137,24 @@
                     <li><a class="link_name" href="/superadmin/setting">Setting</a></li>
                 </ul>
             </li>
-            <li class="nav-item dropdown">
-                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                    <i class='bx bx-log-out'></i>{{ Auth::user()->name }}
-                </a>
-
-                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{('/logout')}}" data-toggle="modal" data-target="#logoutModal">
-                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                        Logout
+            <li class="">
+                <div class="iocn-link">
+                    <a style="color:white " id="" class="" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <i class="bi bi-person-circle"></i> {{ Auth::user()->name }}
                     </a>
-            </div>
-        </li>
-    </ul>
-</div>
+                    <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+                
+                <div class="sub-menu">
+                    <div class="drop-box">
+                        <a style="font-size: 20px" href="{{('/logout')}}" data-toggle="modal" data-target="#logoutModal">
+                            Logout
+                        </a>
+                </div>
+                </div>
+            </li>
+        </ul>
+    </div>
 <!-- Modal Logout -->
 <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">

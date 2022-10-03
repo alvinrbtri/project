@@ -1,19 +1,29 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Master;
 
+use App\Http\Controllers\Controller;
+use App\Models\TambahAlamat;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class ProfilCustomerController extends Controller
+class TambahAlamatCustomerController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+    public function alamat()
+    {
+        $data["alamat"] = TambahAlamat::where("users_id", Auth::user()->id)->get();
+        return view("user.profil.alamat", $data);
+    }
+
     public function index()
     {
-        return view("user.profil.profil");
+        $data["alamat"] = TambahAlamat::all();
+        return view("user.profil.tambah_alamat", $data);
     }
 
     /**
@@ -21,20 +31,20 @@ class ProfilCustomerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        TambahAlamat::insert([
+            'users_id' => Auth::user()->id,
+            'nama_lengkap' => $request->nama_lengkap,
+            'kota_kabupaten' => $request->kota_kabupaten,
+            'kecamatan' => $request->kecamatan,
+            'id_provinsi' => $request->id_provinsi,
+            'no_telp' => $request->no_telp,
+            'detail_alamat' => $request->detail_alamat,
+            'catatan' => $request->catatan
+        ]);
+
+        return redirect("/user/profil/alamat")->with('success', 'Alamat Baru Berhasil ditambahkan!');
     }
 
     /**

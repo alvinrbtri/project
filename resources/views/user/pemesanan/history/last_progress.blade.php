@@ -5,7 +5,7 @@
         <div class="p-4 container card mb-5 mt-5" style="width: 98%" > 
     
             <div class="">
-                <a href="/user/pemesanan/pistory/on_progress" class="ps-3 "><i class="bi bi-arrow-left btn btn-success col-sm-1" style=" font-size: 20px; color: rgb(255, 255, 255);"></i></a>
+                <a href="/user/pemesanan/history/on_progress" class="ps-3 "><i class="bi bi-arrow-left btn btn-success col-sm-1" style=" font-size: 20px; color: rgb(255, 255, 255);"></i></a>
                 <div class="card-body">
                     <nav aria-label="breadcrumb "  class="card-header" style="height: 40px; width:100%">
                         <ol class="breadcrumb ">
@@ -22,7 +22,7 @@
                         <a class="nav-link text-center" href="/user/pemesanan/history/on_progress">On Progress</a>
                     </li>
                     <li class="nav-item col-md-6">
-                        <a class="nav-link active text-center" aria-current="page" href="/user/pemesanan/history/hast_progress">Last Progress</a>
+                        <a class="nav-link active text-center" aria-current="page" href="/user/pemesanan/history/last_progress">Last Progress</a>
                     </li>   
                 </ul>
                 <div class="card mb-3  mt-2" style="max-width: 100%;">
@@ -254,7 +254,7 @@
                         </div>
                         <div>
     
-                            <h3 style="color:  #999">Rincian Pembayaran</h3>
+                            <h3 style="color:#999">Rincian Pembayaran</h3>
                             <div class="row">
                                 <div class="col-md">
                                     <p>Id Order</p>
