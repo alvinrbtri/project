@@ -3,29 +3,30 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\Master\AppController;
-use App\Http\Controllers\Master\KategoriController;
-use App\Http\Controllers\Master\TambahAlamatCustomerController;
-
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\VendorController;
+use App\Http\Controllers\FinanceController;
+
+use App\Http\Controllers\Akun\RoleController;
 
 use App\Http\Controllers\Akun\LoginController;
-use App\Http\Controllers\Akun\RoleController;
-use App\Http\Controllers\VendorController;
+use App\Http\Controllers\Master\AppController;
+use App\Http\Controllers\Layanan\LayananController;
 
-use App\Http\Controllers\FinanceController;
-use App\Http\Controllers\ProvinsiController;
+use App\Http\Controllers\Master\KategoriController;
+use App\Http\Controllers\Master\ProvinsiController;
 
+use App\Http\Controllers\Layanan\SubLayananController;
 use App\Http\Controllers\User\UserPemesananController;
-use App\Http\Controllers\User\UserLandingpageController;
 use App\Http\Controllers\User\ProfilCustomerController;
 
 
-use App\Http\Controllers\UserKonfirmPembayaranController;
+use App\Http\Controllers\User\UserLandingpageController;
 
+use App\Http\Controllers\Layanan\LayananSliderController;
 use App\Http\Controllers\Layanan\SliderLayananController;
-use App\Http\Controllers\Layanan\LayananController;
-
+use App\Http\Controllers\UserKonfirmPembayaranController;
+use App\Http\Controllers\Master\TambahAlamatCustomerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -145,14 +146,17 @@ Route::group(["middleware" => ["autentikasi"]], function() {
             });
 
             Route::prefix("slider")->group(function() {
-                Route::get("/slider_layanan/edit", [SliderLayananController::class, "edit"]);
-                Route::put("/slider_layanan/simpan", [SliderLayananController::class, "update"]);
-                Route::resource("slider_layanan", SliderLayananController::class);
+                Route::get("/layanan_slider/edit", [LayananSliderController::class, "edit"]);
+                Route::put("/layanan_slider/simpan", [LayananSliderController::class, "update"]);
+                Route::resource("layanan_slider", LayananSliderController::class);
+
             });
 
-            Route::get("/layanan/edit", [LayananController::class, "edit"]);
-            Route::put("/layanan/simpan", [LayananController::class, "update"]);
-            Route::resource("layanan", LayananController::class);
+            Route::prefix("layanan")->group(function() {
+                Route::get("/Sub_layanan/edit", [SubLayananController::class, "edit"]);
+                Route::get("/Sub_layanan/simpan", [SubLayananController::class, "update"]);
+                Route::resource("Sub_layanan", SubLayananController::class);
+            });
         });
     });
     Route::get("/logout", [LoginController::class, "logout"]);

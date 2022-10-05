@@ -15,17 +15,11 @@ return new class extends Migration
     {
         Schema::create('sub_layanans', function (Blueprint $table) {
             $table->id();
-            $table->string("nama", 100);
-            $table->text("alamat");
-            $table->text("deskripsi");
+            $table->string("nama_vendor", 100);
+            $table->foreignId("kategori_id");
             $table->double("harga");
-            $table->double("diskon")->nullable();
-            $table->string("kode_pesan", 100)->nullable();
-            $table->string("status1")->enum("tersedia", "tidak tersedia");
-            $table->string("status2")->enum("buka", "tutup");
-            $table->tinyInteger("fitur")->default(0);
-            $table->integer("quantity")->default(10);
-            $table->string("gambar");
+            $table->string("image");
+            $table->string('status')->enum("tersedia", "tidak tersedia");
             $table->timestamps();
         });
     }

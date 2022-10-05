@@ -12,16 +12,16 @@
                     <i class="bx bx-menu"></i>
                 </div>
                 <div class="cardHeader-title">
-                    <h4>Kategori</h4>
+                    <h4>Layanan</h4>
                 </div>
             </div>
     
             <div class="details3">
                 <div class="recentOrders3">
                     <div class="cardHeader">
-                        <h4>Kategori aja</h4>
+                        <h4>Slidernya layanan</h4>
                         <a href="#" class="btn btn-thema"data-bs-toggle="modal" data-bs-target="#exampleModalTambah" class="btn btn-primary fw-bold 
-                        rounded-pill px-4 shadow float-end">Tambah</a>
+                        rounded-pill px-4 shadow float-end"><i class='bx bx-plus'></i> Tambah</a>
                     </div>
                     <br>
                     @if (session('berhasil'))
@@ -34,33 +34,42 @@
                             <tr class="col-md-12">
                                 <td>No</td>
                                 <td>Image</td>
-                                <td>Kategori</td>
+                                <td>Judul</td>
                                 <td>Slug</td>
+                                <td>Deskripsi</td>
+                                <td>Status</td>
                                 <td class="col-md-3 text-center">Aksi</td>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($data_kategori as $data)
+                            @foreach ($layanan_slider as $data)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td><img src="{{ url('/storage/' .$data->image)}}" style="width: 120px;"></td>
-                                <td>{{ $data->kategori }}</td>
+                                <td>{{ $data->judul }}</td>
                                 <td>{{ $data->slug}}</td>
+                                <td>{!!$data->deskripsi !!}</td>
+                                <td>{{ $data->status }}</td>
                                 <td>
                                     <div class="row">
                                         <div class="col-md-4">
-                                            <button onclick="editKategori({{$data->id}})" type="button" class="btnedit" data-bs-toggle="modal" data-bs-target="#exampleModalEdit">
+                                            <button onclick="editLayananSlider({{$data->id}})" type="button" class="btnedit" data-bs-toggle="modal" data-bs-target="#exampleModalEdit">
                                                 <i class='bx bx-edit'></i>
                                             </button>
                                         </div>
-                                        <div class="col-md-4">
-                                            <form onsubmit="return confirm('Apakah anda yakin ?');" action="{{ route('kategori.destroy', $data->id)}}" method="POST">
+                                        <div class="col-md-4 text-end">
+                                            <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('layanan_slider.destroy', $data->id) }}" method="POST">
                                                 @csrf
-                                                @method("DELETE")
-                                                <button class="btndelete" type="submit" >
-                                                    <i class="bx bxs-trash"></i>
+                                                @method('DELETE')
+                                                <button class="btndelete" type="submit">
+                                                    <i class='bx bxs-trash'></i>
                                                 </button>
                                             </form>
+                                        </div>
+                                        <div class="col-md-4 text-end">
+                                            <button onclick="detailLayananSlider({{$data->id}})" class="btndetail" data-bs-toggle="modal" data-bs-target="#exampleModalDetail">
+                                                <i class='bx bx-dots-vertical-rounded'></i>
+                                            </button>
                                         </div>
                                     </div>
                                 </td>
@@ -80,25 +89,51 @@
       <div class="modal-content">
         <div class="modal-header hader">
             <h3 class="modal-title" id="exampleModalLabel">
-                Tambah Layanan
+                Tambah Layanan Slider
             </h3>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <form action="{{ url('/superadmin/master/kategori')}}" method="POST" enctype="multipart/form-data">
+        <form action="{{ url('/superadmin/slider/layanan_slider')}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="modal-body">
+
                 <div class="form-group">
-                    <label for="kategori">Kategori</label>
-                    <input type="text" class="form-control" name="kategori" id="kategori" placeholder="Masukkan Kategori"
-                    @error('kategori') is-invalid @enderror" value="{{ old('kategori') }}">
-                    @error('kategori')
+                    <label for="judul">judul</label>
+                    <input type="text" class="form-control" name="judul" id="judul" placeholder="Masukkan judul"
+                    @error('judul') is-invalid @enderror" value="{{ old('judul') }}">
+                    @error('judul')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
                 </div>
+
+                <div class="form-group">
+                    <label>Deskripsi</label>
+                    <textarea name="deskripsi" class="form-control @error('deskripsi') is-invalid @enderror"
+                    value="{{ old('deskripsi') }}" id="tambah" >
+                    </textarea>
+                    @error('deskripsi')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                <div class="form-group">
+                    <label>Status Penitipan</label>
+                    <div>
+                        <select class="form-control mb-3" name="status">
+                            <option value="active">Active</option>
+                            <option value="deactive">Deactive</option>
+                        </select>
+                        @error('status')
+                            <p class="text-danger">{{$message}}</p>
+                        @enderror
+                    </div>
+                </div>
+
                 <div class="form-group">
                     <label for="image"> Gambar </label>
                     <input type="file" class="form-control" name="image" id="image">
                 </div>
+
             </div>
             <div class="modal-footer d-md-block">
                 <button type="submit" class="btn btn-primary btn-sm">Simpan</button>
@@ -115,11 +150,11 @@
         <div class="modal-content">
             <div class="modal-header hader">
                 <h3 class="modal-title" id="exampleModalLabel">
-                    Edit Kategori
+                    Edit Layanan Slider
                 </h3>
-                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="{{ url('/superadmin/master/kategori/simpan') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ url('/superadmin/slider/layanan_slider/simpan') }}" method="POST" enctype="multipart/form-data">
                 @method("PUT")
                 {{ csrf_field() }}
                 <div class="modal-body" id="modal-content-edit">
@@ -132,7 +167,30 @@
         </div>
     </div>
 </div>
+
+<!-- Modal Detail-->
+<div class="modal fade" id="exampleModalDetail" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" style="width: 40%">
+        <div class="modal-content">
+            <div class="modal-header hader text-center">
+                <h3 class="modal-title" id="exampleModalLabel">Detail Layanan Slider</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="modal-content-detail">
+
+            </div>
+            <div class="modal-footer d-md-block">
+                <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal" aria-label="Close">Kembali</button>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- END -->
+
+<script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('tambah');
+</script>
 
 @endsection
 
@@ -154,9 +212,9 @@
         }
     }
 
-    function editKategori(id) {
+    function editLayananSlider(id) {
         $.ajax({
-            url: "{{ url('/superadmin/master/kategori/edit') }}",
+            url: "{{ url('/superadmin/slider/layanan_slider/edit') }}",
             type: "GET",
             data: {
                 id: id
@@ -166,6 +224,21 @@
                 return true;
             }
         });
+    }
+
+    function detailLayananSlider(id)
+    {
+        $.ajax({
+            url: "{{ url('/superadmin/slider/layanan_slider/detail') }}",
+            type: "GET",
+            data: {
+                id:id
+            },
+            success: function(data) {
+                $("#modal-content-detail").html(data);
+                return true;
+            }
+        })
     }
 </script>
 

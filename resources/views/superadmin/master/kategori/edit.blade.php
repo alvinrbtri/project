@@ -4,6 +4,6 @@
     <input type="text" class="form-control" name="kategori" id="kategori" value="{{ $edit->kategori }}">
 </div>
 <div class="form-group">
-    <label for="slug"> slug </label>
-    <input type="text" class="form-control" name="slug" id="slug" value="{{ $edit->slug }}">
+    <label for="image_new"> Gambar </label>
+    <input type="file" class="form-control" name="image_new" id="image_new">
 </div>

@@ -1562,7 +1562,7 @@ select {
 
 .btnedit {
     background-color: var(--blue);
-    width: 50px;
+    width: 70px;
     height: 30px;
     border-radius: 5px;
 }
@@ -1573,14 +1573,14 @@ select {
 
 .btndetail {
     background-color: #f9ca3f;
-    width: 50px;
+    width: 70px;
     height: 30px;
     border-radius: 5px;
 }
 
 .btndelete {
     background-color: rgb(255, 86, 86);
-    width: 50px;
+    width: 70px;
     height: 30px;
     border-radius: 5px;
 }

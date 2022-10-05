@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Master;
 
-use App\Http\Controllers\Controller;
-use App\Models\Master\Kategori;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Models\Master\Kategori;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class KategoriController extends Controller
 {
@@ -19,16 +21,23 @@ class KategoriController extends Controller
 
     public function store(Request $request)
     {
-        $count = Kategori::where("kategori", $request->kategori)->count();
-        $count = Kategori::where("slug", $request->slug)->count();
+        $this->validate($request, [
+            'kategori' => '',
+            'slug' => '',
+            'image' => 'mimes:jpg,jpeg,png'
+        ]);
 
-        if ($count > 0) {
-            return back();
-        } else {
-            Kategori::create($request->all());
-
-            return back();
+        if($request->file("image")) {
+            $data = $request->file("image")->store("kategori");
         }
+
+        Kategori::create([
+            'kategori' => $request->kategori,
+            'slug' => Str::slug($request->kategori),
+            'image' => $data
+        ]);
+
+        return back()->with('berhasil', 'Slug baru telah ditambahkan');
     }
 
     public function edit(Request $request)
@@ -42,11 +51,44 @@ class KategoriController extends Controller
 
     public function update(Request $request)
     {
+        $this->validate($request, [
+            'kategori' => '',
+            'slug' => '',
+            'image' => 'mimes:jpg,jpeg,png'
+        ]);
+
+        if($request->file("image_new")) {
+            if ($request->gambarLama) {
+                Storage::delete($request->gambarLama);
+            }
+
+            $data = $request->file("image_new")->store("kategori");
+        } else {
+            $data = $request->gambarLama;
+        }
+
         Kategori::where("id", $request->id)->update([
             "kategori" => $request->kategori,
-            "slug" => $request->slug
+            "slug" => Str::slug($request->kategori),
+            "image" => $data
         ]);
 
         return back();
+    }
+
+    public function show(Request $request)
+    {
+        $data = [
+            "detail" => Kategori::where("id", 
+            $request->id)->first()
+        ];
+
+        return view("superadmin.master.kategori.detail", $data);
+    }
+
+    public function destroy (Kategori $kategori)
+    {
+        $kategori->delete();
+        return back()->with('berhasil');
     }
 }

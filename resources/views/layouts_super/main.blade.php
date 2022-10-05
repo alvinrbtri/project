@@ -68,16 +68,19 @@
                 </div>
                 <div class="sub-menu">
                     <div class="drop-box">
-                        <a href="{{ url('/superadmin/layanan')}}">Layanan</a>
+                        <a href="{{ url('/superadmin/master/kategori')}}">Kategori</a>
                     </div>
                     <div class="drop-box">
-                        <a href="{{ url('/sublayanan') }}">Sub Layanan</a>
+                        <a href="{{ url('/superadmin/layanan/Sub_layanan') }}">Sub Layanan</a>
                     </div>
                     <div class="drop-box">
                         <a href="{{ url('/subdetail')}}">Details Sub Layanan</a>
                     </div>
                     <div class="drop-box">
                         <a href="{{ url('/subslider') }}">Sub Slider</a>
+                    </div>
+                    <div class="drop-box">
+                        <a href="{{ url('/superadmin/slider/layanan_slider') }}">Layanan Slider</a>
                     </div>
                 </div>
             </li>
@@ -188,7 +191,7 @@
             arrow[i].addEventListener("click", (e) => {
                 let arrowParent = e.target.parentElement.parentElement;
                 arrowParent.classList.toggle("showMenu");
-            })
+            });
             dropdownBtn[i].addEventListener("click", (e) => {
                 let dropdownParent = e.target.parentElement.parentElement.parentElement;
                 dropdownParent.classList.toggle("showMenu");

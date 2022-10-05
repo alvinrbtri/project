@@ -5,12 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class TambahKategori extends Model
+class LayananSlider extends Model
 {
     use HasFactory;
 
-    protected $fillable=[
-        'nama',
-        'slug'
-    ];
+    protected $guarded = [' '];
 }
