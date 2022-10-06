@@ -68,13 +68,16 @@
                 </div>
                 <div class="sub-menu">
                     <div class="drop-box">
+                        <a href="{{ url('/superadmin/layanan/layanan')}}">Layanan</a>
+                    </div>
+                    <div class="drop-box">
                         <a href="{{ url('/superadmin/master/kategori')}}">Kategori</a>
                     </div>
                     <div class="drop-box">
                         <a href="{{ url('/superadmin/layanan/Sub_layanan') }}">Sub Layanan</a>
                     </div>
                     <div class="drop-box">
-                        <a href="{{ url('/subdetail')}}">Details Sub Layanan</a>
+                        <a href="{{ url('/superadmin/layanan/Det_layanan')}}">Details Sub Layanan</a>
                     </div>
                     <div class="drop-box">
                         <a href="{{ url('/subslider') }}">Sub Slider</a>

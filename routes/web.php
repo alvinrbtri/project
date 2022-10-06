@@ -7,26 +7,26 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\VendorController;
 use App\Http\Controllers\FinanceController;
 
-use App\Http\Controllers\Akun\RoleController;
 
 use App\Http\Controllers\Akun\LoginController;
-use App\Http\Controllers\Master\AppController;
-use App\Http\Controllers\Layanan\LayananController;
+use App\Http\Controllers\Akun\RoleController;
 
+use App\Http\Controllers\Master\AppController;
 use App\Http\Controllers\Master\KategoriController;
 use App\Http\Controllers\Master\ProvinsiController;
+use App\Http\Controllers\Master\TambahAlamatCustomerController;
 
-use App\Http\Controllers\Layanan\SubLayananController;
 use App\Http\Controllers\User\UserPemesananController;
 use App\Http\Controllers\User\ProfilCustomerController;
 
 
 use App\Http\Controllers\User\UserLandingpageController;
 
+use App\Http\Controllers\Layanan\SubLayananController;
 use App\Http\Controllers\Layanan\LayananSliderController;
-use App\Http\Controllers\Layanan\SliderLayananController;
+use App\Http\Controllers\Layanan\DetailController;
+use App\Http\Controllers\Layanan\LayananController;
 use App\Http\Controllers\UserKonfirmPembayaranController;
-use App\Http\Controllers\Master\TambahAlamatCustomerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -156,6 +156,14 @@ Route::group(["middleware" => ["autentikasi"]], function() {
                 Route::get("/Sub_layanan/edit", [SubLayananController::class, "edit"]);
                 Route::get("/Sub_layanan/simpan", [SubLayananController::class, "update"]);
                 Route::resource("Sub_layanan", SubLayananController::class);
+
+                Route::get("/Det_layanan/edit", [DetailController::class, "edit"]);
+                Route::get("/Det_layanan/simpan", [DetailController::class, "update"]);
+                Route::resource("Det_layanan", DetailController::class);
+
+                Route::get("/layanan/edit", [LayananController::class, "edit"]);
+                Route::get("/layanan/simpan", [LayananController::class, "update"]);
+                Route::resource("layanan", LayananController::class);
             });
         });
     });

@@ -13,15 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('detail_sublayanans', function (Blueprint $table) {
+        Schema::create('details', function (Blueprint $table) {
             $table->id();
             $table->foreignId('kategori_id');
-            $table->foreignId('layanan_id');
-            $table->string("nama_vendor");
+            $table->string('nama_vendor');
+            $table->string('deskripsi');
             $table->string("harga");
-            $table->string("status1")->enum("tersedia", "tidak tersedia");
-            $table->text("alamat");
-            $table->text("deskripsi");
+            $table->string("image");
+            $table->string('alamat');
+            $table->string('status')->enum("tersedia", "tidak tersedia");
             $table->timestamps();
         });
     }
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('detail_sublayanans');
+        Schema::dropIfExists('details');
     }
 };

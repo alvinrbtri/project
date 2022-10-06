@@ -20,7 +20,6 @@ class DatabaseSeeder extends Seeder
         $this->call(SeederRoleSeeder::class);
         // $this->call(KategoriSeeder::class);
         $this->call(LayananSeeder::class);
-        $this->call(DetailGambarKecilSeeder::class);
         $this->call(ProvinsiSeeder::class);
     }
 }
