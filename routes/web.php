@@ -14,9 +14,13 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TentangController;
 use App\Http\Controllers\SubDetailController;
 use App\Http\Controllers\SubSliderController;
+use App\Http\Controllers\SliderhomeController;
 use App\Http\Controllers\SubLayananController;
 use App\Http\Controllers\SuperadminController;
+use App\Http\Controllers\GambarkecilController;
 use App\Http\Controllers\UserLayananController;
+use App\Http\Controllers\SliderkontakController;
+use App\Http\Controllers\SlidertentangController;
 use App\Http\Controllers\KebijakanPrivasiController;
 /*
 |--------------------------------------------------------------------------
@@ -121,6 +125,7 @@ Route::controller(UserController::class)->group(function(){
     Route::get('/user/pemesanan/info_pembayaran', 'InfoPembayaran')->middleware('auth');
     Route::get('/user/pemesanan/History/Last_Progress', 'LasProgress')->middleware('auth');
     Route::get('/user/pemesanan/History/On_Progress', 'OnProgress')->middleware('auth');
+    Route::get('/user/pemesanan/History/Pembatalan', 'Pembatalan')->middleware('auth'); 
     Route::get('/user/pemesanan/struk', 'struk')->middleware('auth');
     Route::get('/user/pemesanan/konfirm_pembayaran', 'KonfirmPembayaran')->middleware('auth');
     Route::get('/user/pemesanan/pemesanan', 'pemesanan')->middleware('auth');
@@ -741,3 +746,42 @@ Route::controller(FinanceController::class)->group(function(){
     Route::get('/finance/DataPenarikan/history', 'history')->middleware('auth');
     Route::get('/finance/profilefinance', 'profilefinance')->middleware('auth');
 });
+
+
+//crud tentang
+route::get('/Tentang/edit', [TentangController::class, 'edit']);
+route::get('/Tentang/simpan', [TentangController::class, 'update']);
+Route::resource('tentang', TentangController::class);
+
+//crud kontak
+route::get('/Kontak/edit', [KontakController::class, 'edit']);
+route::get('/Kontak/simpan', [KontakController::class, 'update']);
+Route::resource('kontak', KontakController::class);
+
+//crud sliderhome
+route::get('/Sliderhome/edit', [SliderhomeController::class, 'edit']);
+route::get('/Sliderhome/simpan', [SliderhomeController::class, 'update']);
+Route::resource('sliderhome', SliderhomeController::class);
+
+//crud slider kontak
+route::get('/Sliderkontak/edit', [SliderkontakController::class, 'edit']);
+route::get('/Sliderkontak/simpan', [SliderkontakController::class, 'update']);
+Route::resource('sliderkontak', SliderkontakController::class);
+
+//slider tentang
+route::get('/Slidertentang/edit', [SlidertentangController::class, 'edit']);
+route::get('/Slidertentang/simpan', [SlidertentangController::class, 'update']);
+Route::resource('slidertentang', SlidertentangController::class);
+
+//admin-tambah layanan
+route::get('/admin/layanan/layanan', [LayananController::class, 'index'])->name('/layanan');
+route::post('/create', [LayananController::class, 'post'])->name('/post');
+
+//admin-sublayanan
+route::get('/sublayanan', [SubLayananController::class, 'index'])->name('/sublayanan');
+route::post('/create', [SubLayananController::class, 'post'])->name('/post');
+
+//gambarkecil
+route::get('/Gambarkecil/edit', [GambarkecilController::class, 'edit']);
+route::get('/Gambarkecil/simpan', [GambarkecilController::class, 'update']);
+Route::resource('gambarkecil', GambarkecilController::class);

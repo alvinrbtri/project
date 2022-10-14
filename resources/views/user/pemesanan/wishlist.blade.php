@@ -182,9 +182,9 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card pe-5">
                   <div class="card-body">
-                    <div class="row">
+                    <div class="row col-12">
                       <div class="col-2">
                         <div class="form-check">
                           <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
@@ -193,7 +193,7 @@
                           </label>
                         </div>
                       </div>
-                      <div class="col-1" style="padding-top: 1px">
+                      <div class="col-3" style="padding-top: 1px">
                           <!-- Button trigger modal -->
                           <p type="button" class="btn btn-white mb-0 p-0" data-bs-toggle="modal" data-bs-target="#delete">
                             Hapus
@@ -216,10 +216,10 @@
                             </div>
                           </div>
                       </div>
-                      <div class="col-7 text-end">
+                      <div class="col-6 text-end">
                         <p>Total harga : Rp.0 </p>
                       </div>
-                      <div class="col-1 text-end">
+                      <div class="col-1 px-5 " >
                         <a class="btn btn-success" href="/user/pemesanan/pemesanan" role="button">Checkout</a>
                       </div>
                     </div>

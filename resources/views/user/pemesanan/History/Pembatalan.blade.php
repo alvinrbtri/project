@@ -27,49 +27,6 @@
 
         <div class="card mt-3 mb-4">
           <div class="mt-2" style="max-width: 100%;">
-              <div class="row g-0">
-                <div class="col-md-2 p-4 justify-content-center">
-                  <img src="{{ asset('assets/img/icon_kendaraan.png') }}" class="img-fluid rounded-start" alt="..." style="width: 75%; margin-left: 30px">
-                </div>
-                <div class=" col-md-10">
-                  <div class="card-body">
-                    <div class="row">
-                      <div class="col">
-                        <p class="Pesanan fs-5"><b>Wijaya - titipsini | Layanan Kendaraan</b></p>
-                      </div>
-                      <div class="col-3 text-end">
-                        <p class="idOrder text-success fs-6"><b>ORDER M-012912811288</b></p>
-                      </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                          <p class="tglTransaksi" style="font-size: 14px">
-                            Tanggal Transaksi: <b>16/09/2022</b> | 
-                            Total: <b> Rp 500.000</b> |
-                            2 Unit kendaraan x 4 hari
-                          </p>
-                        </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-3 mt-1">
-                        <p class="text-success"><b>Layanan Selesai</b><i class="bi bi-check-circle-fill p-1"></i></p>
-                      </div>
-                      <div class="col-3">
-                        <a href="/user/subkategori/subbaru" class="btn btn-sucess">Pesan lagi</a>
-                    </div>
-                      <div class="col-6 text-end">
-                        <p class="text-success" style="font-size: 14px"><b>Lihat detail transaksi</b>
-                          <button type="button" class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#detailTransaksi">
-                            <i class="bi bi-three-dots text-dark p-2 mt-2"></i>
-                          </button>
-                        </p>
-                      </div>
-                  </div>
-                  </div>
-                </div> 
-              </div>
-          </div>
-          <div class="mt-2" style="max-width: 100%;">
             <div class="row g-0">
               <div class="col-md-2 p-4 justify-content-center">
                 <img src="{{ asset('assets/img/icon_kendaraan.png') }}" class="img-fluid rounded-start" alt="..." style="width: 75%; margin-left: 30px">
@@ -95,13 +52,14 @@
                   </div>
                   <div class="row">
                     <div class="col-3 mt-1">
-                      <p class="text-danger"><b>Layanan Batal</b>
-                        <i class="bi bi-x-circle-fill p-1"></i>
+                      <p class="text-danger"><b>Layanan dibatalkan Anda</b>
+                        <i class="bi bi-x-circle-fill"></i>
                       </p>
                     </div>
                     <div class="col-3">
-                      <a href="/user/subkategori/subbaru" class="btn btn-sucess">Pesan lagi</a>
-                  </div>
+                        <a href="/user/subkategori/subbaru" class="btn btn-sucess">Pesan lagi</a>
+
+                    </div>
                     <div class="col-6 text-end">
                       <p class="text-success" style="font-size: 14px"><b>Lihat detail transaksi</b>
                         <button type="button" class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#detailTransaksi">
@@ -238,66 +196,5 @@
       </div>
     </div>
 
-    <!-- Modal pesanan selesai -->
-    <div class="modal fade" id="detailPaid" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content mt-3">
-          <div class="modal-body">
-            <div class="container text-center mt-4" style="font-size:20px">
-              <p> Saya telah memastikan bahwa kendaraan yang dititipkan telah diterima kembali dan tidak ada masalah apapun.</p>
-              <div>
-                <a href="/user/pemesanan/History/onprogress"><button class="btn btn-outline-success col-md-12 ">Konfirmasi</button></a>      
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal pesanan penilaian -->
-    <div class="modal fade" id="Penilaian" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-body">
-            <p style="font-size: 15px"><b>Kasih rating, yuk</b></p>
-            <div class="rate text-warning text-center">
-              <p class="fs-2">
-                <i class="bi bi-star"></i>
-                <i class="bi bi-star"></i>
-                <i class="bi bi-star"></i>
-                <i class="bi bi-star"></i>
-                <i class="bi bi-star"></i>
-              </p>
-            </div>
-            
-            <p style="font-size: 15px"><b>Tulis masukan kamu dibawah, ya</b></p>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-
-            <div class="d-grid gap-2 col-6 mx-auto mt-4">
-              <button class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#nilai">Kirim</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal penilaian -->
-    <div class="modal fade" id="nilai" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content mt-3">
-          <div class="modal-body">
-            <p class="text-success fw-bold">Terimakasih atas penilaian dan kepercayaannya. Izinkan admin untuk memberikan pantun</p>
-            <p class="lh-base">Jalan-jalan ke pulau bali<br>
-              Tidak lupa membeli kedondong<br>
-              Kalau ada orderan lagi<br>
-              Pastinya titipsini kasih diskon dong</p>
-
-              <div class="d-grid gap-2 col-6 mx-auto mt-4">
-                <a class="btn btn-success" href="/user/subkategori/subbaru" role="button">Pesan lagi</a>
-              </div>
-          </div>
-        </div>
-      </div>
-    </div>
 </section>
 @endsection

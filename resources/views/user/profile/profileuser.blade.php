@@ -1,13 +1,18 @@
 @extends("layouts.user")
 @section('container')
-    <section class="align-items-center services"  id="services" style="padding-top: 100px;" data-aos-delay="50">
-        <div class="container mt-4 mb-4">
-            <div class="row row-cols-1 row-cols-md-2 g-4">
-                @include('partials.profile')
-                <div class="col" style="width: 700px">
-                <div class="card">
-                    <div class="card-body">
-                        <h6 class="mb-0 fw-bold float-left">Account ID {{Auth::user()->id}}</h6>
+    <section class="align-items-center" style="padding-top: 100px;" data-aos-delay="50">
+        <div class="container card px-4 mt-5">
+                <div class="col-8 ms-4 mt-4">
+                    <h3>PROFIL SAYA</h3>
+                </div>
+            <div class="row col-md-12 py-4" style="margin-left:5px">
+                <div class="col-md-4 ps-2">
+                    @include('partials.profile')
+                </div>
+                <div class="col col-md-6" style="width: 830px; margin-left:15px ">
+                <div class="card rounded-3">
+                    <div class="card-body px-3">
+                        <h6 class="mb-0 fw-">Account ID {{Auth::user()->id}}</h6>
                         <hr width="100%" color="#c0c0c0">
                         <form class="row g-3 fw-bold">
                             <div class="col-md-12">

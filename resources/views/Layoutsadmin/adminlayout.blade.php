@@ -3,6 +3,9 @@
 <html lang="en" dir="ltr">
 
 <head>
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>titipsini.com | Admin </title>
     <link href="{{ asset('assets/img/ic2.png') }}" rel="icon">
@@ -15,7 +18,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="{{ asset('assets/vendor/aos/aos.css') }}" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+   
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css' />
+    <link rel='stylesheet'
+      href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.5.0/font/bootstrap-icons.min.css' />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/dt-1.10.25/datatables.min.css" />
 </head>
 
 <body>
@@ -50,13 +59,30 @@
                 </ul>
             </li>
             <li class="list {{ Request::segment(2) == 'home' ? 'active' : '' }}">
+                <div class="iocn-link">
                 <a href="/admin/home/home">
                     <i class='bx bx-home'></i>
                     <span class="link_name">Home</span>
                 </a>
-                <ul class="sub-menu blank">
-                    <li><a class="link_name" href="/admin/home/home">Home</a></li>
-                </ul>
+                <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+                <div class="sub-menu">
+                    <div class="drop-box">
+                        <a href="/admin/home/home">Home</a>
+                    </div>
+                    <div class="drop-box">
+                        <a href="{{ url('/sliderhome') }}">Slider Home</a>
+                    </div>
+                    <div class="drop-box">
+                        <a href="{{ url('/sliderkontak') }}">Slider Kontak</a>
+                    </div>
+                    <div class="drop-box">
+                        <a href="{{ url('/tentang') }}">Tentang</a>
+                    </div>
+                    <div class="drop-box">
+                        <a href="{{ url('/kontak') }}">Kontak</a>
+                    </div> 
+                </div>
             </li>
             <li class="list {{ Request::segment(2) == 'layanan ' ? 'active' : '' }}">
                 <div class="iocn-link">
@@ -67,8 +93,11 @@
                     <i class='bx bxs-chevron-down arrow'></i>
                 </div>
                 <div class="sub-menu">
+                    {{-- <div class="drop-box">
+                        <a href="/admin/layanan-kategori/showsubkategori">SubKategori</a>
+                    </div> --}}
                     <div class="drop-box">
-                        <a href="{{ url('/layanan')}}">Layanan</a>
+                        <a href="/admin/layanan/layanan">Layanan</a>
                     </div>
                     <div class="drop-box">
                         <a href="{{ url('/sublayanan') }}">Sub Layanan</a>
@@ -79,8 +108,34 @@
                     <div class="drop-box">
                         <a href="{{ url('/subslider') }}">Sub Slider</a>
                     </div>
+                    <div class="drop-box">
+                        <a href="{{ url('/detail_layanan') }}">Detail Layanan</a>
+                    </div>
+                    <div class="drop-box">
+                        <a href="/gambarkecil">Gambar kecil</a>
+                    </div>
+                    <div class="drop-box">
+                        <a href="/info">Informasi pembayaran</a>
+                    </div>
                 </div>
             </li>
+
+            <li class="list {{ Request::segment(2) == 'Tentang ' ? 'active' : '' }}">
+                <div class="iocn-link">
+                    <a>
+                        <i class="bi bi-columns-gap"></i>
+                        <span class="link_name dropBtn">Tentang</span>
+                    </a>
+                    <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+                <div class="sub-menu">
+                    <div class="drop-box">
+                        <a href="/slidertentang">Slider Tentang</a>
+                    </div>   
+                </div>
+            </li>
+
+
             <li class="list {{ Request::segment(2) == 'data' ? 'active' : '' }}">
                 <div class="iocn-link">
                     <a>
@@ -124,7 +179,7 @@
             </li>
             <li class="nav-item dropdown">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                    <i class='bx bx-log-out'></i>{{ Auth::user()->name }}
+                    <i class='bx bx-log-out'>{{ Auth::user()->name }}</i>
                 </a>
 
                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -195,13 +250,25 @@
             });
         }
         // script for sidenav toggle
-        let sidebar = document.querySelector(".sidebar");
-        let sidebarBtn = document.querySelector(".bx-menu");
-        console.log(sidebarBtn);
-        sidebarBtn.addEventListener("click", () => {
-            sidebar.classList.toggle("close");
-        });
+        // let sidebar = document.querySelector(".sidebar");
+        // let sidebarBtn = document.querySelector(".bx-menu");
+        // console.log(sidebarBtn);
+        // sidebarBtn.addEventListener("click", () => {
+        //     sidebar.classList.toggle("close");
+        // });
     </script>
+
+    {{-- crud tentang --}}
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.bundle.min.js'></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.10.25/datatables.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    {{-- edit tentang --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -212,6 +279,18 @@
     <script>
         AOS.init();
     </script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+</script>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
 
     @yield("js")
 </body>

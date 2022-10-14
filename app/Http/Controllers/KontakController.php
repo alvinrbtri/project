@@ -2,19 +2,88 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kontak;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class KontakController extends Controller
-{
-    public function index(Request $request)
+{  public function index()
     {
         $data = [
-            'h2' => 'Contact Us',
-            'p'  => 'Hubungi Kami',
+            "data_kontak" => Kontak::get()
         ];
 
-        return view('user.kontak', [
-            'data' => $data,
+        return view("admin.home.Kontak.kontak", $data);
+    }
+
+    public function store(Request $request)
+    {
+        // $this->validate($request, [
+        //     'alamat' => '',
+        //     'email' => '',
+        //     'image' => 'mimes:jpg,jpeg,png'
+        // ]);
+
+        if($request->file("image")) {
+            $data = $request->file("image")->store("kontak");
+        }
+
+        Kontak::create([
+            'alamat' => $request->alamat,
+            'email' => $request->email,
+            'telp' => $request->telp,
+            'image' => $data
         ]);
+        return back()->with('berhasil', 'Data baru telah ditambahkan!');
+    }
+
+    public function edit(Request $request)
+    {
+        $data = [
+            "edit" => Kontak::where("id", $request->id)->first()
+        ];
+
+        return view("admin.home.Kontak.edit", $data);
+    }
+
+    public function update(Request $request)
+    {
+        // $this->validate($request, [
+        //     'alamat' => '',
+        //     'email' => '',
+        //     'image' => 'mimes:jpg,jpeg,png'
+        // ]);
+
+        if($request->file("image_new")) {
+            if ($request->gambarLama) {
+                Storage::delete($request->gambarLama);
+            }
+
+            $data = $request->file("image_new")->store("kontak");
+        } else {
+            $data = $request->gambarLama;
+        }
+
+        Kontak::where("id", $request->id)->update([
+            'alamat' => $request->alamat,
+            'email' => $request->email,
+            'telp' => $request->telp,
+            'image' => $data
+        ]);
+
+        return back();
+    }
+    public function destroy(Kontak $kontak)
+    {
+        //delete image
+        Storage::delete('Kontak'. $kontak->image);
+
+        //delete post
+        $kontak->delete();
+
+        //redirect to index
+        return back()->with('Berhasil dihapus!');
     }
 }
+

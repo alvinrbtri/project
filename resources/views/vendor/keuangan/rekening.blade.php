@@ -17,18 +17,20 @@
             </div>
         </div>
         
-        <div class="cardBox" data-aos="fade-up" data-aos-delay="100">
+        {{-- <div class="cardBox" data-aos="fade-up" data-aos-delay="100">
           
 
-            <div class="card border-0" >
-                <div class="card-body">
-                    <div class="numbers">$230.000</div>
-                    <div class="cardName">Pemasukan</div>
-                </div>
-                <div class="iconBx card-img-overlay">
-                    <ion-icon name="archive-outline" ></ion-icon>
+          <div class="card border-0" >
+            <div class="card-body">
+                <div class="numbers">$230.000</div>
+                <div class="cardName">Penghasilan 
+                    <p class="text-muted" style="font-size: 20px">Bulan ini</p>
                 </div>
             </div>
+            <div class="iconBx card-img-overlay">
+                <ion-icon name="archive-outline" ></ion-icon>
+            </div>
+        </div>
             
             <div class="card border-0" style="background-color:#00B56A;">
                 <div class="card-body">
@@ -39,7 +41,7 @@
                     <ion-icon name="card" style="color:white"></ion-icon>
                 </div>
             </div> 
-        </div>
+        </div> --}}
 
         <div class="row">
             <div class="col-xs-10">

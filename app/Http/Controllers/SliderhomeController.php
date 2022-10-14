@@ -2,20 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tentang;
+
+use App\Models\Sliderhome;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Sliderhome as ModelsSliderhome;
 
-class TentangController extends Controller
+class SliderhomeController extends Controller
 {
     public function index()
     {
         $data = [
-            "data_tentang" => Tentang::get()
+            "data_shome" => Sliderhome::get()
         ];
 
-        return view("admin.home.Tentang.tentang", $data);
+        return view("admin.home.Sliderhome.sliderhome", $data);
     }
 
     public function store(Request $request)
@@ -27,24 +29,24 @@ class TentangController extends Controller
         // ]);
 
         if($request->file("image")) {
-            $data = $request->file("image")->store("tentang");
+            $data = $request->file("image")->store("slidehome");
         }
 
-        Tentang::create([
+        Sliderhome::create([
             'judul' => $request->judul,
             'deskripsi' => $request->deskripsi,
             'image' => $data
         ]);
-        return back()->with('berhasil', 'Data baru telah ditambahkan!');
+        return back()->with('berhasil', 'Layanan baru telah ditambahkan!');
     }
 
     public function edit(Request $request)
     {
         $data = [
-            "edit" => Tentang::where("id", $request->id)->first()
+            "edit" => Sliderhome::where("id", $request->id)->first()
         ];
 
-        return view("admin.home.Tentang.edit", $data);
+        return view("admin.home.Sliderhome.edit", $data);
     }
 
     public function update(Request $request)
@@ -60,12 +62,12 @@ class TentangController extends Controller
                 Storage::delete($request->gambarLama);
             }
 
-            $data = $request->file("image_new")->store("tentang");
+            $data = $request->file("image_new")->store("slidehome");
         } else {
             $data = $request->gambarLama;
         }
 
-        Tentang::where("id", $request->id)->update([
+        Sliderhome::where("id", $request->id)->update([
             'judul' => $request->judul,
             'deskripsi' => $request->deskripsi,
             'image' => $data
@@ -73,15 +75,16 @@ class TentangController extends Controller
 
         return back();
     }
-    public function destroy(Tentang $tentang)
+    public function destroy(Sliderhome $sliderhome)
     {
         //delete image
-        Storage::delete('tentang'. $tentang->image);
+        Storage::delete('sliderhome'. $sliderhome->image);
 
         //delete post
-        $tentang->delete();
+        $sliderhome->delete();
 
         //redirect to index
         return back()->with('Berhasil dihapus!');
     }
+    
 }

@@ -46,7 +46,7 @@
                      <img src="{{ asset('../../assets/img/pesan.png') }}" class="img-fluid rounded-start" style="width:30px" alt="...">
                  </div>
                  <div class="col-md">
-                          <p><b>Pesan</b></p>
+                          <p><b>SMS</b></p>
                      <p class="card-text mt-1"><small class="text-muted">Berisi update perihal perubahan akun, <br>password, dan perubahan data pengguna. </small></p>
                  </div>
                  <div class="col-md-2">

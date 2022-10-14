@@ -23,10 +23,12 @@
             <div class="card border-0" >
                 <div class="card-body">
                     <div class="numbers">$230.000</div>
-                    <div class="cardName">Pemasukan</div>
+                    <div class="cardName">Penghasilan 
+                    </div>
                 </div>
                 <div class="iconBx card-img-overlay">
                     <ion-icon name="archive-outline" ></ion-icon>
+                    <p class="text-muted mt-2" style="font-size: 10px">Agustus</p>
                 </div>
             </div>
                 <div class="card border-0" >
