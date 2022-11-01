@@ -54,28 +54,19 @@
                                 <div class="card-body">
                                      {{-- <div class="container-fluid"> --}}
                                         <div class="row">
-                                            <div class="col-2 text-start">
-                                                <p>Sepatu</p>
+                                            <div class="col-7 text-start">
+                                                <p>Mobil Pickup</p>
                                             </div>
-                                            <div class="col-10 text-end">
-                                                <p>x1</p>
+                                            <div class="col-2 text-end">
+                                                <p>01</p>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-2 text-start">
-                                                <p>Tas</p>
+                                            <div class="col-1">
+                                                <p>X</p>
                                             </div>
-                                            <div class="col-10 text-end">
-                                                <p>x2</p>
+                                            <div class="col-2 text-end">
+                                                <p>40.000</p>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-2 text-start">
-                                                <p>Meja</p>
-                                            </div>
-                                            <div class="col-10 text-end">
-                                                <p>x2</p>
-                                            </div>
+        
                                         </div>
                                         <hr width="100%" color="#c0c0c0">
                                         <div class="row">

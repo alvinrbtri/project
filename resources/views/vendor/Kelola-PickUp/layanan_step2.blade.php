@@ -16,7 +16,7 @@
         <div class="cardBox1">
             <div class="card1">
                 <div>
-                    <a href="/vendor/Kelola-Kendaraan/kelola_kendaraan" style="text-decoration:none">
+                    <a href="/vendor/Kelola-Kendaraan/layanan_step1" style="text-decoration:none">
                         <div class="cardName1">Kendaraan
                         </div>
                     </a>
@@ -25,7 +25,7 @@
     
             <div class="card1">
                 <div>
-                    <a href="/vendor/Kelola-Bangunan/kelola_bangunan" style="text-decoration:none">
+                    <a href="/vendor/Kelola-Bangunan/layanan_step1" style="text-decoration:none">
                         <div class="cardName1">Bangunan
                         </div>
                     </a>
@@ -34,7 +34,7 @@
     
             <div class="card1">
                 <div>
-                    <a href="/vendor/Kelola-Barang/kelola_barang" style="text-decoration:none">
+                    <a href="/vendor/Kelola-Barang/layanan_step1" style="text-decoration:none">
                         <div class="cardName1">Barang
                         </div>
                     </a>
@@ -42,7 +42,7 @@
             </div>
             <div class="card2">
                 <div>
-                    <a href="/vendor/Kelola-PickUp/kelola_pickup" style="text-decoration:none">
+                    <a href="/vendor/Kelola-PickUp/layanan_step1" style="text-decoration:none">
                         <div class="cardName2">Pick Up
                         </div>
                     </a>
@@ -102,7 +102,7 @@
 
         <!--modal pilih bangunan-->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel" >Pilih Jenis Pick Up</h5>
@@ -115,25 +115,7 @@
                     sesuai.</p>
             </label>
 
-              </div>
-
-              
-              <div class="file-upload">
-                <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Tambahkan foto</button>
-              
-                <div class="image-upload-wrap">
-                  <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
-                  <div class="drag-text"><br>
-                  <p>Tidak ada foto yang dipilih</p>
-                  </div>
-                </div>
-                <div class="file-upload-content">
-                  <img class="file-upload-image" src="#" alt="your image" />
-                  <div class="image-title-wrap">
-                    <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
-                  </div>
-                </div>
-              </div>
+        </div>
         <P><b>Kendaraan</b></P>
         <div class="form-check">
           <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
@@ -171,7 +153,7 @@
         <label for="">Masukan harga </label>
         <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Rp20.000">
     </div>
-        <a href=" /Vendor/Kelola-Bangunan/pengelolaan_barang2"><button type="button" class="btn btn-success col-md-12 mt-3">Lanjutkan</button><br><br></a>
+        <a href="/Vendor/Kelola-PickUp/layanan_step3"><button type="button" class="btn btn-success col-md-12 mt-3">Lanjutkan</button><br><br></a>
       </div>
     </div>
 </div>

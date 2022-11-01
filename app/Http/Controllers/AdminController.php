@@ -18,7 +18,7 @@ class AdminController extends Controller
 
     public function profile()
     {
-        return view('admin.profile');
+        return view('admin.profile.profil');
     }
 
     public function kategorilayanan()
@@ -38,12 +38,12 @@ class AdminController extends Controller
 
     public function payment()
     {
-        return view('admin.payment');
+        return view('admin.Data.payment.payment');
     }
 
     public function order()
     {
-        return view('admin.order');
+        return view('admin.Data.order.order');
     }
 
     public function pengaturanuser()
@@ -53,7 +53,7 @@ class AdminController extends Controller
 
     public function barang()
     {
-        return view('admin.barang');
+        return view('admin.Data.order.barang');
     }
 
     public function home()
@@ -63,36 +63,36 @@ class AdminController extends Controller
 
     public function bangunan()
     {
-        return view('admin.bangunan');
+        return view('admin.Data.order.bangunan');
     }
 
     public function pickup()
     {
-        return view('admin.pickup');
+        return view('admin.Data.order.pickup');
     }
 
     public function vendor()
     {
-        return view('admin.data_vendor');
+        return view('admin.Vendor.data_vendor');
     }
 
     public function trans()
     {
-        return view('admin.data_trans');
+        return view('admin.Vendor.data_trans');
     }
 
     public function data_pickup()
     {
-        return view('admin.data_pick_up');
+        return view('admin.Vendor.data_pick_up');
     }
 
     public function trans_selesai()
     {
-        return view('admin.data_trans_selesai');
+        return view('admin.Vendor.data_trans_selesai');
     }
 
     public function trans_berlangsung()
     {
-        return view('admin.data_trans');
+        return view('admin.Vendor.data_trans');
     }
 }

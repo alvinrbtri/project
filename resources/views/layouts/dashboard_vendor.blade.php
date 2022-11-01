@@ -10,6 +10,8 @@
     <link href="{{ asset('assets/css/modal.css') }}" rel="stylesheet">
     <link href="{{ asset('style/loginview2.css') }}" rel="stylesheet">
      <link href="{{ asset('style/loginview2.css') }}" rel="stylesheet">
+     <link href="{{ asset('assets/css/uploadfoto.css') }}" rel="stylesheet">
+     
     <!-- Boxiocns CDN Link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
@@ -90,6 +92,73 @@ integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxV
 <!-- Template Main JS File -->
 <script src="../../assets/js/main.js"></script>
 
+{{-- js upload foto --}}
+
+<script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script>
+    {{-- js uplad foto --}}
+     function readURL(input) {
+      if (input.files && input.files[0]) {
+    
+        var reader = new FileReader();
+    
+        reader.onload = function(e) {
+          $('.image-upload-wrap').hide();
+    
+          $('.file-upload-image').attr('src', e.target.result);
+          $('.file-upload-content').show();
+    
+          $('.image-title').html(input.files[0].name);
+        };
+    
+        reader.readAsDataURL(input.files[0]);
+    
+      } else {
+        removeUpload();
+      }
+    }
+    
+    function removeUpload() {
+      $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+      $('.file-upload-content').hide();
+      $('.image-upload-wrap').show();
+    }
+    $('.image-upload-wrap').bind('dragover', function () {
+            $('.image-upload-wrap').addClass('image-dropping');
+        });
+        $('.image-upload-wrap').bind('dragleave', function () {
+            $('.image-upload-wrap').removeClass('image-dropping');
+    });
+    </script>
+
+    {{-- js quantity --}}
+    <script>
+        const plus = document.querySelector(".plus"),
+          minus = document.querySelector(".minus"),
+          num = document.querySelector(".num");
+    
+          let a = 1;
+    
+          plus.addEventListener("click", ()=>{
+            a++;
+            a = (a < 10) ? "0" + a : a;
+            num.innerText = a;
+            console.log(a);
+          });
+    
+          minus.addEventListener("click", ()=>{
+            if(a > 1){
+              a--;
+              a = (a < 10) ? "0" + a : a;
+              num.innerText = a;
+            }
+            else {
+              a = 0;
+              num.innerText = a;
+              alert("Anda yakin menghapus layanan ini ?");
+            }
+          });
+    </script>
 </body>
 
 </html>

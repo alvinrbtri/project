@@ -49,6 +49,17 @@
                     <li><a class="link_name" href="/admin/dashboard">Dasboard</a></li>
                 </ul>
             </li>
+
+            <li class="list {{ Request::segment(2) == 'profil' ? 'active' : '' }}">
+                <a href="/admin/profile/profil">
+                    <i class="bi bi-person"></i>
+                    <span class="link_name">Profil</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="/admin/profile">Ubah Password</a></li>
+                </ul>
+            </li>
+
             <li class="list {{ Request::segment(2) == 'profile' ? 'active' : '' }}">
                 <a href="/admin/profile">
                     <i class='bx bx-key'></i>
@@ -58,6 +69,13 @@
                     <li><a class="link_name" href="/admin/profile">Ubah Password</a></li>
                 </ul>
             </li>
+            <li class="list {{ Request::segment(2) == 'Data customer' ? 'active' : '' }}">
+                <div class="iocn-link">
+                <a href="/admin/customer/data">
+                    <i class="bi bi-people"></i>
+                    <span class="link_name">Pengguna</span>
+                </a>
+                </div>
             <li class="list {{ Request::segment(2) == 'home' ? 'active' : '' }}">
                 <div class="iocn-link">
                 <a href="/admin/home/home">
@@ -177,23 +195,31 @@
                     <li><a class="link_name" href="/admin/setting">Setting</a></li>
                 </ul>
             </li>
-            <li class="nav-item dropdown">
-                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                    <i class='bx bx-log-out'>{{ Auth::user()->name }}</i>
-                </a>
-
-                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <a data-bs-toggle="modal" data-bs-target="#ModalLogout" href="{{ route('logout') }}"
-                       onclick="event.preventDefault();
-                                     document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
+            <li class="list {{ Request::segment(2) == 'logout' ? 'active' : '' }}">
+                <div class="iocn-link">
+                    <a style="color:white " id="" class="" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <i class="bi bi-person-circle"></i> {{ Auth::user()->name }}
                     </a>
+                        
+                        {{-- <a style="font-size: 20px" href="{{('/logout')}}" data-toggle="modal" data-target="#logoutModal">
+                            Logout
+                        </a> --}}
+                    </div>
 
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
-                </div>
+                    <div style="margin-left:65px">
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                          document.getElementById('logout-form').submit();">
+                             {{ __('Logout') }}
+                             </a>
+ 
+                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                             @csrf
+                         </form>
+
+                    </div>
             </li>
+
             {{-- <li>
                 <div class="profile-details">
                     <div class="profile-content">

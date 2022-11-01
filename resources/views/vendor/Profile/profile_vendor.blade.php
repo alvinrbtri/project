@@ -18,12 +18,7 @@
             </div>
 
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-8 ms-4">
-                        <p class="mb-0">OVERVIEW</p>
-                        <h3>Profile Vendor</h3>
-                    </div>
-                </div>
+
                 {{-- Card User Profile --}}
                 <div class="row g-3 mb-5" data-aos="fade-up" data-aos-offset="200" data-aos-delay="50"
                     data-aos-duration="1000">

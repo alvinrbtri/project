@@ -16,7 +16,7 @@
         <div class="cardBox1">
             <div class="card1">
                 <div>
-                    <a href="Vendor/Kelola-Kendaraan/kelola_kendaraan" style="text-decoration:none">
+                    <a href="Vendor/Kelola-Kendaraan/layanan_step1" style="text-decoration:none">
                         <div class="cardName1">Kendaraan
                         </div>
                     </a>
@@ -24,7 +24,7 @@
             </div>
             <div class="card2">
                 <div>
-                    <a href="/Vendor/Kelola-Bangunan/kelola_bangunan" style="text-decoration:none">
+                    <a href="/Vendor/Kelola-Bangunan/layanan_step1" style="text-decoration:none">
                         <div class="cardName2">Bangunan
                         </div>
                     </a>
@@ -32,7 +32,7 @@
             </div>
             <div class="card1">
                 <div>
-                    <a href="/Vendor/Kelola-Barang/kelola_barang" style="text-decoration:none">
+                    <a href="/Vendor/Kelola-Barang/layanan_step1" style="text-decoration:none">
                         <div class="cardName1">Barang
                         </div>
                     </a>
@@ -40,7 +40,7 @@
             </div>
             <div class="card1">
                 <div>
-                    <a href="/Vendor/Kelola-PickUp/kelola_pickup" style="text-decoration:none">
+                    <a href="/Vendor/Kelola-PickUp/layanan_step1" style="text-decoration:none">
                         <div class="cardName1">Pick Up
                         </div>
                     </a>

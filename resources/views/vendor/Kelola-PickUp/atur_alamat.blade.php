@@ -118,7 +118,85 @@
                             mudah ditemukan (opsional)</small></p>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                       </div>
-                
+                      <div class="row">
+                        <label for=""><b>Upload foto kondisi kendaraan Anda</b></label>
+                        <div class="col-md-3">
+                          <div class="file-upload">
+                            <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
+                          
+                            <div class="image-upload-wrap">
+                              <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                              <div class="drag-text">
+                                <h3>+</h3>
+                              </div>
+                            </div>
+                            <p class="text-center">Kanan</p>
+                            <div class="file-upload-content">
+                              <img class="file-upload-image" src="#" alt="your image" />
+                              <div class="image-title-wrap">
+                                <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <div class="file-upload">
+                            <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
+                          
+                            <div class="image-upload-wrap">
+                              <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                              <div class="drag-text">
+                                <h3>+</h3>
+                              </div>
+                            </div>
+                            <p class="text-center">Kiri</p>
+                            <div class="file-upload-content">
+                              <img class="file-upload-image" src="#" alt="your image" />
+                              <div class="image-title-wrap">
+                                <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <div class="file-upload">
+                            <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
+                          
+                            <div class="image-upload-wrap">
+                              <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                              <div class="drag-text">
+                                <h3>+</h3>
+                              </div>
+                            </div>
+                            <p class="text-center">Depan</p>
+                            <div class="file-upload-content">
+                              <img class="file-upload-image" src="#" alt="your image" />
+                              <div class="image-title-wrap">
+                                <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <div class="file-upload">
+                            <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>  
+                            <div class="image-upload-wrap">
+                              <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                              <div class="drag-text">
+                                <h3>+</h3>
+                              </div>
+                            </div>
+                            <p class="text-center">Dalam</p>
+                            <div class="file-upload-content">
+                              <img class="file-upload-image" src="#" alt="your image" />
+                              <div class="image-title-wrap">
+                                <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    
                       <a href="/Vendor/Kelola-PickUp/layanan_step2"><button type="button" class="btn btn-success col-md-12 mt-3">Selanjutnya</button></a>
                 </form>
                 

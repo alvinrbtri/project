@@ -51,7 +51,7 @@
                         </div>
                     </div>
 
-                    {{-- Form Edit User Profile --}}
+                    {{-- User Profile --}}
                     <div class="col-lg-8 col-md-6 mt-4 pe-2 ps-2 mb-1">
                         <div class="card-profile d-flex flex-column px-0 py-4">
                             <div class="id-user px-3">
@@ -60,28 +60,25 @@
                             <hr width="100%" color="#c0c0c0">
                             <div class=" p-3">
                                 <form class="row g-3 fw-bold">
+                                   
+                                    <div class="col-md-12">
+                                        <label for="username" class="form-label">Nama Pengguna</label>
+                                        <input type="text" class="form-control input-text" id="username"
+                                            placeholder="username" value="{{Auth::user()->name}}">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="firstName" class="form-label">Nama</label>
+                                        <input type="text" class="form-control input-text" id="firstName"
+                                            placeholder="first name" value="{{Auth::user()->first_name}}">
+                                    </div>
+                                    
                                     <div class="col-md-6">
                                         <label for="inputEmail" class="form-label">Email</label>
                                         <input type="email" class="form-control" id="inputEmail"
                                             value="{{Auth::user()->email}}">
                                     </div>
-                                    <div class="col-md-6">
-                                        <label for="username" class="form-label">Username</label>
-                                        <input type="text" class="form-control input-text" id="username"
-                                            placeholder="username" value="{{Auth::user()->name}}">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="firstName" class="form-label">First Name</label>
-                                        <input type="text" class="form-control input-text" id="firstName"
-                                            placeholder="first name" value="{{Auth::user()->first_name}}">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="lastName" class="form-label">Last Name</label>
-                                        <input type="text" class="form-control input-text" id="lastName"
-                                            placeholder="last name" value="{{Auth::user()->last_name}}">
-                                    </div>
                                     <div class="col-12">
-                                        <label for="inputAddress" class="form-label">Address</label>
+                                        <label for="inputAddress" class="form-label">Alamat</label>
                                         <input type="text" class="form-control input-text" id="inputAddress"
                                             placeholder="address" value="{{Auth::user()->address}}">
                                     </div>

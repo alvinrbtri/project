@@ -22,8 +22,8 @@
                     </a>
                 </div>
                 <!-- <div class="iconBx1">
-                                    <ion-icon name="car-outline"></ion-icon>
-                                </div> -->
+                            <ion-icon name="car-outline"></ion-icon>
+                        </div> -->
             </div>
 
             <div class="card1">
@@ -33,51 +33,44 @@
                         </div>
                     </a>
                 </div>
-                <!-- <div class="iconBx1">
-                                    <ion-icon name="cube-outline"></ion-icon>
-                                </div> -->
+            </div>
+
+            <div class="card2">
+                <div>
+                    <a href="/admin/data/order=barang" style="text-decoration:none">
+                        <div class="cardName2">Barang
+                        </div>
+                    </a>
+                </div>
             </div>
 
             <div class="card1">
                 <div>
-                    <a href="/admin/data/order=barang" style="text-decoration:none">
-                        <div class="cardName1">Barang
-                        </div>
-                    </a>
-                </div>
-                <!-- <div class="iconBx1">
-                                    <ion-icon name="home-outline"></ion-icon>
-                                </div> -->
-            </div>
-            <div class="card2">
-                <div>
                     <a href="/admin/data/order=pickup" style="text-decoration:none">
-                        <div class="cardName2">Pick Up
+                        <div class="cardName1">Pick Up
                         </div>
                     </a>
                 </div>
-                <!-- <div class="iconBx1">
-                                    <ion-icon name="arrow-down-outline"></ion-icon>
-                                </div> -->
             </div>
         </div>
         <!-- data list -->
         <div class="details1 w-auto">
             <div class="recentOrders">
                 <div class="cardHeader">
-                    <h2>Data Orderan Pick Up</h2>
-                    <a href="#" class="btn btn-thema">View All</a>
+                    <h2>Data Orderan Barang</h2>
+                    <a href="#" class="btn btn-thema"><i class="bi bi-printer-fill p-1"></i>Cetak</a>
                 </div>
+                <a href="" class="text-end">View All</a>
                 <table class="table-borderless mt-3 w-auto">
-                    <thead>
+                    <thead class="text-start">
                         <tr>
-                            <td class="text-start">Nama</td>
-                            <td class="text-start">No Hp</td>
-                            <td class="text-start">Jenis Kendaraan</td>
-                            <td class="text-start">Metode Pembayaran</td>
-                            <td class="text-start">Pick Up</td>
-                            <td class="text-start">Total Pembayaran</td>
-                            <td class="text-start">Alamat</td>
+                            <td>Nama</td>
+                            <td>No Hp</td>
+                            <td>Jenis Barang</td>
+                            <td>Metode Pembayaran</td>
+                            <td>Pick Up</td>
+                            <td>Total Pembayaran</td>
+                            <td>Alamat</td>
                         </tr>
                     </thead>
                     <tbody class="text-start">
@@ -194,12 +187,132 @@
                     </tbody>
                 </table>
             </div>
-
-            <!-- New Customer -->
-
-            <!-- New Customer -->
-
-        </div>
+            {{-- <table class="table-borderless mt-3 w-auto">
+                <thead class="text-start">
+                    <tr>
+                        <td>Nama</td>
+                        <td>No Hp</td>
+                        <td>Jenis Barang</td>
+                        <td>Metode Pembayaran</td>
+                        <td>Pick Up</td>
+                        <td>Total Pembayaran</td>
+                        <td>Alamat</td>
+                    </tr>
+                </thead>
+                <tbody class="text-start">
+                    <tr>
+                        <td>Robecca Howard</td>
+                        <td>(307) 555 0133</td>
+                        <td>Mobil Pick up</td>
+                        <td>Transfer Bank</td>
+                        <td>Yes</td>
+                        <td>IDR 600.000</td>
+                        <td>2118 Thornridge cir. Syracuse connecticut 35624</td>
+                        <!-- <td><span class="status return">Return</span></td> -->
+                    </tr>
+                    <tr>
+                        <td>Robecca Howard</td>
+                        <td>(307) 555 0133</td>
+                        <td>Mobil Pick up</td>
+                        <td>Transfer Bank</td>
+                        <td>Yes</td>
+                        <td>IDR 600.000</td>
+                        <td>2118 Thornridge cir. Syracuse connecticut 35624</td>
+                        <!-- <td><span class="status return">Return</span></td> -->
+                    </tr>
+                    <tr>
+                        <td>Robecca Howard</td>
+                        <td>(307) 555 0133</td>
+                        <td>Mobil Pick up</td>
+                        <td>Transfer Bank</td>
+                        <td>Yes</td>
+                        <td>IDR 600.000</td>
+                        <td>2118 Thornridge cir. Syracuse connecticut 35624</td>
+                        <!-- <td><span class="status return">Return</span></td> -->
+                    </tr>
+                    <tr>
+                        <td>Robecca Howard</td>
+                        <td>(307) 555 0133</td>
+                        <td>Mobil Pick up</td>
+                        <td>Transfer Bank</td>
+                        <td>Yes</td>
+                        <td>IDR 600.000</td>
+                        <td>2118 Thornridge cir. Syracuse connecticut 35624</td>
+                        <!-- <td><span class="status return">Return</span></td> -->
+                    </tr>
+                    <tr>
+                        <td>Robecca Howard</td>
+                        <td>(307) 555 0133</td>
+                        <td>Mobil Pick up</td>
+                        <td>Transfer Bank</td>
+                        <td>Yes</td>
+                        <td>IDR 600.000</td>
+                        <td>2118 Thornridge cir. Syracuse connecticut 35624</td>
+                        <!-- <td><span class="status return">Return</span></td> -->
+                    </tr>
+                    <tr>
+                        <td>Robecca Howard</td>
+                        <td>(307) 555 0133</td>
+                        <td>Mobil Pick up</td>
+                        <td>Transfer Bank</td>
+                        <td>Yes</td>
+                        <td>IDR 600.000</td>
+                        <td>2118 Thornridge cir. Syracuse connecticut 35624</td>
+                        <!-- <td><span class="status return">Return</span></td> -->
+                    </tr>
+                    <tr>
+                        <td>Robecca Howard</td>
+                        <td>(307) 555 0133</td>
+                        <td>Mobil Pick up</td>
+                        <td>Transfer Bank</td>
+                        <td>Yes</td>
+                        <td>IDR 600.000</td>
+                        <td>2118 Thornridge cir. Syracuse connecticut 35624</td>
+                        <!-- <td><span class="status return">Return</span></td> -->
+                    </tr>
+                    <tr>
+                        <td>Robecca Howard</td>
+                        <td>(307) 555 0133</td>
+                        <td>Mobil Pick up</td>
+                        <td>Transfer Bank</td>
+                        <td>Yes</td>
+                        <td>IDR 600.000</td>
+                        <td>2118 Thornridge cir. Syracuse connecticut 35624</td>
+                        <!-- <td><span class="status return">Return</span></td> -->
+                    </tr>
+                    <tr>
+                        <td>Robecca Howard</td>
+                        <td>(307) 555 0133</td>
+                        <td>Mobil Pick up</td>
+                        <td>Transfer Bank</td>
+                        <td>Yes</td>
+                        <td>IDR 600.000</td>
+                        <td>2118 Thornridge cir. Syracuse connecticut 35624</td>
+                        <!-- <td><span class="status return">Return</span></td> -->
+                    </tr>
+                    <tr>
+                        <td>Robecca Howard</td>
+                        <td>(307) 555 0133</td>
+                        <td>Mobil Pick up</td>
+                        <td>Transfer Bank</td>
+                        <td>Yes</td>
+                        <td>IDR 600.000</td>
+                        <td>2118 Thornridge cir. Syracuse connecticut 35624</td>
+                        <!-- <td><span class="status return">Return</span></td> -->
+                    </tr>
+                    <tr>
+                        <td>Robecca Howard</td>
+                        <td>(307) 555 0133</td>
+                        <td>Mobil Pick up</td>
+                        <td>Transfer Bank</td>
+                        <td>Yes</td>
+                        <td>IDR 600.000</td>
+                        <td>2118 Thornridge cir. Syracuse connecticut 35624</td>
+                        <!-- <td><span class="status return">Return</span></td> -->
+                    </tr>
+                </tbody>
+            </table>
+        </div> --}}
     </div>
 </section>
 @endsection

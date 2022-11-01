@@ -38,8 +38,7 @@
             </div>
             <div class="sub-menu">
                 <div class="drop-box"> 
-                    <a href="/vendor/homelagi">Pesanan Masuk</a>
-                    <a href="/orderan_baru">Berlangsung</a>
+                    <a href="/Vendor/order/kendaraan/orderan_baru">Berlangsung</a>
                     <a href="/historybaru">History</a>
                    
                 </div>

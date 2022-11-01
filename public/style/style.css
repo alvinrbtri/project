@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -228,7 +229,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 10px;
+    padding: 0 px;
 }
 
 .toggle {
@@ -242,9 +243,8 @@ body {
 }
 
 .search {
-    position: relative;
     width: 400px;
-    margin: 0 10px;
+    justify-content: right;
 }
 
 .search label {
@@ -517,17 +517,21 @@ body {
     .navigation {
         left: -300px;
     }
+
     .navigation.active {
         width: 300px;
         left: 0;
     }
+
     .main {
         width: 100%;
         left: 0;
     }
+
     .main.active {
         left: 300px;
     }
+
     .cardBox {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -537,9 +541,11 @@ body {
     .details {
         grid-template-columns: repeat(1, 1fr);
     }
+
     .recentOrders {
         overflow-x: auto;
     }
+
     .status.inprogress {
         white-space: nowrap;
     }
@@ -549,24 +555,30 @@ body {
     .cardBox {
         grid-template-columns: repeat(1, 1fr);
     }
+
     .cardHeader h2 {
         font-size: 20px;
     }
+
     .user {
         min-width: 40px;
     }
+
     .navigation {
         width: 100%;
         left: -100%;
         z-index: 1000;
     }
+
     .navigation.active {
         width: 100%;
         left: 0;
     }
+
     .toggle {
         z-index: 10001;
     }
+
     .main.active .toggle {
         color: var(--white);
         left: initial;
@@ -574,3 +586,4 @@ body {
         position: fixed;
     }
 }
+

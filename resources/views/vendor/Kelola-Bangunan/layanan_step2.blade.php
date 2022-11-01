@@ -16,7 +16,7 @@
         <div class="cardBox1">
             <div class="card1">
                 <div>
-                    <a href="Vendor/Kelola-barang/kelola_barang" style="text-decoration:none">
+                    <a href="Vendor/Kelola-barang/layanan_step1" style="text-decoration:none">
                         <div class="cardName1">Kendaraan
                         </div>
                     </a>
@@ -24,7 +24,7 @@
             </div>
             <div class="card2">
                 <div>
-                    <a href="Vendor/Kelola-Bangunan/kelola_bangunan" style="text-decoration:none">
+                    <a href="Vendor/Kelola-Bangunan/layanan_step1" style="text-decoration:none">
                         <div class="cardName2">Bangunan
                         </div>
                     </a>
@@ -33,7 +33,7 @@
     
             <div class="card1">
                 <div>
-                    <a href="Vendor/Kelola-Barang/kelola_barang" style="text-decoration:none">
+                    <a href="Vendor/Kelola-Barang/layanan_step1" style="text-decoration:none">
                         <div class="cardName1">Barang
                         </div>
                     </a>
@@ -41,7 +41,7 @@
             </div>
             <div class="card1">
                 <div>
-                    <a href="Vendor/Kelola-PickUp/kelola_pickup" style="text-decoration:none">
+                    <a href="Vendor/Kelola-PickUp/layanan_step1" style="text-decoration:none">
                         <div class="cardName1">Pick Up
                         </div>
                     </a>
@@ -89,59 +89,226 @@
                         </div>
           </div>
         </div>
-        <!--modal pilih bangunan-->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-        <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel" >Pilih Jenis Bangunan</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-          <div class="mb-2">
-              <label for="exampleFormControlInput1" class="form-label"><b>Pilih bangunan yang ada di
-                layanan Anda inginkan</b>
-                <p class="text-muted">Silahkan pilih jenis bangunan yang 
-                    anda sediakan</p>
-          </label>
-              </div>
-
-              <div class="file-upload">
-                <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Tambahkan foto</button>
-              
-                <div class="image-upload-wrap">
-                  <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
-                  <div class="drag-text"><br>
-                  <p>Tidak ada foto yang dipilih</p>
+       {{-- MODAL PILIH BANGUNAN --}}
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Pilih Jenis Bangunan</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="mt-2" style="font-size: 15px">
+                  <label for="exampleFormControlInput1" class="form-label"><b>Pilih bangunan yang ada di
+                    layanan Anda</b>
+                  </label>
+                </div>
+                <h2 style="font-size: 20px"><b>Rumah</b></h2>
+                <div class="row">
+                  <div class="col-md-8">
+                    <div class="form-check" style="font-size:20px">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                       Tipe A (Besar)
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-md-2 text-end">
+                    <div class="box text-dark">
+                      <div class="wrapper" style="width: 200px">
+                        <span class="minus">-</span>
+                        <span class="num">01</span>
+                        <span class="plus">+</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="file-upload-content">
-                  <img class="file-upload-image" src="#" alt="your image" />
-                  <div class="image-title-wrap">
-                    <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
+                <div class="row">
+                  <div class="col-md-8">
+                    <label for="">Deskripsi Layanan</label>
+                   <textarea type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></textarea>
+                  </div>
+                  <div class="col-md-4">
+                    <label for="">Harga penitipan perhari </label>
+                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Rp20.000">
                   </div>
                 </div>
-              </div>
-
-              <div class="col-sm-12 mt-3">
-                <label for="inputState" class="form-label"><h6>Pilih Jenis banguan yang ada di layanan anda</h6></label>
-                <select>
-                  <option selected>Pilih Kategori</option>
-                  <option>Rumah</option>
-                  <option>Apartement</option>
-                  <option>Kost-Kostan</option>
-                  <option>Kontrakan</option>
-                  <option>Rumah sususn</option>
-
-                </select>
-              </div><br>
-            <div class="mb-3">
-                <label for="">Masukan harga penitipan </label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Rp20.000">
-            </div>
-            <div class="mb-3">
-              <label for="">Deskripsi produk</label>
-              <textarea type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></textarea>
-          </div>
+                <div class="row">
+                  <div class="col-md-8">
+                    <div class="form-check" style="font-size:20px">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Tipe B (Sedang)
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-md-2 text-end">
+                    <div class="box text-dark">
+                      <div class="wrapper" style="width: 250px">
+                        <span class="minus">-</span>
+                        <span class="num">01</span>
+                        <span class="plus">+</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-8">
+                    <label for="">Deskripsi Layanan</label>
+                   <textarea type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></textarea>
+                  </div>
+                  <div class="col-md-4 mt-1">
+                    <label for="">Harga penitipan perhari</label>
+                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Rp20.000">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-8">
+                    <div class="form-check" style="font-size:20px">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Tipe C (Kecil)
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-md-2 text-end">
+                    <div class="box text-dark">
+                      <div class="wrapper" style="width: 250px">
+                        <span class="minus">-</span>
+                        <span class="num">01</span>
+                        <span class="plus">+</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-8">
+                    <label for="">Deskripsi Layanan</label>
+                   <textarea type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></textarea>
+                  </div>
+                  <div class="col-md-4  mt-1">
+                    <label for="">Harga penitipan perhari</label>
+                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Rp20.000">
+                  </div>
+                </div>
+                <h2 style="font-size: 20px"><b>Kantor</b></h2>
+                <div class="row">
+                    <div class="col-md-8">
+                      <div class="form-check" style="font-size:20px">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                         Tipe A (Besar)
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-md-2 text-end">
+                      <div class="box text-dark">
+                        <div class="wrapper" style="width: 200px">
+                          <span class="minus">-</span>
+                          <span class="num">01</span>
+                          <span class="plus">+</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-8">
+                      <label for="">Deskripsi Layanan</label>
+                     <textarea type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></textarea>
+                    </div>
+                    <div class="col-md-4">
+                      <label for="">Harga penitipan perhari </label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Rp20.000">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-8">
+                      <div class="form-check" style="font-size:20px">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          Tipe B (Sedang)
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-md-2 text-end">
+                      <div class="box text-dark">
+                        <div class="wrapper" style="width: 250px">
+                          <span class="minus">-</span>
+                          <span class="num">01</span>
+                          <span class="plus">+</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-8">
+                      <label for="">Deskripsi Layanan</label>
+                     <textarea type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></textarea>
+                    </div>
+                    <div class="col-md-4 mt-1">
+                      <label for="">Harga penitipan perhari</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Rp20.000">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-8">
+                      <div class="form-check" style="font-size:20px">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          Tipe C (Kecil)
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-md-2 text-end">
+                      <div class="box text-dark">
+                        <div class="wrapper" style="width: 250px">
+                          <span class="minus">-</span>
+                          <span class="num">01</span>
+                          <span class="plus">+</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-8">
+                      <label for="">Deskripsi Layanan</label>
+                     <textarea type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></textarea>
+                    </div>
+                    <div class="col-md-4  mt-1">
+                      <label for="">Harga penitipan perhari</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Rp20.000">
+                    </div>
+                  </div>
+                  <h2 style="font-size: 20px">Kost-Kostan</h2>
+                  <div class="row">
+                    <div class="col-md-8">
+                      <div class="form-check" style="font-size:20px">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                         Kost-kostan
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-md-2 text-end">
+                      <div class="box text-dark">
+                        <div class="wrapper" style="width: 200px">
+                          <span class="minus">-</span>
+                          <span class="num">01</span>
+                          <span class="plus">+</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-8">
+                      <label for="">Deskripsi Layanan</label>
+                     <textarea type="text" class="form-control" id="exampleFormControlInput1" placeholder=""></textarea>
+                    </div>
+                    <div class="col-md-4">
+                      <label for="">Harga penitipan perhari </label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Rp20.000">
+                    </div>
+                  </div>
+                
         <a href="/Vendor/Kelola-Bangunan/layanan_step3"><button type="button" class="btn btn-success col-md-12 mt-3">Lanjutkan</button><br><br></a>
         </div>
     </div>

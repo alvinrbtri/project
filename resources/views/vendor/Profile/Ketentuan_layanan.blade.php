@@ -6,7 +6,6 @@
     <div class="p-4 container card mt-5" style="width: 75%" > 
     
     <div class=""style="font-size: 20px">
-        <a href="/vendor/Profile/profile_vendor" class="ps-3 "><i class="bi bi-arrow-left btn btn-success col-sm-1" style=" font-size: 20px; color: rgb(255, 255, 255);"></i></a>
         <div class="card-body">
         <nav aria-label="breadcrumb "  class="card-header" style="height: 40px; width:100%">
             <ol class="breadcrumb ">

@@ -16,7 +16,7 @@
         <div class="cardBox1">
             <div class="card2">
                 <div>
-                    <a href="Vendor/Kelola-barang/kelola_barang" style="text-decoration:none">
+                    <a href="/Vendor/Kelola-barang/layanan_step1" style="text-decoration:none">
                         <div class="cardName2">Kendaraan
                         </div>
                     </a>
@@ -25,7 +25,7 @@
     
             <div class="card1">
                 <div>
-                    <a href="Vendor/Kelola-Bangunan/kelola_bangunan" style="text-decoration:none">
+                    <a href="/Vendor/Kelola-Bangunan/layanan_step1" style="text-decoration:none">
                         <div class="cardName1">Bangunan
                         </div>
                     </a>
@@ -34,7 +34,7 @@
     
             <div class="card1 ">
                 <div>
-                    <a href="Vendor/Kelola-Barang/kelola_barang" style="text-decoration:none">
+                    <a href="/Vendor/Kelola-Barang/layanan_step1" style="text-decoration:none">
                         <div class="cardName1">Barang
                         </div>
                     </a>
@@ -42,7 +42,7 @@
             </div>
             <div class="card1">
                 <div>
-                    <a href="Vendor/Kelola-PickUp/kelola_pickup" style="text-decoration:none">
+                    <a href="/Vendor/Kelola-PickUp/layanan_step1" style="text-decoration:none">
                         <div class="cardName1">Pick Up
                         </div>
                     </a>
@@ -84,20 +84,7 @@
                                         <hr>
                                      </div>
                                     </div>
-                                    <div class="">
-                                     <h6><svg xmlns="http://www.w3.org/2000/svg" width="37px" height="37px" fill="currentColor" class="bi bi-3-circle-fill p-2"  viewBox="0 0 16 16" style="color:rgb(255, 221, 0)">
-                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0Zm-8.082.414c.92 0 1.535.54 1.541 1.318.012.791-.615 1.36-1.588 1.354-.861-.006-1.482-.469-1.54-1.066H5.104c.047 1.177 1.05 2.144 2.754 2.144 1.653 0 2.954-.937 2.93-2.396-.023-1.278-1.031-1.846-1.734-1.916v-.07c.597-.1 1.505-.739 1.482-1.876-.03-1.177-1.043-2.074-2.637-2.062-1.675.006-2.59.984-2.625 2.12h1.248c.036-.556.557-1.054 1.348-1.054.785 0 1.348.486 1.348 1.195.006.715-.563 1.237-1.342 1.237h-.838v1.072h.879Z"/>
-                                      </svg><b>Ketersediaan Lahan</b></h6>
-                                     <div class="row mb-5">
-                                        <div class="col-md-10 ">
-                                            <p class="ps-4">Menginputkan detail rincian lahan parkir</p>
-                                        </div>
-                                        <div class="col-md-2 mb-3">
-                                            <i class="bi bi-check2-square" style="font-size: 37px; color:rgb(98, 212, 133);"></i>
-                                        </div>   
-                                        <hr>
-
-                                     </div>
+                                   
                                     <div>
                                         <p><i class="bi bi-check-circle-fill p-2" style="font-size: 25px; color:rgb(98, 212, 133);"></i>Dengan mengisi data ini, maka Anda setuju
                                             dengan <b>Syarat & Ketentuan Umum </b> 

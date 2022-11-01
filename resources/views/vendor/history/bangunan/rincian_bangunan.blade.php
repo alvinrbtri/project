@@ -53,22 +53,24 @@
                           <hr width="100%" color="#c0c0c0">
                                 <div class="card-body">
                                      {{-- <div class="container-fluid"> --}}
-                                        <div class="row">
-                                            <div class="col-2 text-start">
-                                                <p>Rumah</p>
+                                        <div class="col-2 text-start">
+                                            <p>Rumah</p>
                                             </div>
-                                            <div class="col-10 text-end">
-                                                <p>x1</p>
+                                            <div class="row">
+                                                <div class="col-4 text-start">
+                                                    <p>Tipe A</p>
+                                                </div>
+                                                <div class="col-3 text-end">
+                                                    <p>01</p>
+                                                </div>
+                                                <div class="col-1">
+                                                    <p>X</p>
+                                                </div>
+                                                <div class="col-3 text-end">
+                                                    <p>400.000</p>
+                                                </div>
+            
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-2 text-start">
-                                                <p>Kosan</p>
-                                            </div>
-                                            <div class="col-10 text-end">
-                                                <p>x2</p>
-                                            </div>
-                                        </div>
                                         <hr width="100%" color="#c0c0c0">
                                         <div class="row">
                                             <div class="col-2 text-start">
@@ -100,17 +102,10 @@
                                                 <p>Subtotal</p>
                                             </div>
                                             <div class="col-10 text-end">
-                                                <p>Rp 2.500.000
+                                                <p>Rp 2.000.000
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-2 text-start">
-                                                <p>Diskon</p>
-                                            </div>
-                                            <div class="col-10 text-end">
-                                                <p>0</p>
-                                            </div>
-                                        </div>
+                                       
                                         <div class="row">
                                             <div class="col-5 text-start">
                                                 <p>Biaya Penjemputan</p>
@@ -125,7 +120,7 @@
                                                 <p>Total</p>
                                             </div>
                                             <div class="col-10 text-end">
-                                                <p>Rp 2.550.000</p>
+                                                <p>Rp 2.000.000</p>
                                             </div>
                                         </div>
                                         <div class="d-grid gap-2 col-6 mx-auto">

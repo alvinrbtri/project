@@ -9,6 +9,12 @@
                 <div class="cardHeader-title">
                     <h2>Orderan</h2>
                 </div>
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Cari Disini">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
             </div>
 
             <!-- top nav -->

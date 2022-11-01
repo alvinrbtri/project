@@ -30,9 +30,9 @@ class FinanceController extends Controller
     {
         return view('finance.DataPenarikan.penarikan');
     }
-    public function konfirmasi()
+    public function vendor()
     {
-        return view('finance.DataPenarikan.konfirmasi');
+        return view('finance.DataPenarikan.vendor');
     }
     public function history()
     {
@@ -40,6 +40,6 @@ class FinanceController extends Controller
     }
     public function profile()
     {
-        return view('finance.profilefinance');
+        return view('finance.profil.profilefinance');
     }
 }

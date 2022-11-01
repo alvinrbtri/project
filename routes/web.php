@@ -19,6 +19,7 @@ use App\Http\Controllers\SubLayananController;
 use App\Http\Controllers\SuperadminController;
 use App\Http\Controllers\GambarkecilController;
 use App\Http\Controllers\UserLayananController;
+use App\Http\Controllers\DataPenggunaController;
 use App\Http\Controllers\SliderkontakController;
 use App\Http\Controllers\SlidertentangController;
 use App\Http\Controllers\KebijakanPrivasiController;
@@ -54,7 +55,7 @@ Route::group(["middleware" => ["auth"]], function() {
     Route::controller(AdminController::class)->group(function(){
         Route::get('/admin/index', 'index')->middleware('role:admin')->name('admin.index');
         Route::get('/admin/dashboard', 'index');
-        Route::get('/admin/profile', 'profile');
+        Route::get('/admin/profile/profil', 'profile');
         Route::get('/admin/data/order', 'order');
         Route::get('/admin/data/order=barang', 'barang');
         Route::get('/admin/home/home', 'home');
@@ -69,9 +70,10 @@ Route::group(["middleware" => ["auth"]], function() {
         Route::get('/admin/setting', 'setting');
         Route::get('/admin/data/pengaturan-user','pengaturanuser');
     });
+Route::get('/admin/customer/data', [DataPenggunaController::class, 'index']);
 
     //admin-subslider
-    route::get('/subslider/edit', [SubSliderController::class, 'edit']);
+    Route::get('/subslider/edit', [SubSliderController::class, 'edit']);
     route::get('/subslider/simpan', [SubSliderController::class, 'update']);
     Route::get("/subslider/detail", [SubSliderController::class, "show"]);
     Route::resource('subslider', SubSliderController::class);
@@ -98,6 +100,8 @@ Route::controller(ProfileController::class)->group(function(){
     Route::get('/admin/profile', 'index')->name('profile.index');
     Route::patch('/profile/{id}', 'update')->name('profile.update');
 });
+
+
 
 //CRUD HOME
 Route::controller(UserController::class)->group(function(){
@@ -345,6 +349,11 @@ Route::controller(SuperadminController::class)->group(function(){
     Route::get('/superadmin/profile','profile')->middleware('auth')->name('profile.profile');
     Route::get('/superadmin/profile','indexp')->name('profile.indexp');
     Route::patch('/profile/{id}','update')->name('profile.update');
+    Route::get('/superadmin/transaksi/transaksi','transaksiuser');
+    Route::get('/superadmin/penarikan/penarikan','penarikan');
+    Route::get('/superadmin/penarikan/history','history');
+
+
 });
 // Route::get('/admin/profile', [AdminController::class, 'profile'])->middleware('auth');
 // Route::get('/admin/profile', [ProfileController::class, 'index'])->name('profile.index');
@@ -742,9 +751,9 @@ Route::controller(FinanceController::class)->group(function(){
     Route::get('/finance/transaksi/detailtransaksiuser', 'detailtransaksiuser')->middleware('auth');
     Route::get('/finance/transaksi/detailtransaksivendor', 'detailtransaksivendor')->middleware('auth');
     Route::get('/finance/DataPenarikan/penarikan', 'penarikan')->middleware('auth');
-    Route::get('/finance/DataPenarikan/konfirmasi', 'konfirmasi')->middleware('auth');
+    Route::get('/finance/DataPenarikan/vendor', 'vendor')->middleware('auth');
     Route::get('/finance/DataPenarikan/history', 'history')->middleware('auth');
-    Route::get('/finance/profilefinance', 'profilefinance')->middleware('auth');
+    Route::get('/finance/profilefinance', 'profile')->middleware('auth');
 });
 
 

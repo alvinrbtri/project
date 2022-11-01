@@ -3,19 +3,6 @@
 <!--hero section-->
 @section('container')
 <section class="align-items-center services section-bg"  id="services" style="padding-top: 100px;" data-aos-delay="50">
-    <div class="p-4 container card mt-5" style="width: 75%" > 
-    
-    <div class=""style="font-size: 20px">
-        <a href="/vendor/Profile/profile_vendor" class="ps-3 "><i class="bi bi-arrow-left btn btn-success col-sm-1" style=" font-size: 20px; color: rgb(255, 255, 255);"></i></a>
-        <div class="card-body">
-        <nav aria-label="breadcrumb "  class="card-header" style="height: 40px; width:100%">
-            <ol class="breadcrumb ">
-                <li class="breadcrumb-item"><a href="/vendor/Profile/profile_vendor">Profile</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Pusat Bantuan</li>
-            </ol>
-        </nav>
-        </div>
-    </div>
         <div class="container mt-9 mb-4">
             <div class="row justify-content-center">
                 <div class="col-md-12">
@@ -55,7 +42,7 @@
                                <p> <a href="/Vendor/Profile/Jawaban6">Mengapa saya tidak mendapatkan
                                 notifikasi penarikan?</a></p>
                             </div>
-                        </div>
+                        </div> 
                         <br>
                         <label for="faq" class="form-label">Hubungi Kami</label><br><br>
                             <a href="#" class="btn btn-success"><i class="bi bi-envelope"></i> Send E-mail</a>

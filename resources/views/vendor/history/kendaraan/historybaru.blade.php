@@ -12,356 +12,411 @@
                     <h2>History</h2>
                 </div>
             </div>
-        <div class="">
-            <div class="cardBox1">
-                <div class="card1">
-                    <div>
-                        <a href="/rincian_kendaraan" style="text-decoration:none">
-                            <div class="cardName1">Kendaraan
-                            </div>
-                        </a>
-                    </div>
-                </div>
-        
-                <div class="card1">
-                    <div>
-                        <a href="/rincian_bangunan" style="text-decoration:none">
-                            <div class="cardName1">Bangunan
-                            </div>
-                        </a>
-                    </div>
-                </div>
-        
-                <div class="card1">
-                    <div>
-                        <a href="/rincian_barang" style="text-decoration:none">
-                            <div class="cardName1">Barang
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="card1">
-                    <div>
-                        <a href="/rincian_pickup" style="text-decoration:none">
-                            <div class="cardName1">Pick Up
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row justify-content-center m-auto">
-            <div class="col-md-11">
-                <div class="card" style="background-color: #fff;">
-                    
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md" style="padding-top: 25px; font-size:20px">
-                                <h3><b>History Pemesanan</b></h3>
-                            </div>
-                        </div>
+     
                         <hr width="100%" color="#c0c0c0">
-                    
-
-                        <div class="row">
-                            <div class="col-2 p-2" style="padding:15px font-size:15px">
-                                <p style="background: #D3FBE2; padding: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; -webkit-border-radius: 15px; border-radius: 15px; margin: 0; text-align: center; line-height: 23px; color: black; font-size: 18px"><b>Today</b></p>
-                            </div>
-
-                            <div class="container text-center">
-                                <div class="row justify-content-center">
-                                    <div class="card mb-2" style="width: 75%">
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-2">
-                                                    <a href="/rincian_kendaraan"><img src="../assets/img/icon_kendaraan.png" alt="kendaraan" style="width:65px; height: 65px;"></a>
-                                                </div>  
-                                                <div class="col-md-6" style="padding-top: 18px; padding-left: 50px">
-                                                    <a href="/orderan_baru"><p class="text-muted">24 Jan 2021, 11.00 PM</p></a>
-                                                </div>
-                                                <div class="col-md-3" style="padding-top: 5px; padding-left: 100px">
-                                                    <p style="background: #D3FBE2; padding: 15px; border-radius: 15px; margin: 0; 
-                                                    text-align: center; color: #00B56A; font-size: 15px; width:100px">
-                                                    <b>Selesai</b></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-body" style="padding-top: 0px; padding-bottom: 0px;">
-                                            <p style="padding-right: 83%"><b>Mori Ucing</b></p>
-                                            <div class="row">
-                                                <div class="col-md-3" style="padding-right: 70px; padding-bottom: 0px">
-                                                    <a href="/orderan_baru"><p class="text-muted" style="padding-top: 0px">3 Items</p></a>
-                                                </div>
-                                                <div class="col-8 text-end" style="padding-top: 0px padding-left: 100px;">
-                                                    <p style="padding-top: 0px">Total</p>
-                                                    <p class="text-success" style="padding-top: 0px; padding-bottom: 0px;"><b>Rp 500.000</b></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                        <div class="details1 ">
+                            <div class="recentOrders">
+                                <div class="cardHeader">
+                                    <h2>History Penitipan</h2>
                                 </div>
+                                <table class="table-borderless mt-3 w-auto">
+                                    <thead class="text-start">
+                                        <tr>
+                                            <td>Nama</td>
+                                            <td>Jenis Layanan</td>
+                                            <td>Status</td>
+                                            <td class="text-center">Action</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="text-start">
+                                        <tr>
+                                            <td>Sintia Dwi</td>
+                                            <td>Bangunan</td>
+                                            <td style="color: rgb(67, 195, 89)">Selesai</td>
+                                            <td class="col-md-2 text-end">
+                                                <a href="" class="btn btn-info " data-bs-toggle="modal"
+                                                    data-bs-target="#exampleModal"><i class="bi bi-info-circle p-1"></i>Detail</a>
+                
+                                            </td>
+                
+                                            <!-- <td><span class="status return">Return</span></td> -->
+                                        </tr>
+                                        <tr>
+                                            <td>Angel</td>
+                                            <td>Kendaraan</td>
+                                            <td style="color: rgb(174, 21, 7)">Gagal</td>
+                                            <td class="col-md-2 text-end">
+                                                <a href="" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal2"><i
+                                                        class="bi bi-info-circle p-1"></i>Detail<a>
+                
+                                            </td>
+                                            <!-- <td><span class="status return">Return</span></td> -->
+                                        </tr>
+                                        <tr>
+                                            <td>Dila</td>
+                                            <td>Barang</td>
+                                            <td style="color: rgb(67, 195, 89)">Selsai</td>
+                                            <td class="col-md-2 text-end">
+                                                <a href="" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal3"><i
+                                                        class="bi bi-info-circle p-1"></i>Detail<a>
+                
+                                            </td>
+                                            <!-- <td><span class="status return">Return</span></td> -->
+                                        </tr>
+                
+                                    </tbody>
+                                </table>
                             </div>
+                        </div>
+                
+                        <!--modal detail 1-->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel" style="color:#27cd88">Detail Pesanan</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="card p-3">
+                                            <div class="card-body">
+                                                <p class="card-title text-center text-success"><b>30 Dec.2021 11:00 PM</b></p><br>
 
-                            <div class="container text-center">
-                                <div class="row justify-content-center">
-                                    <div class="card mb-3" style="width: 75%">
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-2">
-                                                    <a href="/rincian_kendaraan"><img src="../assets/img/icon_kendaraan.png" alt="kendaraan" style="width:65px; height: 65px;"></a>
-                                                </div>  
-                                                <div class="col-md-6" style="padding-top: 18px; padding-left: 50px">
-                                                    <p class="text-muted">24 Jan 2021, 11.00 PM</p>
+                                                        <div class="row" style="color: #00B56A;">
+                                                            <div class="col-6">
+                                                                <b>
+                                                                    <p class="mb-1">Status</p>
+                                                                </b>
+                                                            </div>
+                                                            <div class="col-md text-end">
+                                                                <b>Selesai</b>
+                                                            </div>
+                                                        </div>
+                                                <div class="row">
+                                                    <div style="background: #F2F2F2">
+                
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                <b>
+                                                                    <p class="mb-1">Order Id</p>
+                                                                </b>
+                                                            </div>
+                                                            <div class="col-md text-end">
+                                                                <b>1234569098</b>
+                                                            </div>
+                                                        </div>
+                
+                                                    </div>
+                                                </div><br>
+                
+                                                <div class="col-md">
+                                                    <b>
+                                                        <p class="mb-1">Sinta Sari Dwi Putra</p>
+                                                    </b>
+                                                    <p class="mb-1" style="font-size: 14px">No.Telp : 0823491231</p>
+                                                </div><br>
+                
+                                                <div class="col-md">
+                                                    <p><i class="bi bi-geo-fill p-2" style="color: #F24E1E"></i>Jl.Kusumanegara Sawahan,
+                                                        Bantul,
+                                                        Yogyakarta</p>
                                                 </div>
-                                                <div class="col-md-3" style="padding-top: 5px; padding-left: 100px">
-                                                    <p style="background: #ef5656; padding: 15px; border-radius: 15px; margin: 0; 
-                                                    text-align: center; color: #ffffff; font-size: 15px; width:100px">
-                                                    <b>Gagal</b></p>
+                
+                                                <div class="col-1">
+                                                    <h6 style="margin-right: 10px"><i class="bi bi-three-dots-vertical p-2"></i></h6>
+                                                </div>
+                
+                                                <div class="col-md">
+                                                    <h6><i class="bi bi-house-door-fill p-2" style="color: #F24E1E"></i>Kantor
+                                                        Titipsini.com
+                                                    </h6>
+                                                </div>
+                
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            {{-- <div class="container-fluid"> --}}
+                                                <div class="col-2 text-start">
+                                                    <p>Rumah</p>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-7 text-start">
+                                                        <p>Tipe A</p>
+                                                    </div>
+                                                    <div class="col-2  text-end">
+                                                        <p>01</p>
+                                                    </div>
+                                                    <div class="col-1 text-end">
+                                                        <p>x</p>
+                                                    </div>
+                                                    <div class="col-2 text-end">
+                                                        <p>400.000</p>
+                                                    </div>
+                                                </div>
+                
+                                                <div class="row">
+                                                    <div class="col-5 text-start">
+                                                        <p>Durasi Penitipan</p>
+                                                    </div>
+                                                    <div class="col-7 text-end">
+                                                        <p>5 hari</p>
+                                                    </div>
+                                                </div>
+                                                <hr width="100%" color="#c0c0c0">
+                                                <div class="row">
+                                                    <div class="col-2 text-start">
+                                                        <p><b>Total</b></p>
+                                                    </div>
+                                                    <div class="col-10 text-end">
+                                                        <p><b>Rp 2.000.000</b></p>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card-body " style="padding-top: 0px; padding-bottom: 0px;">
-                                            <p style="padding-right: 78%"><b>Anastasya Jay</b></p>
-                                            <div class="row">
-                                                <div class="col-md-3" style="padding-right: 70px; padding-top: 0px">
-                                                    <a href="/orderan_baru"><p class="text-muted">3 Items</p></a>
-                                                </div>
-                                                <div class="col-8 text-end" style="padding-top: 0px padding-left: 100px;">
-                                                    <p>Total</p>
-                                                    <p class="text-success" style="padding-top: 0px; padding-bottom: 0px;"><b>Rp 500.000</b></p>
-                                                </div>
-                                            </div>
+                                        <div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="col-2 p-2" style=" padding:15px; font-size:20px">
-                                <p style="background: #D3FBE2; padding: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; -webkit-border-radius: 15px; border-radius: 15px; margin: 0; text-align: center; line-height: 23px; color: black; font-size: 18px"><b>23 Jan Wed</b></p>
-                            </div>
-
-                            <div class="container text-center">
-                                <div class="row justify-content-center">
-                                    <div class="card mb-2" style="width: 75%">
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-2">
-                                                    <a href="/rincian_bangunan"><img src="../assets/img/icon_bangunann.png" alt="kendaraan" style="width:65px; height: 65px;"></a>
-                                                </div>  
-                                                <div class="col-md-6" style="padding-top: 18px; padding-left: 50px">
-                                                    <p class="text-muted">25 Jan 2021, 12.00 PM</p>
-                                                </div>
-                                                <div class="col-md-3" style="padding-top: 5px; padding-left: 100px">
-                                                    <p style="background: #D3FBE2; padding: 15px; border-radius: 15px; margin: 0; 
-                                                    text-align: center; color: #00B56A; font-size: 15px; width:100px">
-                                                    <b>Selesai</b></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-body" style="padding-top: 0px; padding-bottom: 0px;">
-                                            <p style="padding-right: 83%"><b>Mori Ucing</b></p>
-                                            <div class="row">
-                                                <div class="col-md-3" style="padding-right: 70px; padding-bottom: 0px">
-                                                    <a href="/orderan_baru"><p class="text-muted" style="padding-top: 0px">3 Items</p></a>
-                                                </div>
-                                                <div class="col-8 text-end" style="padding-top: 0px padding-left: 100px;">
-                                                    <p style="padding-top: 0px">Total</p>
-                                                    <p class="text-success" style="padding-top: 0px; padding-bottom: 0px;"><b>Rp 500.000</b></p>
-                                                </div>
-                                            </div>
-                                        </div>
+                        {{-- modal dtail2 --}}
+                        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel" style="color:#27cd88">Detail Pesanan</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
-                                </div>
-                            </div>
+                                    <div class="modal-body">
+                                        <div class="card p-3">
+                                            <div class="card-body">
+                                                <p class="card-title text-center text-success"><b>30 Dec.2021 11:00 PM</b></p><br>
 
-                            <div class="container text-center">
-                                <div class="row justify-content-center">
-                                    <div class="card mb-3" style="width: 75%">
+                                                        <div class="row" style="color: #b50c00;">
+                                                            <div class="col-6">
+                                                                <b>
+                                                                    <p class="mb-1">Status</p>
+                                                                </b>
+                                                            </div>
+                                                            <div class="col-md text-end">
+                                                                <b>Gagal</b>
+                                                            </div>
+                                                        </div>
+                                                <div class="row">
+                                                    <div style="background: #F2F2F2">
+                
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                <b>
+                                                                    <p class="mb-1">Order Id</p>
+                                                                </b>
+                                                            </div>
+                                                            <div class="col-md text-end">
+                                                                <b>1234569098</b>
+                                                            </div>
+                                                        </div>
+                
+                                                    </div>
+                                                </div><br>
+                
+                                                <div class="col-md">
+                                                    <b>
+                                                        <p class="mb-1">Sinta Sari Dwi Putra</p>
+                                                    </b>
+                                                    <p class="mb-1" style="font-size: 14px">No.Telp : 0823491231</p>
+                                                </div><br>
+                
+                                                <div class="col-md">
+                                                    <p><i class="bi bi-geo-fill p-2" style="color: #F24E1E"></i>Jl.Kusumanegara Sawahan,
+                                                        Bantul,
+                                                        Yogyakarta</p>
+                                                </div>
+                
+                                                <div class="col-1">
+                                                    <h6 style="margin-right: 10px"><i class="bi bi-three-dots-vertical p-2"></i></h6>
+                                                </div>
+                
+                                                <div class="col-md">
+                                                    <h6><i class="bi bi-house-door-fill p-2" style="color: #F24E1E"></i>Kantor
+                                                        Titipsini.com
+                                                    </h6>
+                                                </div>
+                
+                                            </div>
+                                        </div>
                                         <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-2">
-                                                    <a href="/rincian_bangunan"><img src="../assets/img/icon_bangunann.png" alt="kendaraan" style="width:65px; height: 65px;"></a>
-                                                </div>  
-                                                <div class="col-md-6" style="padding-top: 18px; padding-left: 50px">
-                                                   <p class="text-muted">25 Jan 2021, 13.00 PM</p>
+                                            {{-- <div class="container-fluid"> --}}
+                                                <div class="col-2 text-start">
+                                                    <p>Mobil</p>
                                                 </div>
-                                                <div class="col-md-3" style="padding-top: 5px; padding-left: 100px">
-                                                    <p style="background: #ef5656; padding: 15px; border-radius: 15px; margin: 0; 
-                                                    text-align: center; color: #ffffff; font-size: 15px; width:100px">
-                                                    <b>Gagal</b></p>
+                                                <div class="row">
+                                                    <div class="col-7 text-start">
+                                                        <p>Golongan 1</p>
+                                                    </div>
+                                                    <div class="col-2  text-end">
+                                                        <p>01</p>
+                                                    </div>
+                                                    <div class="col-1 text-end">
+                                                        <p>x</p>
+                                                    </div>
+                                                    <div class="col-2 text-end">
+                                                        <p>400.000</p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-body " style="padding-top: 0px; padding-bottom: 0px;">
-                                            <p style="padding-right: 78%"><b>Anastasya Jay</b></p>
-                                            <div class="row">
-                                                <div class="col-md-3" style="padding-right: 70px; padding-top: 0px">
-                                                    <a href="/orderan_baru"><p class="text-muted">3 Items</p></a>
+                
+                                                <div class="row">
+                                                    <div class="col-5 text-start">
+                                                        <p>Durasi Penitipan</p>
+                                                    </div>
+                                                    <div class="col-7 text-end">
+                                                        <p>5 hari</p>
+                                                    </div>
                                                 </div>
-                                                <div class="col-8 text-end" style="padding-top: 0px padding-left: 100px;">
-                                                    <p>Total</p>
-                                                    <p class="text-success" style="padding-top: 0px; padding-bottom: 0px;"><b>Rp 500.000</b></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-2 p-2" style="padding:15px; font-size:20px">
-                                <p style="background: #D3FBE2; padding: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; -webkit-border-radius: 15px; border-radius: 15px; margin: 0; text-align: center; line-height: 23px; color: black; font-size: 18px"><b>23 Jan Wed</b></p>
-                            </div>
-
-                            <div class="container text-center">
-                                <div class="row justify-content-center">
-                                    <div class="card mb-2" style="width: 75%">
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-2">
-                                                    <a href="/rincian_barang"><img src="../assets/img/icon_barang.png" alt="barang" style="width:65px; height: 65px;"></a>
-                                                </div>  
-                                                <div class="col-md-6" style="padding-top: 18px; padding-left: 50px">
-                                                    <p class="text-muted">23 Jan 2021, 12.00 PM</p>
-                                                </div>
-                                                <div class="col-md-3" style="padding-top: 5px; padding-left: 100px">
-                                                    <p style="background: #D3FBE2; padding: 15px; border-radius: 15px; margin: 0; 
-                                                    text-align: center; color: #00B56A; font-size: 15px; width:100px">
-                                                    <b>Selesai</b></p>
+                                                <hr width="100%" color="#c0c0c0">
+                                                <div class="row">
+                                                    <div class="col-2 text-start">
+                                                        <p><b>Total</b></p>
+                                                    </div>
+                                                    <div class="col-10 text-end">
+                                                        <p><b>Rp 2.000.000</b></p>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card-body" style="padding-top: 0px; padding-bottom: 0px;">
-                                            <p style="padding-right: 75%"><b>Tatang Sutatang</b></p>
-                                            <div class="row">
-                                                <div class="col-md-3" style="padding-right: 70px; padding-bottom: 0px">
-                                                    <p class="text-muted" style="padding-top: 0px">3 Items</p>
-                                                </div>
-                                                <div class="col-8 text-end" style="padding-top: 0px padding-left: 100px;">
-                                                    <p style="padding-top: 0px">Total</p>
-                                                    <p class="text-success" style="padding-top: 0px; padding-bottom: 0px;"><b>Rp 500.000</b></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="container text-center">
-                                <div class="row justify-content-center">
-                                    <div class="card mb-3" style="width: 75%">
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-2">
-                                                    <a href="/rincian_barang"><img src="../assets/img/icon_barang.png" alt="kendaraan" style="width:65px; height: 65px;"></a>
-                                                </div>  
-                                                <div class="col-md-6" style="padding-top: 18px; padding-left: 50px">
-                                                    <p class="text-muted">23 Jan 2021, 12.00 PM</p>
-                                                </div>
-                                                <div class="col-md-3" style="padding-top: 5px; padding-left: 100px">
-                                                    <p style="background: #ef5656; padding: 15px; border-radius: 15px; margin: 0; 
-                                                    text-align: center; color: #ffffff; font-size: 15px; width:100px">
-                                                    <b>Gagal</b></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-body " style="padding-top: 0px; padding-bottom: 0px;">
-                                            <p style="padding-right: 83%"><b>Anastasya</b></p>
-                                            <div class="row">
-                                                <div class="col-md-3" style="padding-right: 70px; padding-top: 0px">
-                                                   <p class="text-muted">3 Items</p>
-                                                </div>
-                                                <div class="col-8 text-end" style="padding-top: 0px padding-left: 100px;">
-                                                    <p>Total</p>
-                                                    <p class="text-success" style="padding-top: 0px; padding-bottom: 0px;"><b>Rp 500.000</b></p>
-                                                </div>
-                                            </div>
+                                        <div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="col-2 p-2" style="padding:15px; font-size:20px">
-                                <p style="background: #D3FBE2; padding: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; -webkit-border-radius: 15px; border-radius: 15px; margin: 0; text-align: center; line-height: 23px; color: black; font-size: 18px"><b>23 Jan Wed</b></p>
-                            </div>
-
-                            <div class="container text-center">
-                                <div class="row justify-content-center">
-                                    <div class="card mb-2" style="width: 75%">
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-2">
-                                                    <a href="/rincian_pickup"><img src="../assets/img/icon_pickup.png" alt="kendaraan" style="width:65px; height: 65px;"></a>
-                                                </div>  
-                                                <div class="col-md-6" style="padding-top: 18px; padding-left: 50px">
-                                                    <p class="text-muted">24 Jan 2021, 11.00 PM</p>
-                                                </div>
-                                                <div class="col-md-3" style="padding-top: 5px; padding-left: 100px">
-                                                    <p style="background: #D3FBE2; padding: 15px; border-radius: 15px; margin: 0; 
-                                                    text-align: center; color: #00B56A; font-size: 15px; width:100px">
-                                                    <b>Selesai</b></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card-body" style="padding-top: 0px; padding-bottom: 0px;">
-                                            <p style="padding-right: 78%"><b>Alvi Nurbaetri</b></p>
-                                            <div class="row">
-                                                <div class="col-md-3" style="padding-right: 70px; padding-bottom: 0px">
-                                                    <a href="/orderan_baru"><p class="text-muted" style="padding-top: 0px">3 Items</p></a>
-                                                </div>
-                                                <div class="col-8 text-end" style="padding-top: 0px padding-left: 100px;">
-                                                    <p style="padding-top: 0px">Total</p>
-                                                    <p class="text-success" style="padding-top: 0px; padding-bottom: 0px;"><b>Rp 500.000</b></p>
-                                                </div>
-                                            </div>
-                                        </div>
+                        {{-- modal detail3 --}}
+                        <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel" style="color:#27cd88">Detail Pesanan</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
-                                </div>
-                            </div>
+                                    <div class="modal-body">
+                                        <div class="card p-3">
+                                            <div class="card-body">
+                                                <p class="card-title text-center text-success"><b>30 Dec.2021 11:00 PM</b></p><br>
 
-                            <div class="container text-center">
-                                <div class="row justify-content-center">
-                                    <div class="card mb-3" style="width: 75%">
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-2">
-                                                    <a href="/rincian_pickup"><img src="../assets/img/icon_pickup.png" alt="kendaraan" style="width:65px; height: 65px;"></a>
-                                                </div>  
-                                                <div class="col-md-6" style="padding-top: 18px; padding-left: 50px">
-                                                    <p class="text-muted">24 Jan 2021, 11.00 PM</p>
+                                                        <div class="row" style="color: #00B56A;">
+                                                            <div class="col-6">
+                                                                <b>
+                                                                    <p class="mb-1">Status</p>
+                                                                </b>
+                                                            </div>
+                                                            <div class="col-md text-end">
+                                                                <b>Selesai</b>
+                                                            </div>
+                                                        </div>
+                                                <div class="row">
+                                                    <div style="background: #F2F2F2">
+                
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                <b>
+                                                                    <p class="mb-1">Order Id</p>
+                                                                </b>
+                                                            </div>
+                                                            <div class="col-md text-end">
+                                                                <b>1234569098</b>
+                                                            </div>
+                                                        </div>
+                
+                                                    </div>
+                                                </div><br>
+                
+                                                <div class="col-md">
+                                                    <b>
+                                                        <p class="mb-1">Sinta Sari Dwi Putra</p>
+                                                    </b>
+                                                    <p class="mb-1" style="font-size: 14px">No.Telp : 0823491231</p>
+                                                </div><br>
+                
+                                                <div class="col-md">
+                                                    <p><i class="bi bi-geo-fill p-2" style="color: #F24E1E"></i>Jl.Kusumanegara Sawahan,
+                                                        Bantul,
+                                                        Yogyakarta</p>
                                                 </div>
-                                                <div class="col-md-3" style="padding-top: 5px; padding-left: 100px">
-                                                    <p style="background: #ef5656; padding: 15px; border-radius: 15px; margin: 0; 
-                                                    text-align: center; color: #ffffff; font-size: 15px; width:100px">
-                                                    <b>Gagal</b></p>
+                
+                                                <div class="col-1">
+                                                    <h6 style="margin-right: 10px"><i class="bi bi-three-dots-vertical p-2"></i></h6>
+                                                </div>
+                
+                                                <div class="col-md">
+                                                    <h6><i class="bi bi-house-door-fill p-2" style="color: #F24E1E"></i>Kantor
+                                                        Titipsini.com
+                                                    </h6>
+                                                </div>
+                
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            {{-- <div class="container-fluid"> --}}
+                                                <div class="row">
+                                                    <div class="col-7 text-start">
+                                                        <p>Barang</p>
+                                                    </div>
+                                                    <div class="col-2  text-end">
+                                                        <p>10 kg</p>
+                                                    </div>
+                                                    <div class="col-1 text-end">
+                                                        <p>x</p>
+                                                    </div>
+                                                    <div class="col-2 text-end">
+                                                        <p>5.000</p>
+                                                    </div>
+                                                </div>
+                                                <hr width="100%" color="#c0c0c0">
+                                                <div class="row">
+                                                    <div class="col-2 text-start">
+                                                        <p>Pick Up</p>
+                                                    </div>
+                                                    <div class="col-10 text-end">
+                                                        <p>Antar-Jemput</p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-5 text-start">
+                                                        <p>Durasi Penitipan</p>
+                                                    </div>
+                                                    <div class="col-7 text-end">
+                                                        <p>5 hari</p>
+                                                    </div>
+                                                </div>
+                                                <hr width="100%" color="#c0c0c0">
+                                                <div class="row">
+                                                    <div class="col-5 text-start">
+                                                        <p>Biaya Penjemputan</p>
+                                                    </div>
+                                                    <div class="col-7 text-end">
+                                                        <p>50.000</p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-2 text-start">
+                                                        <p><b>Total</b></p>
+                                                    </div>
+                                                    <div class="col-10 text-end">
+                                                        <p><b>Rp 250.000</b></p>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card-body " style="padding-top: 0px; padding-bottom: 0px;">
-                                            <p style="padding-right: 78%"><b>Leon Immanuel</b></p>
-                                            <div class="row">
-                                                <div class="col-md-3" style="padding-right: 70px; padding-top: 0px">
-                                                    <a href="/orderan_baru"><p class="text-muted">3 Items</p></a>
-                                                </div>
-                                                <div class="col-8 text-end" style="padding-top: 0px padding-left: 100px;">
-                                                    <p>Total</p>
-                                                    <p class="text-success" style="padding-top: 0px; padding-bottom: 0px;"><b>Rp 500.000</b></p>
-                                                </div>
-                                            </div>
+                                        <div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
+
+
+                     
         </div>
        
         

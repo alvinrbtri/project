@@ -54,8 +54,9 @@
                 <div class="recentOrders">
                     <div class="cardHeader">
                         <h2>Data Orderan Kendaraan</h2>
-                        <a href="#" class="btn btn-thema">View All</a>
+                        <a href="#" class="btn btn-thema"><i class="bi bi-printer-fill p-1"></i>Cetak</a>
                     </div>
+                    <a href="" class="text-end">View All</a>
                     <table class="table-borderless mt-3 w-auto">
                         <thead class="text-start">
                             <tr>

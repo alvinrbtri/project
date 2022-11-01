@@ -80,14 +80,8 @@
                                       </svg><b>Jenis & Jumlah Kendaraan</b></h6>
                                     <div class="row">
                                         <div class="col-md-10">
-                                            <p class="">Untuk mengatur lokasi dan detail
-                                                alamat pick up</p>
+                                            <p class="">Untuk mengatur jenis dan jumlah kendaraan pick up Anda</p>
                                         </div>
-                                        <div class="col-md-2">
-                                            
-                                           
-                                        </div>   
-                                       
                                     </div>
                                     </div>
                                 </div>

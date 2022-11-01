@@ -58,6 +58,19 @@ class SuperadminController extends Controller
     // {
     //     return view('admin.bangunan');
     // }
+    public function history()
+    {
+        return view('superadmin.penarikan.history');
+    }
+
+    public function penarikan()
+    {
+        return view('superadmin.penarikan.penarikan');
+    }
+    public function transaksiuser()
+    {
+        return view('superadmin.transaksi.transaksi');
+    }
 
     public function pickup()
     {
@@ -129,5 +142,7 @@ class SuperadminController extends Controller
 
         return back()->with('status', 'Profile berhasil di updated!');
     }
+
+
 
 }

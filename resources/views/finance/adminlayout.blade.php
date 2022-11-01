@@ -40,6 +40,12 @@
                     <li><a class="link_name" href="/finance/page">Dasboard</a></li>
                 </ul>
             </li>
+            <li class="list {{ Request::segment(2) == 'profilefinance' ? 'active' : '' }}">
+                <a href="/finance/profilefinance">
+                    <i class='bx bx-user'></i>
+                    <span class="link_name">Profile</span>
+                </a>
+            </li>
             {{-- <li class="list {{ Request::segment(2) == 'transaksiuser' ? 'active' : '' }}">
                 <a href="/finance/transaksi/transaksiuser">
                     <i class="bi bi-bag-check"></i>
@@ -52,7 +58,7 @@
             <li class="list {{ Request::segment(2) == 'transaksi' ? 'active' : '' }}">
                 <div class="iocn-link">
                     <a>
-                        <i class='bx bx-data'></i>
+                        <i class="bi bi-cash-stack"></i>
                         <span class="link_name dropBtn">Transaksi</span>
                     </a>
                     <i class='bx bxs-chevron-down arrow'></i>
@@ -61,14 +67,13 @@
                     <div class="drop-box">
                         {{-- <a href="/finance/transaksi/transaksiuser">Data User</a> --}}
                         <a href="/finance/transaksi/transaksiuser">Data Transaksi</a>
-                        <a href="#">Status Orderan</a>
                     </div>
                 </div>
             </li>
             <li class="list {{ Request::segment(2) == 'DataPenarikan' ? 'active' : '' }}">
                 <div class="iocn-link">
                     <a>
-                        <i class="bi bi-folder"></i>
+                        <i class="bi bi-credit-card-2-back"></i>
                         <span class="link_name dropBtn">Penarikan</span>
                     </a>
                     <i class='bx bxs-chevron-down arrow'></i>
@@ -78,7 +83,7 @@
                         <a href="/finance/DataPenarikan/penarikan">Penarikan</a>
                         <a href="/finance/DataPenarikan/history">History</a>
                     </div>
-                </div> 
+                </div>
             </li>
             {{-- <li class="list {{ Request::segment(2) == 'DataPenarikan' ? 'active' : '' }}">
                 <div class="iocn-link">
@@ -90,27 +95,28 @@
                     <li><a class="link_name" href="/finance/DataPenarikan/penarikan">Penarikan</a></li>
                 </ul>
             </li> --}}
-            <li class="list {{ Request::segment(2) == 'profilefinance' ? 'active' : '' }}">
-                <a href="/finance/profilefinance">
-                    <i class='bx bx-user'></i>
-                    <span class="link_name">Profile</span>
+
+
+            <li class="list {{ Request::segment(2) == 'laporan' ? 'active' : '' }}">
+                <a href="/finance/laporan/laporan">
+                    <i class="bi bi-journal-text"></i>
+                    <span class="link_name">Laporan</span>
                 </a>
-                <ul class="sub-menu blank">
-                    <li><a class="link_name" href="/finance/profilefinance">Profile</a></li>
-                </ul>
             </li>
+
             <li class="nav-item dropdown">
-                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     {{ Auth::user()->name }}
                 </a>
-    
+
                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="{{ route('logout') }}"
-                       onclick="event.preventDefault();
+                        onclick="event.preventDefault();
                                      document.getElementById('logout-form').submit();">
                         {{ __('Logout') }}
                     </a>
-    
+
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
                     </form>
@@ -193,3 +199,4 @@
 </body>
 
 </html>
+ 

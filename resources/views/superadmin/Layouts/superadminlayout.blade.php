@@ -93,6 +93,31 @@
                     </div>
                 </div>
             </li>
+            <li class="list {{ Request::segment(2) == 'transaksi' ? 'active' : '' }}">
+                <a href="/superadmin/transaksi/transaksi">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="link_name">Transaksi</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="/superadmin/transaksi/transaksi">Transaksi</a></li>
+                </ul>
+            </li>
+
+            <li class="list {{ Request::segment(2) == 'DataPenarikan' ? 'active' : '' }}">
+                <div class="iocn-link">
+                    <a>
+                        <i class="bi bi-credit-card-2-back"></i>
+                        <span class="link_name dropBtn">Penarikan</span>
+                    </a>
+                    <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+                <div class="sub-menu">
+                    <div class="drop-box">
+                        <a href="/superadmin/penarikan/penarikan">Penarikan</a>
+                        <a href="/superadmin/penarikan/history">History</a>
+                    </div>
+                </div>
+            </li>
             <li class="list {{ Request::segment(2) == 'setting' ? 'active' : '' }}">
                 <div class="iocn-link">
                     <a>
@@ -108,6 +133,7 @@
                     </div>
                 </div>
             </li>
+           
             {{-- <li class="list {{ Request::segment(2) == 'setting' ? 'active' : '' }}">
                 <a href="/superadmin/setting">
                     <i class='bx bx-cog'></i>
